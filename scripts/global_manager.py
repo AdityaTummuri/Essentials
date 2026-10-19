@@ -734,3 +734,4 @@ def global_uninstall(
     print(f"\nUninstall complete: safely removed {removed_count} skill installation(s).")
     print("All unmanaged user files and modified copies were preserved.")
     return 0
+
