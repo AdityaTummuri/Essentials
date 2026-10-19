@@ -117,7 +117,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-scene",
+      "path": "skills/threejs/threejs-scene",
       "description": "Build or correct Three.js scene hierarchies, camera framing, coordinate transforms, and responsive renderer lifecycles.",
       "useCases": "Scene hierarchy, camera framing, coordinate conventions",
       "source": {
@@ -157,7 +157,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-materials",
+      "path": "skills/threejs/threejs-materials",
       "description": "Implement Three.js PBR materials, texture mapping, transparency, and color-management fixes.",
       "useCases": "PBR materials, texture mapping, transparency, color-management fixes",
       "source": {
@@ -197,7 +197,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-lighting",
+      "path": "skills/threejs/threejs-lighting",
       "description": "Light Three.js scenes using environment maps, direct lights, baked light, and tuned shadow maps.",
       "useCases": "Environment maps, direct lights, baked lighting",
       "source": {
@@ -237,7 +237,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-shaders",
+      "path": "skills/threejs/threejs-shaders",
       "description": "Write and debug Three.js GLSL shaders, custom material effects, uniforms, and shader deformation.",
       "useCases": "Custom GLSL shaders, uniforms, material effects",
       "source": {
@@ -277,7 +277,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-postprocessing",
+      "path": "skills/threejs/threejs-postprocessing",
       "description": "Add or debug Three.js bloom, antialiasing, ambient occlusion, depth effects, and render-target composition.",
       "useCases": "Bloom, antialiasing, ambient occlusion, depth effects",
       "source": {
@@ -317,7 +317,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-animation",
+      "path": "skills/threejs/threejs-animation",
       "description": "Implement Three.js animation clips, skeletal animation, transitions, scroll timelines, and frame-independent motion.",
       "useCases": "Animation clips, skeletal animation, transitions",
       "source": {
@@ -357,7 +357,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-geometry",
+      "path": "skills/threejs/threejs-geometry",
       "description": "Create or optimize Three.js BufferGeometry, procedural meshes, instanced objects, and geometry attributes.",
       "useCases": "BufferGeometry, procedural meshes, instancing",
       "source": {
@@ -397,7 +397,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-particles",
+      "path": "skills/threejs/threejs-particles",
       "description": "Build Three.js particle systems, point clouds, large repeated datasets, and CPU or GPU simulations.",
       "useCases": "Particle systems, point clouds, large repeated datasets",
       "source": {
@@ -437,7 +437,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-audio",
+      "path": "skills/threejs/threejs-audio",
       "description": "Add Three.js spatial audio, user-controlled playback, listener movement, and audio lifecycle handling.",
       "useCases": "Spatial audio with user-controlled playback",
       "source": {
@@ -477,7 +477,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-interaction",
+      "path": "skills/threejs/threejs-interaction",
       "description": "Implement Three.js pointer picking, orbit controls, object dragging, selection, and synchronized HTML controls.",
       "useCases": "Pointer picking, orbit controls, dragging",
       "source": {
@@ -517,7 +517,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-performance",
+      "path": "skills/threejs/threejs-performance",
       "description": "Profile and optimize Three.js frame time, GPU workload, asset memory, and resource leaks.",
       "useCases": "Frame time, GPU workload, memory profiling and optimization",
       "source": {
@@ -557,7 +557,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-accessibility",
+      "path": "skills/threejs/threejs-accessibility",
       "description": "Make Three.js interactions usable with keyboards, assistive technology, reduced motion, and non-3D fallbacks.",
       "useCases": "Keyboard and assistive-technology access to 3D interactions",
       "source": {
@@ -597,7 +597,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-html",
+      "path": "skills/threejs/threejs-html",
       "description": "Integrate Three.js with responsive HTML, Next.js or other frameworks, scroll sections, overlays, and multiple views.",
       "useCases": "Responsive HTML and framework integration",
       "source": {
@@ -637,7 +637,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-r3f",
+      "path": "skills/threejs/threejs-r3f",
       "description": "Build or fix React Three Fiber scenes, Drei helpers, Suspense loading, events, and React lifecycle integration.",
       "useCases": "React Three Fiber scenes, Drei helpers, Suspense loading",
       "source": {
@@ -677,7 +677,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-web",
+      "path": "skills/threejs/threejs-web",
       "description": "Plan and implement complete Three.js web experiences, or select focused skills for an existing 3D feature.",
       "useCases": "Planning complete Three.js web experiences",
       "source": {
@@ -717,7 +717,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-product-viewer",
+      "path": "skills/threejs/threejs-product-viewer",
       "description": "Build Three.js product viewers with material variants, camera presets, hotspots, configuration state, and image export.",
       "useCases": "Product viewers with material variants and camera presets",
       "source": {
@@ -757,7 +757,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-assets",
+      "path": "skills/threejs/threejs-assets",
       "description": "Load, validate, compress, cache, and release glTF models, textures, decoder assets, and user-supplied 3D files.",
       "useCases": "Loading, validating and compressing glTF models and textures",
       "source": {
@@ -797,7 +797,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-debugging",
+      "path": "skills/threejs/threejs-debugging",
       "description": "Diagnose Three.js black canvases, missing meshes, wrong colors, flicker, picking bugs, and context loss.",
       "useCases": "Black canvases, missing meshes, wrong colors, flicker",
       "source": {
@@ -837,7 +837,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-testing",
+      "path": "skills/threejs/threejs-testing",
       "description": "Test Three.js features with browser checks, deterministic visual fixtures, lifecycle tests, and device-specific evidence.",
       "useCases": "Browser checks and deterministic visual fixtures",
       "source": {
@@ -877,7 +877,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-deployment",
+      "path": "skills/threejs/threejs-deployment",
       "description": "Prepare and verify Three.js web builds, asset hosting, decoder paths, caching, and deployment compatibility.",
       "useCases": "Web build preparation, asset hosting, decoder paths",
       "source": {
@@ -917,7 +917,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-webgpu",
+      "path": "skills/threejs/threejs-webgpu",
       "description": "Build or migrate Three.js WebGPURenderer, TSL node materials, and GPU compute features.",
       "useCases": "WebGPURenderer and TSL node materials",
       "source": {
@@ -957,7 +957,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-physics",
+      "path": "skills/threejs/threejs-physics",
       "description": "Integrate Rapier or another physics engine with Three.js, including colliders, fixed timesteps, and render synchronization.",
       "useCases": "Rapier physics integration",
       "source": {
@@ -997,7 +997,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-xr",
+      "path": "skills/threejs/threejs-xr",
       "description": "Implement Three.js VR or AR sessions, XR input, reference spaces, hit testing, and session lifecycle.",
       "useCases": "VR and AR sessions and XR input",
       "source": {
@@ -1037,7 +1037,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-spatial-data",
+      "path": "skills/threejs/threejs-spatial-data",
       "description": "Integrate Three.js BIM/IFC, GIS, CAD, measurements, clipping, and large-coordinate datasets.",
       "useCases": "BIM/IFC, GIS and CAD data, measurements, clipping",
       "source": {
@@ -1075,9 +1075,9 @@
       "kind": "skill",
       "status": "vendored",
       "installable": true,
-      "category": "motion",
+      "category": "design",
       "collection": "motion/emil-design-eng",
-      "path": "skills/motion/emil-design-eng/apple-design",
+      "path": "skills/design/apple-design",
       "description": "Apple's approach to interface design and fluid, physical motion, translated for the web. Use when building or reviewing gesture-driven UI, spring animations, drag/swipe/sheet interactions, momentum and interruptible transitions, translucent materials and depth, typography (optical sizing, tracking, leading), reduced-motion, or the design foundations (feedback, spatial consistency, restraint) behind Apple-style interfaces.",
       "useCases": "Apple-style interface design and fluid physical motion",
       "source": {
@@ -1115,9 +1115,9 @@
       "kind": "skill",
       "status": "vendored",
       "installable": true,
-      "category": "motion",
+      "category": "design",
       "collection": "motion/emil-design-eng",
-      "path": "skills/motion/emil-design-eng/emil-design-eng",
+      "path": "skills/design/emil-design-eng",
       "description": "This skill encodes Emil Kowalski's philosophy on UI polish, component design, animation decisions, and the invisible details that make software feel great.",
       "useCases": "UI polish and component craft (Emil Kowalski's approach)",
       "source": {
@@ -1155,9 +1155,9 @@
       "kind": "skill",
       "status": "vendored",
       "installable": true,
-      "category": "motion",
+      "category": "design",
       "collection": "motion/emil-design-eng",
-      "path": "skills/motion/emil-design-eng/animate",
+      "path": "skills/design/animate",
       "description": "Build an animation from scratch, making the decisions in the order that determines whether it feels right \u2014 should it animate at all, what purpose, which tool, which properties, which curve and duration, how it interrupts, how it exits. Writes the implementation. Use when asked to animate something, add motion, make a component feel alive, or build a transition. For critiquing existing motion use review-animations; for auditing a whole codebase use improve-animations.",
       "useCases": "Building an animation from scratch in a decision order",
       "source": {
@@ -1195,9 +1195,9 @@
       "kind": "skill",
       "status": "vendored",
       "installable": true,
-      "category": "motion",
+      "category": "design",
       "collection": "motion/emil-design-eng",
-      "path": "skills/motion/emil-design-eng/animation-vocabulary",
+      "path": "skills/design/animation-vocabulary",
       "description": "Reverse-lookup glossary that turns a vague description of a web animation or motion effect into its exact term (\"the bouncy thing when a popover opens\" \u2192 Pop in; \"the iOS rubber-band scroll\" \u2192 Rubber-banding). Use when the user asks \"what's it called when\u2026\", or describes a motion effect without knowing its name and wants the right word to prompt an AI or designer with. For naming an effect, not designing or building one.",
       "useCases": "Turning vague animation descriptions into precise terms",
       "source": {
@@ -1235,9 +1235,9 @@
       "kind": "skill",
       "status": "vendored",
       "installable": true,
-      "category": "motion",
+      "category": "design",
       "collection": "motion/emil-design-eng",
-      "path": "skills/motion/emil-design-eng/animation-performance",
+      "path": "skills/design/animation-performance",
       "description": "Keep web animations inside the frame budget \u2014 animate composite-only properties, keep motion off the main thread when the page is busy, and find the cause when an animation drops frames. Covers the layout/paint/composite pipeline, cheaper property swaps, CSS vs WAAPI vs requestAnimationFrame, Framer Motion's hardware-accelerated path, React re-rendering per frame, inherited CSS variable recalculation, blur cost, and when `will-change` actually helps. Use when an animation is janky, choppy, stutters, or drops frames; when choosing which property to animate; when deciding between CSS and JS animation on performance grounds; or when reaching for `will-change` or GPU layers. For choosing easing, duration, or whether to animate at all use animate; for reviewing motion as a whole use review-animations.",
       "useCases": "Keeping animations inside the frame budget (composite-only props)",
       "source": {
@@ -1275,9 +1275,9 @@
       "kind": "skill",
       "status": "vendored",
       "installable": true,
-      "category": "motion",
+      "category": "design",
       "collection": "motion/emil-design-eng",
-      "path": "skills/motion/emil-design-eng/review-animations",
+      "path": "skills/design/review-animations",
       "description": "Reviews animation and motion code against a high craft bar derived from Emil Kowalski's design engineering philosophy. Default to flagging; approval is earned.",
       "useCases": "Reviewing animation code against a craft bar",
       "source": {
@@ -1315,9 +1315,9 @@
       "kind": "skill",
       "status": "vendored",
       "installable": true,
-      "category": "motion",
+      "category": "design",
       "collection": "motion/emil-design-eng",
-      "path": "skills/motion/emil-design-eng/find-animation-opportunities",
+      "path": "skills/design/find-animation-opportunities",
       "description": "Search a codebase or UI for places that don't animate but should, and reject everything that shouldn't. Read-only; it proposes motion with exact values, it does not implement it. Use when the user asks \"what could be animated here?\" or wants to \"make this feel more alive\". For fixing existing animations, use improve-animations or review-animations instead.",
       "useCases": "Finding static UI that should animate",
       "source": {
@@ -1355,9 +1355,9 @@
       "kind": "skill",
       "status": "vendored",
       "installable": true,
-      "category": "motion",
+      "category": "design",
       "collection": "motion/emil-design-eng",
-      "path": "skills/motion/emil-design-eng/improve-animations",
+      "path": "skills/design/improve-animations",
       "description": "Survey a codebase's animation and motion code as a senior motion advisor, then produce a prioritized audit and self-contained implementation plans for other agents (or cheaper models) to execute. Read-only on source code \u2014 it plans improvements, it does not apply them. Use when the user asks to \"improve the animations\", \"audit the motion\", \"make this app feel better\", or wants a roadmap of animation fixes rather than a review of a single diff.",
       "useCases": "Auditing a codebase's motion system and planning fixes",
       "source": {
@@ -1395,9 +1395,9 @@
       "kind": "skill",
       "status": "vendored",
       "installable": true,
-      "category": "motion",
+      "category": "design",
       "collection": "motion/design-motion-principles",
-      "path": "skills/motion/design-motion-principles",
+      "path": "skills/design/design-motion-principles",
       "description": "Motion and interaction design expert based on Emil Kowalski, Jakub Krehel, and Jhey Tompkins' techniques. Two modes \u2014 build interactive components with purposeful motion, or audit existing animations to catch AI-slop motion patterns (audit emits a branded HTML report with looping demos). Use when creating, adding, animating, or reviewing UI motion: transitions, hover states, micro-interactions, enter/exit animations, or any motion design work in React, Framer Motion, CSS, or HTML. Provides per-designer perspectives with context-aware weighting.",
       "useCases": "Motion and interaction design guidance with reference workflows",
       "source": {
@@ -1437,7 +1437,7 @@
       "installable": true,
       "category": "design",
       "collection": "design/ui-ux-pro-max",
-      "path": "skills/design/ui-ux-pro-max/ui-ux-pro-max",
+      "path": "skills/design/ui-ux-pro-max",
       "description": "UI/UX design intelligence for web, mobile, and desktop. This skill should be used when designing, building, reviewing, or fixing interfaces, including pages, components, design systems, accessibility, interaction, responsive layout, typography, color, charts, and stack-specific UI implementation. Searchable local data: 79 searchable styles (50 active), 192 product palettes and reasoning profiles, 74 font pairings, 119 UX guidelines, 105 icons, 17 GSAP presets, 25 chart types, and 22 stacks.",
       "useCases": "Searchable UI/UX rules, palettes, typography and style data",
       "source": {
@@ -1477,7 +1477,7 @@
       "installable": true,
       "category": "design",
       "collection": "design/ui-ux-pro-max",
-      "path": "skills/design/ui-ux-pro-max/design",
+      "path": "skills/design/design",
       "description": "Comprehensive design skill: brand identity, design tokens, UI styling, logo generation (55 styles, Gemini, Atlas Cloud, or MuAPI AI), corporate identity program (50 deliverables, CIP mockups), HTML presentations (Chart.js), banner design (22 styles, social/ads/web/print), icon design (15 styles, SVG, Gemini 3.1 Pro), social photos (HTML\u2192screenshot, multi-platform). Actions: design logo, create CIP, generate mockups, build slides, design banner, generate icon, create social photos, social media images, brand identity, design system. Platforms: Facebook, Twitter, LinkedIn, YouTube, Instagram, Pinterest, TikTok, Threads, Google Ads.",
       "useCases": "Design-generation workflow with references",
       "source": {
@@ -1555,9 +1555,9 @@
       "kind": "skill",
       "status": "vendored",
       "installable": true,
-      "category": "frontend",
+      "category": "design",
       "collection": "frontend/frontend-design",
-      "path": "skills/frontend/frontend-design",
+      "path": "skills/design/frontend-design",
       "description": "Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one. Helps with aesthetic direction, typography, and making choices that don't read as templated defaults.",
       "useCases": "Distinctive, production-grade frontend aesthetics that avoid generic AI-looking UI",
       "source": {
@@ -1953,7 +1953,7 @@
       "installable": true,
       "category": "engineering",
       "collection": "engineering/universal-dev-skills",
-      "path": "skills/engineering/universal-dev-skills/code-review",
+      "path": "skills/engineering/code-review",
       "description": "Perform structured, rigorous code reviews focusing on correctness, edge cases, error handling, security, performance, and architecture.",
       "useCases": "Code review, pull request audits, correctness and security checks",
       "source": {
@@ -1993,7 +1993,7 @@
       "installable": true,
       "category": "engineering",
       "collection": "engineering/universal-dev-skills",
-      "path": "skills/engineering/universal-dev-skills/test-driven-development",
+      "path": "skills/engineering/test-driven-development",
       "description": "Design and implement comprehensive automated test suites following Red-Green-Refactor, boundary testing, and regression prevention.",
       "useCases": "Unit testing, TDD methodology, test automation, regression testing",
       "source": {
@@ -2033,7 +2033,7 @@
       "installable": true,
       "category": "engineering",
       "collection": "engineering/universal-dev-skills",
-      "path": "skills/engineering/universal-dev-skills/git-hygiene",
+      "path": "skills/engineering/git-hygiene",
       "description": "Maintain clean, atomic, conventional commit histories, branch workflows, and safe conflict resolution strategies.",
       "useCases": "Git branching, atomic conventional commits, rebase workflows, repo maintenance",
       "source": {
@@ -2073,7 +2073,7 @@
       "installable": true,
       "category": "robotics-ml",
       "collection": "robotics-ml/robotics-ml-toolkit",
-      "path": "skills/robotics-ml/robotics-ml-toolkit/computer-vision",
+      "path": "skills/robotics-ml/computer-vision",
       "description": "Architect and implement real-time computer vision pipelines, camera calibration, feature extraction, object detection, and optical flow.",
       "useCases": "Computer vision, OpenCV, camera calibration, object detection, optical flow, PyTorch vision",
       "source": {
@@ -2113,7 +2113,7 @@
       "installable": true,
       "category": "robotics-ml",
       "collection": "robotics-ml/robotics-ml-toolkit",
-      "path": "skills/robotics-ml/robotics-ml-toolkit/model-evaluation",
+      "path": "skills/robotics-ml/model-evaluation",
       "description": "Rigorously evaluate ML models across classification, regression, and detection metrics, preventing data leakage and benchmarking inference latency.",
       "useCases": "Machine learning validation, PR-AUC, metrics, data leakage prevention, latency benchmarking",
       "source": {
@@ -2153,7 +2153,7 @@
       "installable": true,
       "category": "robotics-ml",
       "collection": "robotics-ml/robotics-ml-toolkit",
-      "path": "skills/robotics-ml/robotics-ml-toolkit/dataset-curation",
+      "path": "skills/robotics-ml/dataset-curation",
       "description": "Curate, validate, and version datasets for machine learning and robotics, mitigating class imbalance, labeling drift, and schema violations.",
       "useCases": "Dataset preparation, data validation, schema enforcement, class imbalance, DVC versioning",
       "source": {
@@ -2193,7 +2193,7 @@
       "installable": true,
       "category": "robotics-ml",
       "collection": "robotics-ml/robotics-ml-toolkit",
-      "path": "skills/robotics-ml/robotics-ml-toolkit/edge-inference",
+      "path": "skills/robotics-ml/edge-inference",
       "description": "Optimize and deploy deep learning models for edge devices and robotics using ONNX Runtime, TensorRT, INT8 quantization, and hardware acceleration.",
       "useCases": "Edge AI, ONNX Runtime, TensorRT, INT8 quantization, Jetson embedded deployment",
       "source": {
@@ -2233,7 +2233,7 @@
       "installable": true,
       "category": "audio",
       "collection": "audio/web-audio-toolkit",
-      "path": "skills/audio/web-audio-toolkit/browser-audio",
+      "path": "skills/audio/browser-audio",
       "description": "Implement interactive Web Audio API soundscapes, spatial 3D audio, user-gesture unlock lifecycles, and audio-reactive WebGL shader visualizers.",
       "useCases": "Web Audio API, spatial audio, sound effects, audio visualizers, AudioContext lifecycle",
       "source": {
@@ -2273,7 +2273,7 @@
       "installable": true,
       "category": "testing",
       "collection": "testing/visual-testing-toolkit",
-      "path": "skills/testing/visual-testing-toolkit/visual-regression",
+      "path": "skills/testing/visual-regression",
       "description": "Implement automated visual regression testing, pixel-diffing thresholds, headless browser consistency, and screenshot snapshot baselines.",
       "useCases": "Visual testing, snapshot testing, Playwright, pixelmatch, UI regression prevention",
       "source": {
@@ -2313,7 +2313,7 @@
       "installable": true,
       "category": "engineering",
       "collection": "engineering/universal-dev-skills",
-      "path": "skills/engineering/universal-dev-skills/api-design",
+      "path": "skills/engineering/api-design",
       "description": "Design clean, scalable, backward-compatible APIs following RESTful/RPC standards, idempotency keys, pagination, and error schemas.",
       "useCases": "REST API design, idempotency keys, cursor pagination, error formatting, schema design",
       "source": {
@@ -2353,7 +2353,7 @@
       "installable": true,
       "category": "engineering",
       "collection": "engineering/universal-dev-skills",
-      "path": "skills/engineering/universal-dev-skills/security-audit",
+      "path": "skills/engineering/security-audit",
       "description": "Audit codebases for OWASP Top 10 vulnerabilities, supply-chain risks, insecure deserialization, secret leakage, and permission flaws.",
       "useCases": "Security review, vulnerability audits, OWASP Top 10, dependency auditing, secret scanning",
       "source": {
@@ -2393,7 +2393,7 @@
       "installable": true,
       "category": "engineering",
       "collection": "engineering/universal-dev-skills",
-      "path": "skills/engineering/universal-dev-skills/ci-cd-workflow",
+      "path": "skills/engineering/ci-cd-workflow",
       "description": "Architect secure, reproducible CI/CD pipelines using GitHub Actions, matrix testing, dependency caching, and least-privilege permissions.",
       "useCases": "CI/CD workflows, GitHub Actions, matrix testing, artifact caching, pipeline security",
       "source": {
@@ -2433,7 +2433,7 @@
       "installable": true,
       "category": "product",
       "collection": "product/product-management-toolkit",
-      "path": "skills/product/product-management-toolkit/product-strategist",
+      "path": "skills/product/product-strategist",
       "description": "Strategic product leadership toolkit for Head of Product covering OKR cascade generation, quarterly planning, competitive landscape analysis, and vision docs.",
       "useCases": "Product strategy, OKR cascades, product vision documents, quarterly roadmap planning",
       "source": {
@@ -2473,7 +2473,7 @@
       "installable": true,
       "category": "product",
       "collection": "product/product-management-toolkit",
-      "path": "skills/product/product-management-toolkit/ui-design-system",
+      "path": "skills/product/ui-design-system",
       "description": "UI design system toolkit for Senior UI Designer including design token generation, component documentation, responsive calculations, and developer handoff.",
       "useCases": "Design systems, design tokens, typography scales, color palettes, developer handoff",
       "source": {
@@ -2505,6 +2505,116 @@
         "copilot"
       ],
       "safeForDefault": true
+    },
+    {
+      "id": "pytest-workflow",
+      "name": "pytest-workflow",
+      "kind": "skill",
+      "status": "vendored",
+      "category": "python",
+      "path": "skills/python/pytest-workflow",
+      "installable": true,
+      "safeForDefault": true,
+      "license": "MIT",
+      "description": "Architect, write, and maintain deterministic unit and integration test suites using Pytest.",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local (2026-10-20)",
+        "upstreamPath": "skills/python/pytest-workflow"
+      },
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable code or network calls."
+      }
+    },
+    {
+      "id": "python-patterns",
+      "name": "python-patterns",
+      "kind": "skill",
+      "status": "vendored",
+      "category": "python",
+      "path": "skills/python/python-patterns",
+      "installable": true,
+      "safeForDefault": true,
+      "license": "MIT",
+      "description": "Idiomatic modern Python design patterns, dataclasses, protocols, and clean architecture conventions.",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local (2026-10-20)",
+        "upstreamPath": "skills/python/python-patterns"
+      },
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable code or network calls."
+      }
+    },
+    {
+      "id": "type-hints-modern",
+      "name": "type-hints-modern",
+      "kind": "skill",
+      "status": "vendored",
+      "category": "python",
+      "path": "skills/python/type-hints-modern",
+      "installable": true,
+      "safeForDefault": true,
+      "license": "MIT",
+      "description": "Python 3.10+ static type hinting, TypeAlias, TypeVar, Self, ParamSpec, and static verification.",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local (2026-10-20)",
+        "upstreamPath": "skills/python/type-hints-modern"
+      },
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable code or network calls."
+      }
+    },
+    {
+      "id": "asyncio-patterns",
+      "name": "asyncio-patterns",
+      "kind": "skill",
+      "status": "vendored",
+      "category": "python",
+      "path": "skills/python/asyncio-patterns",
+      "installable": true,
+      "safeForDefault": true,
+      "license": "MIT",
+      "description": "Production asynchronous programming with Asyncio, TaskGroups, timeouts, and concurrency throttling.",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local (2026-10-20)",
+        "upstreamPath": "skills/python/asyncio-patterns"
+      },
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable code or network calls."
+      }
+    },
+    {
+      "id": "packaging-pyproject",
+      "name": "packaging-pyproject",
+      "kind": "skill",
+      "status": "vendored",
+      "category": "python",
+      "path": "skills/python/packaging-pyproject",
+      "installable": true,
+      "safeForDefault": true,
+      "license": "MIT",
+      "description": "Standards-compliant Python project packaging, build hooks, pyproject.toml, and distribution.",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local (2026-10-20)",
+        "upstreamPath": "skills/python/packaging-pyproject"
+      },
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable code or network calls."
+      }
     }
   ]
 }
