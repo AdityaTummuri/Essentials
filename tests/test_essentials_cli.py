@@ -177,10 +177,71 @@ class EssentialsCLITests(unittest.TestCase):
         self.assertEqual(res.returncode, 2)
         self.assertIn("refusing to install into the Essentials repository itself", res.stderr)
 
-    def test_unknown_skill_rejected(self) -> None:
-        res = run_cli("install", "--skills", "nonexistent-skill-id", "--target", str(self.target), "--yes")
+    def test_search_command(self) -> None:
+        res = run_cli("search", "vision")
+        self.assertEqual(res.returncode, 0, res.stderr)
+        self.assertIn("computer-vision", res.stdout)
+
+        res_json = run_cli("search", "audio", "--json")
+        self.assertEqual(res_json.returncode, 0, res_json.stderr)
+        data = json.loads(res_json.stdout)
+        self.assertTrue(any(r["id"] == "browser-audio" for r in data))
+
+    def test_inspect_command(self) -> None:
+        res = run_cli("inspect", "computer-vision")
+        self.assertEqual(res.returncode, 0, res.stderr)
+        self.assertIn("SKILL: computer-vision", res.stdout)
+        self.assertIn("robotics-ml", res.stdout)
+
+        res_preset = run_cli("inspect", "robotics-ml")
+        self.assertEqual(res_preset.returncode, 0, res_preset.stderr)
+        self.assertIn("PRESET: robotics-ml", res_preset.stdout)
+        self.assertIn("computer-vision", res_preset.stdout)
+
+    def test_sync_command(self) -> None:
+        # Install initial skill
+        run_cli("install", "--skills", "computer-vision,browser-audio", "--target", str(self.target), "--agent", "cursor", "--yes")
+        rule_cv = self.target / ".cursor" / "rules" / "computer-vision.mdc"
+        rule_ba = self.target / ".cursor" / "rules" / "browser-audio.mdc"
+        self.assertTrue(rule_cv.is_file())
+
+        # Delete one file and locally modify the other
+        rule_cv.unlink()
+        rule_ba.write_text("locally modified rule\n")
+
+        # Run sync
+        res = run_cli("sync", "--target", str(self.target))
+        self.assertEqual(res.returncode, 0, res.stderr + res.stdout)
+        self.assertIn("restoring", res.stdout)
+        self.assertIn("preserved without overwriting", res.stdout)
+        self.assertTrue(rule_cv.is_file(), "deleted file should be restored by sync")
+        self.assertEqual(rule_ba.read_text(), "locally modified rule\n", "modified rule must be preserved")
+
+    def test_path_with_spaces(self) -> None:
+        spaced_dir = self.tmp_dir / "my project with spaces"
+        spaced_dir.mkdir()
+        res = run_cli("install", "--skills", "code-review", "--target", str(spaced_dir), "--agent", "cursor", "--yes")
+        self.assertEqual(res.returncode, 0, res.stderr + res.stdout)
+        self.assertTrue((spaced_dir / ".cursor" / "rules" / "code-review.mdc").is_file())
+
+        res_un = run_cli("uninstall", "--target", str(spaced_dir), "--yes")
+        self.assertEqual(res_un.returncode, 0, res_un.stderr + res_un.stdout)
+        self.assertFalse((spaced_dir / ".cursor" / "rules" / "code-review.mdc").exists())
+
+    def test_corrupted_ledger_recovery(self) -> None:
+        ledger_file = self.target / ".essentials-ledger.json"
+        ledger_file.write_text("NOT_VALID_JSON{:::}\n")
+        res = run_cli("status", "--target", str(self.target))
         self.assertEqual(res.returncode, 2)
-        self.assertIn("not installable", res.stderr)
+        self.assertIn("corrupt ledger file", res.stderr)
+        self.assertIn("To reset, backup or remove this ledger", res.stderr)
+
+    def test_new_presets_robotics_and_engineering(self) -> None:
+        res = run_cli("install", "robotics-ml", "--target", str(self.target), "--agent", "cursor", "--yes")
+        self.assertEqual(res.returncode, 0, res.stderr + res.stdout)
+        rules_dir = self.target / ".cursor" / "rules"
+        for s in ("computer-vision", "model-evaluation", "dataset-curation", "edge-inference"):
+            self.assertTrue((rules_dir / f"{s}.mdc").is_file(), f"{s} rule should be installed")
 
 
 if __name__ == "__main__":

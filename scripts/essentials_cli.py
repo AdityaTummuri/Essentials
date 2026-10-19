@@ -101,7 +101,7 @@ def read_project_ledger(project: Path) -> dict[str, Any]:
             data.setdefault("installs", {})
             return data
         except Exception as exc:
-            raise CLIError(f"corrupt ledger file {ledger_file}: {exc}") from exc
+            raise CLIError(f"corrupt ledger file {ledger_file}: {exc}. To reset, backup or remove this ledger.") from exc
 
     # Check for legacy Claude Code ledger
     legacy_file = project / LEGACY_LEDGER_PATH
@@ -575,6 +575,197 @@ def cmd_uninstall(args: argparse.Namespace) -> int:
     return 0
 
 
+# --------------------------------------------------------------------------- Command: Search
+
+def cmd_search(args: argparse.Namespace) -> int:
+    """Search for skills across id, description, use cases, and categories."""
+    manifest = load_manifest()
+    query = args.query.strip().lower()
+    cat_filter = getattr(args, "category", None)
+    if cat_filter:
+        cat_filter = cat_filter.strip().lower()
+
+    matches = []
+    for r in manifest.get("resources", []):
+        if cat_filter and r.get("category", "").lower() != cat_filter:
+            continue
+        text_corpus = f"{r.get('id', '')} {r.get('description', '')} {r.get('useCases', '')} {r.get('category', '')}".lower()
+        if query in text_corpus:
+            matches.append(r)
+
+    if getattr(args, "json", False):
+        print(json.dumps(matches, indent=2))
+        return 0
+
+    print(f"Search results for '{args.query}' ({len(matches)} match(es)):\n")
+    if not matches:
+        print("  No skills matched your search criteria.")
+        return 0
+
+    for r in matches:
+        status_tag = "installable" if r.get("installable") else f"[{r.get('status', 'held')}]"
+        print(f"  • {r['id']:<28} [{r.get('category', 'general'):<12}] ({status_tag})")
+        print(f"    {r.get('description', '')[:75]}")
+        if r.get("useCases"):
+            print(f"    Use cases: {r['useCases'][:75]}")
+        print()
+    return 0
+
+
+# --------------------------------------------------------------------------- Command: Inspect
+
+def cmd_inspect(args: argparse.Namespace) -> int:
+    """Inspect complete metadata and provenance for a specific skill or preset."""
+    manifest = load_manifest()
+    target_id = args.skill_id.strip()
+
+    # Check if target is a preset
+    if target_id in manifest.get("presets", {}):
+        pdata = manifest["presets"][target_id]
+        if getattr(args, "json", False):
+            print(json.dumps({target_id: pdata}, indent=2))
+            return 0
+        print("=" * 65)
+        print(f" PRESET: {target_id}")
+        print("=" * 65)
+        print(f"Description: {pdata.get('description', '')}")
+        print(f"Included Skills ({len(pdata.get('skills', []))}):")
+        for sid in pdata.get("skills", []):
+            print(f"  • {sid}")
+        return 0
+
+    # Search for matching resource
+    matched = None
+    for r in manifest.get("resources", []):
+        if r.get("id") == target_id:
+            matched = r
+            break
+
+    if not matched:
+        raise CLIError(f"skill or preset '{target_id}' not found in manifest")
+
+    if getattr(args, "json", False):
+        print(json.dumps(matched, indent=2))
+        return 0
+
+    print("=" * 65)
+    print(f" SKILL: {matched['id']}")
+    print("=" * 65)
+    print(f"  Category:        {matched.get('category', 'general')}")
+    print(f"  Kind:            {matched.get('kind', 'skill')}")
+    print(f"  Status:          {matched.get('status', 'unknown')}")
+    print(f"  Installable:     {'Yes' if matched.get('installable') else 'No'}")
+    print(f"  Safe for Default:{'Yes' if matched.get('safeForDefault') else 'No'}")
+    print(f"  License:         {matched.get('license', 'Unspecified')}")
+    print(f"  Description:     {matched.get('description', '')}")
+    if matched.get("useCases"):
+        print(f"  Use Cases:       {matched['useCases']}")
+
+    src = matched.get("source", {})
+    if src:
+        print(f"\n  Upstream Source:")
+        print(f"    Repository:    {src.get('repo', 'None')}")
+        print(f"    Commit:        {src.get('commit', 'None')} ({src.get('commitDate', '')})")
+        print(f"    Upstream Path: {src.get('upstreamPath', '')}")
+
+    sec = matched.get("securityReview", {})
+    if sec:
+        print(f"\n  Security Review:")
+        print(f"    Status:        {sec.get('status', 'unreviewed')}")
+        print(f"    Date:          {sec.get('date', 'None')}")
+        print(f"    Notes:         {sec.get('notes', 'None')}")
+
+    agents = matched.get("supportedAgents", [])
+    if agents:
+        print(f"\n  Supported Agents: {', '.join(agents)}")
+    return 0
+
+
+# --------------------------------------------------------------------------- Command: Sync
+
+def cmd_sync(args: argparse.Namespace) -> int:
+    """Synchronize installed skills in a project to match canonical library versions."""
+    manifest = load_manifest()
+    installable = get_installable_resources(manifest)
+    project = resolve_project_dir(args.target)
+    ledger = read_project_ledger(project)
+    installs = ledger.get("installs", {})
+
+    if not installs:
+        # If no installs, check if a preset was provided to initialize
+        preset_name = getattr(args, "preset", None) or getattr(args, "selector", None)
+        if preset_name and preset_name in manifest.get("presets", {}):
+            print(f"No existing installs found. Initializing project with preset '{preset_name}'...")
+            args.skills = manifest["presets"][preset_name]["skills"]
+            args.preset = None
+            args.selector = None
+            return cmd_install(args)
+        print(f"Nothing to sync: no installed skills recorded in {project}.")
+        print("To install skills or a preset, use 'install' (e.g. './scripts/essentials install portfolio --target <dir>').")
+        return 0
+
+    library_dir = REPO_ROOT / "resources"
+    updated_count = 0
+    up_to_date_count = 0
+    skipped_modified = 0
+
+    print(f"Synchronizing installed skills for: {project}")
+    for sid, rec in list(installs.items()):
+        if sid not in installable:
+            print(f"  ! {sid}: no longer in installable manifest; kept as-is")
+            continue
+
+        res = installable[sid]
+        agent_name = rec.get("agent", "claude-code")
+        adapter = get_adapter(agent_name)
+        dest = project / rec.get("destination", sid)
+        source_dir = library_dir / res["path"]
+
+        # Check if destination exists
+        if not os.path.lexists(dest):
+            print(f"  + {sid}: missing from disk, restoring...")
+            _, new_rec = adapter.install(project, res, source_dir, mode=rec.get("mode", "link"))
+            new_rec["installedAt"] = now_iso()
+            installs[sid] = new_rec
+            updated_count += 1
+            continue
+
+        # For link mode: verify link target
+        if rec.get("mode") == "link":
+            if dest.is_symlink() and os.readlink(dest) == str(source_dir.resolve()):
+                up_to_date_count += 1
+            else:
+                print(f"  ↻ {sid}: updating symlink target...")
+                dest.unlink()
+                os.symlink(source_dir.resolve(), dest, target_is_directory=True)
+                rec["source"] = str(source_dir.resolve())
+                rec["installedAt"] = now_iso()
+                updated_count += 1
+        else:
+            # For copy mode: verify hash
+            current_sha = sha256_file(dest) if dest.is_file() else tree_digest(dest)
+            canonical_sha = res.get("skillMd", {}).get("sha256")
+            if rec.get("sha256") and current_sha != rec["sha256"]:
+                print(f"  . {sid}: local modifications detected; preserved without overwriting")
+                skipped_modified += 1
+            elif rec.get("sha256") == canonical_sha:
+                up_to_date_count += 1
+            else:
+                print(f"  ↻ {sid}: updating copy to latest canonical version...")
+                if dest.is_file():
+                    dest.unlink()
+                elif dest.is_dir():
+                    shutil.rmtree(dest)
+                _, new_rec = adapter.install(project, res, source_dir, mode="copy")
+                new_rec["installedAt"] = now_iso()
+                installs[sid] = new_rec
+                updated_count += 1
+
+    write_project_ledger(project, ledger)
+    print(f"\nSync complete: {updated_count} updated, {up_to_date_count} up-to-date, {skipped_modified} user-modified kept.")
+    return 0
+
+
 # --------------------------------------------------------------------------- CLI Parser Builder
 
 def build_cli_parser() -> argparse.ArgumentParser:
@@ -589,6 +780,19 @@ def build_cli_parser() -> argparse.ArgumentParser:
     p_list = subparsers.add_parser("list", help="List available skills, presets, and supported agents")
     p_list.add_argument("--json", action="store_true", help="Output in machine-readable JSON format")
     p_list.set_defaults(func=cmd_list)
+
+    # search
+    p_search = subparsers.add_parser("search", help="Search available skills by keyword or category")
+    p_search.add_argument("query", help="Search keyword")
+    p_search.add_argument("--category", "-c", help="Filter by category (e.g. robotics-ml, audio, engineering)")
+    p_search.add_argument("--json", action="store_true", help="Output in machine-readable JSON format")
+    p_search.set_defaults(func=cmd_search)
+
+    # inspect
+    p_inspect = subparsers.add_parser("inspect", help="Inspect provenance, license, and security details of a skill or preset")
+    p_inspect.add_argument("skill_id", help="Skill ID or preset name")
+    p_inspect.add_argument("--json", action="store_true", help="Output in machine-readable JSON format")
+    p_inspect.set_defaults(func=cmd_inspect)
 
     # validate
     p_validate = subparsers.add_parser("validate", help="Validate skill manifests, hashes, and security rules")
@@ -610,6 +814,16 @@ def build_cli_parser() -> argparse.ArgumentParser:
     p_install.add_argument("--dry-run", action="store_true", help="Preview planned changes without writing to disk")
     p_install.add_argument("--yes", "-y", action="store_true", help="Skip interactive confirmation prompts")
     p_install.set_defaults(func=cmd_install)
+
+    # sync
+    p_sync = subparsers.add_parser("sync", help="Synchronize installed project skills against canonical library")
+    p_sync.add_argument("selector", nargs="?", help="Optional preset name to initialize if uninstalled")
+    p_sync.add_argument("--target", "-t", required=True, help="Target project directory path")
+    p_sync.add_argument("--preset", "-p", help="Optional preset name")
+    p_sync.add_argument("--agent", "-a", default="claude-code", help="Target agent format")
+    p_sync.add_argument("--mode", "-m", choices=["link", "copy"], help="Install mode")
+    p_sync.add_argument("--yes", "-y", action="store_true", help="Skip confirmation")
+    p_sync.set_defaults(func=cmd_sync)
 
     # status
     p_status = subparsers.add_parser("status", help="Inspect installation status and verify file integrity")
