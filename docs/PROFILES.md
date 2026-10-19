@@ -1,57 +1,50 @@
-# Installation Profiles
+# Curated Profiles & Bundles
 
-Profiles in Essentials are curated, tested collections of skills designed for specific project archetypes and engineering disciplines.
+Essentials provides curated profiles—cohesive collections of skills designed for specific engineering disciplines, project archetypes, and developer workflows.
 
-Instead of hunting through individual skills, developers can install a cohesive profile with one command.
+Because **skills are just folders**, you don't need a special installer to use a profile. You can inspect a profile's skills and copy them directly with standard shell commands.
+
+```bash
+# View skills in any profile and get the exact copy command:
+./scripts/essentials inspect portfolio
+./scripts/essentials inspect python-dev
+./scripts/essentials inspect full-stack
+```
 
 ---
 
 ## 1. Available Profiles
 
-### 🎨 `portfolio` (31 skills)
+### 🎨 `portfolio` (28 skills)
 *For creative developers, agency websites, interactive 3D portfolios, and showcase sites.*
 - **Focus**: High-fidelity art direction, Three.js 3D scenes, shaders, PBR materials, postprocessing, animation, Web Audio API, and UI elegance.
 - **Skills Included**:
-  - Three.js Core: `threejs-scene`, `threejs-materials`, `threejs-lighting`, `threejs-shaders`, `threejs-postprocessing`, `threejs-animation`, `threejs-geometry`, `threejs-particles`, `threejs-audio`, `threejs-interaction`, `threejs-performance`, `threejs-accessibility`, `threejs-html`, `threejs-r3f`, `threejs-web`, `threejs-product-viewer`, `threejs-assets`, `threejs-debugging`, `threejs-testing`, `threejs-deployment`
-  - Design & Frontend: `frontend-design`, `ui-ux-pro-max`, `design`, `design-md`, `apple-design`
-  - Motion & Interaction: `emil-design-eng`, `animate`, `animation-performance`, `review-animations`, `design-motion-principles`
-  - Audio: `browser-audio`
-- **Installation Command**:
+  - **Three.js**: `threejs-scene`, `threejs-materials`, `threejs-lighting`, `threejs-shaders`, `threejs-postprocessing`, `threejs-animation`, `threejs-geometry`, `threejs-particles`, `threejs-audio`, `threejs-interaction`, `threejs-performance`, `threejs-accessibility`, `threejs-html`, `threejs-r3f`, `threejs-web`, `threejs-product-viewer`, `threejs-assets`, `threejs-debugging`, `threejs-testing`, `threejs-deployment`
+  - **Design & Frontend**: `frontend-design`, `ui-ux-pro-max`, `design`, `design-md`, `apple-design`
+  - **Motion & Interaction**: `emil-design-eng`, `animate`, `animation-performance`, `review-animations`, `design-motion-principles`
+  - **Audio**: `browser-audio`
+- **Copy to `~/.agents/skills/`**:
   ```bash
-  ./scripts/essentials install portfolio --target ~/projects/portfolio-site
+  mkdir -p ~/.agents/skills
+  cp -r skills/threejs/* ~/.agents/skills/
+  cp -r skills/design/frontend-design skills/design/ui-ux-pro-max skills/design/design skills/design/design-md skills/design/apple-design ~/.agents/skills/
+  cp -r skills/design/emil-design-eng skills/design/animate skills/design/animation-performance skills/design/review-animations skills/design/design-motion-principles ~/.agents/skills/
+  cp -r skills/audio/browser-audio ~/.agents/skills/
   ```
 
 ---
 
-### 📊 `dashboard` (6 skills)
-*For SaaS analytics platforms, internal admin tools, and data-dense dashboards.*
-- **Focus**: Information hierarchy, visual clarity, data visualization, accessibility, and restrained motion.
+### 🐍 `python-dev` (8 skills)
+*For modern Python backend services, CLI utilities, and data processing.*
+- **Focus**: Clean architecture, static typing with modern Python 3.10+ syntax, Pytest workflows, async patterns, pyproject.toml packaging, code reviews, and Git hygiene.
 - **Skills Included**:
-  - `frontend-design`: Layout balance, high-contrast usability, responsive grid alignment.
-  - `ui-ux-pro-max`: UI reasoning, color harmony, typography systems, chart palettes.
-  - `design`: General interface design principles.
-  - `design-md`: Automated design token and style guide documentation.
-  - `animation-performance`: 60fps interaction budgeting, minimizing DOM thrashing.
-  - `review-animations`: Eliminating unnecessary UI animations.
-- **Installation Command**:
+  - **Python**: `pytest-workflow`, `python-patterns`, `type-hints-modern`, `asyncio-patterns`, `packaging-pyproject`
+  - **Engineering**: `code-review`, `git-hygiene`, `security-audit`
+- **Copy to `~/.agents/skills/`**:
   ```bash
-  ./scripts/essentials install dashboard --target ~/projects/analytics-dashboard
-  ```
-
----
-
-### 🐍 `python-dev` (5 skills)
-*For backend services, CLI utilities, and data processing in Python.*
-- **Focus**: Clean architecture, modern typing, test-driven development, and Python engineering standards.
-- **Skills Included**:
-  - `code-review`: Static analysis, linting, code smells, and performance profiling.
-  - `test-driven-development`: Red-Green-Refactor testing workflows and pytest patterns.
-  - `git-hygiene`: Atomic commits, branch workflows, and clean history maintenance.
-  - `api-design`: RESTful conventions, idempotency keys, cursor pagination.
-  - `security-audit`: Dependency vulnerability scanning and OWASP security review.
-- **Installation Command**:
-  ```bash
-  ./scripts/essentials install python-dev --target ~/projects/python-service
+  mkdir -p ~/.agents/skills
+  cp -r skills/python/* ~/.agents/skills/
+  cp -r skills/engineering/code-review skills/engineering/git-hygiene skills/engineering/security-audit ~/.agents/skills/
   ```
 
 ---
@@ -61,24 +54,10 @@ Instead of hunting through individual skills, developers can install a cohesive 
 - **Focus**: Craftsmanship, rigorous code review, TDD, Git hygiene, API schemas, security audits, and hardened CI/CD.
 - **Skills Included**:
   - `code-review`, `test-driven-development`, `git-hygiene`, `api-design`, `security-audit`, `ci-cd-workflow`
-- **Installation Command**:
+- **Copy to `~/.agents/skills/`**:
   ```bash
-  ./scripts/essentials install engineering --target ~/projects/core-service
-  ```
-
----
-
-### 🤖 `robotics-ml` (4 skills)
-*For computer vision, robotics, edge AI, and machine learning practitioners.*
-- **Focus**: Real-time vision pipelines, model evaluation, dataset curation, and edge quantization.
-- **Skills Included**:
-  - `computer-vision`: Camera intrinsics calibration, OpenCV/PyTorch pipelines, optical flow, object detection.
-  - `model-evaluation`: Data leakage prevention, PR-AUC, group cross-validation, inference benchmarking.
-  - `dataset-curation`: Labeling schema, class imbalance mitigation, data validation.
-  - `edge-inference`: ONNX Runtime, TensorRT quantization (INT8/FP16), embedded deployment.
-- **Installation Command**:
-  ```bash
-  ./scripts/essentials install robotics-ml --target ~/projects/robot-vision
+  mkdir -p ~/.agents/skills
+  cp -r skills/engineering/* ~/.agents/skills/
   ```
 
 ---
@@ -87,17 +66,47 @@ Instead of hunting through individual skills, developers can install a cohesive 
 *End-to-end web application suite covering backend, design, frontend, and visual testing.*
 - **Focus**: Unified development from database APIs to frontend UI design and CI pipelines.
 - **Skills Included**:
-  - `code-review`, `test-driven-development`, `git-hygiene`, `api-design`, `security-audit`
-  - `frontend-design`, `ui-ux-pro-max`, `design-md`, `visual-regression`, `ci-cd-workflow`
-- **Installation Command**:
+  - **Backend & Engineering**: `code-review`, `test-driven-development`, `git-hygiene`, `api-design`, `security-audit`, `ci-cd-workflow`
+  - **Frontend & Design**: `frontend-design`, `ui-ux-pro-max`, `design-md`
+  - **Visual Testing**: `visual-regression`
+- **Copy to `~/.agents/skills/`**:
   ```bash
-  ./scripts/essentials install full-stack --target ~/projects/web-app
+  mkdir -p ~/.agents/skills
+  cp -r skills/engineering/* ~/.agents/skills/
+  cp -r skills/design/frontend-design skills/design/ui-ux-pro-max skills/design/design-md ~/.agents/skills/
+  cp -r skills/testing/visual-regression ~/.agents/skills/
   ```
 
 ---
 
-## 2. Safety & Profile Rules
+### 📊 `dashboard` (6 skills)
+*For SaaS analytics platforms, internal admin tools, and data-dense dashboards.*
+- **Focus**: Information hierarchy, visual clarity, data visualization, accessibility, and restrained motion.
+- **Skills Included**:
+  - `frontend-design`, `ui-ux-pro-max`, `design`, `design-md`, `animation-performance`, `review-animations`
+- **Copy to `~/.agents/skills/`**:
+  ```bash
+  mkdir -p ~/.agents/skills
+  cp -r skills/design/frontend-design skills/design/ui-ux-pro-max skills/design/design skills/design/design-md skills/design/animation-performance skills/design/review-animations ~/.agents/skills/
+  ```
 
-1. **Only Static-Reviewed Skills**: All skills bundled into profiles must be approved in `resources/resources.json` with `securityReview.status = "static-reviewed"` and `safeForDefault = true`.
-2. **Zero Arbitrary Code Execution**: No skill inside a default profile runs background code, network requests, or scripts.
-3. **Held Items Excluded**: Tools like `oil-motion` (which runs a local HTTP credential server and spawns ffmpeg) are strictly excluded from profiles and require individual, manual installation.
+---
+
+### 🤖 `robotics-ml` (4 skills)
+*For computer vision, robotics, edge AI, and machine learning practitioners.*
+- **Focus**: Real-time vision pipelines, model evaluation, dataset curation, and edge quantization.
+- **Skills Included**:
+  - `computer-vision`, `model-evaluation`, `dataset-curation`, `edge-inference`
+- **Copy to `~/.agents/skills/`**:
+  ```bash
+  mkdir -p ~/.agents/skills
+  cp -r skills/robotics-ml/* ~/.agents/skills/
+  ```
+
+---
+
+## 2. Safety Invariants
+
+1. **100% Static-Reviewed Skills**: All skills in these profiles are strictly instructional markdown with zero arbitrary code execution, background daemons, or unsolicited network requests.
+2. **Transparent Copying**: You choose exactly what gets copied into your environment. You can audit any skill's `SKILL.md` before copying.
+3. **Easy Removal**: To remove any profile or skill, simply delete the folder from `~/.agents/skills/<skill-id>` or `~/.claude/skills/<skill-id>`.

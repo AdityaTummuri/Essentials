@@ -7,6 +7,45 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [3.0.0] - 2026-10-20
+
+### Changed
+- **"Skills Are Just Folders" Architecture**: Fundamentally simplified the skill distribution model. Removed all custom Python runtime installers, symlink daemons, installation ledgers, and format adapters. Users now simply copy skill folders directly into `~/.agents/skills/` (for OpenCode, VS Code Copilot, Gemini CLI, Cursor, Windsurf, Codex) or `~/.claude/skills/` (for Claude Code).
+- **Top-Level `skills/` Directory**: Reorganized the entire canonical skill collection into a top-level `skills/` directory structured across 8 intuitive categories:
+  - `skills/threejs/` (24 skills)
+  - `skills/engineering/` (6 skills)
+  - `skills/design/` (13 skills)
+  - `skills/robotics-ml/` (4 skills)
+  - `skills/python/` (5 skills)
+  - `skills/audio/` (1 skill)
+  - `skills/product/` (2 skills)
+  - `skills/testing/` (1 skill)
+- **Refactored CLI (`scripts/essentials`)**: Streamlined the CLI into a zero-dependency, pure standard library browsing and validation companion supporting:
+  - `list`: Browse all 56 skills across 8 categories and curated profiles.
+  - `search <query>`: Case-insensitive keyword search across skill names, categories, and descriptions.
+  - `inspect <id|preset>`: Detailed view displaying metadata, YAML frontmatter, file trees, and ready-to-paste copy commands.
+  - `validate`: Static integrity verifier checking YAML frontmatter, uniqueness, and absence of forbidden files.
+- **Authoritative Manifest Updated**: Updated `resources/resources.json` to point all 56 skills directly to `skills/<category>/<skill-id>`.
+
+### Added
+- **5 New Modern Python Engineering Skills (`skills/python/`)**:
+  - `pytest-workflow`: Robust pytest testing workflows, fixtures, parametrization, and coverage integration.
+  - `python-patterns`: Clean architecture patterns, dependency injection, and idiomatic Pythonic design.
+  - `type-hints-modern`: Python 3.10+ typing (`X | Y`, ParamSpec, TypeVarTuple, Self, Protocol).
+  - `asyncio-patterns`: Modern Asyncio concurrency with `asyncio.TaskGroup` and cancellation semantics.
+  - `packaging-pyproject`: Modern PEP 517/621 packaging with `pyproject.toml`, hatchling/flit, and pre-commit hooks.
+- **Dedicated Test Suite (`tests/test_skills.py`)**: 9 automated unit and workflow tests verifying:
+  - Category structure and license files.
+  - Frontmatter validity and 100% unique skill names across all 56 skills.
+  - Manual folder copying workflow in temporary isolation.
+  - CLI `list`, `search`, `inspect`, and `validate` commands.
+
+### Removed
+- **Custom Installer & Symlink Machinery**: Deleted `scripts/global_manager.py`, `resources/scripts/setup-project.sh`, `resources/scripts/library.py`, and all 9 translation adapters in `adapters/`.
+- **Legacy Duplication**: Deleted `resources/skills/` and removed tracked `.agents/` workspace copies, leaving top-level `skills/` as the single authoritative source of truth.
+
+---
+
 ## [2.2.0] - 2026-10-20
 
 ### Added
