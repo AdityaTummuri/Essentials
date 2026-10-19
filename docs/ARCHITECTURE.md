@@ -117,5 +117,70 @@ The Essentials CLI (`./scripts/essentials`) is implemented exclusively in the Py
 - **`sync`**: Reconciles target project installations against the canonical library, updating unchanged skills while protecting local modifications.
 - **`status`**: Audits project ledger integrity and flags missing or tampered files.
 - **`uninstall`**: Safe atomic uninstaller protecting developer customizations.
+- **`setup-global`**: Installs selected skills or presets globally across OpenCode, Claude Code, and VS Code Copilot.
+- **`global-status`**: Audits global agent directories, health, and unmanaged user skills.
+- **`global-sync`**: Synchronizes globally installed skills with canonical updates and repairs broken links.
+- **`global-uninstall`**: Safely removes Essentials-managed skills while preserving unmanaged user skills.
+
+---
+
+## 6. System-Wide Personal Skill Management Architecture
+
+Essentials provides native system-wide skill management on Linux, enabling one canonical skills library in `Essentials/resources/skills/` to power **OpenCode**, **Claude Code**, and **VS Code with GitHub Copilot** simultaneously.
+
+### Global Discovery Path Architecture
+
+Agents discover skills from specific user-level paths:
+
+1. **Claude Code**: Scans `~/.claude/skills/<skill-id>/SKILL.md`.
+2. **OpenCode**: Scans `~/.agents/skills/<skill-id>/SKILL.md` (universal Agent Skills open standard) and `~/.config/opencode/skills/<skill-id>/SKILL.md`.
+3. **VS Code with GitHub Copilot**: Scans `~/.agents/skills/<skill-id>/SKILL.md` (Agent Skills standard) and `~/.copilot/skills/<skill-id>/SKILL.md`.
+
+### Single Source of Truth & Zero Duplicate Strategy
+
+By default, Essentials employs the **`shared`** distribution strategy:
+- Symlinks canonical skill folders to `~/.claude/skills/<id>` for Claude Code.
+- Symlinks canonical skill folders to `~/.agents/skills/<id>` for OpenCode and VS Code Copilot.
+- This satisfies all three tools without generating redundant file copies or duplicate skill IDs that cause collision warnings in Copilot.
+- Dedicated directories (`~/.config/opencode/skills` and `~/.copilot/skills`) can also be targeted via `--strategy dedicated` or `--strategy all`.
+
+### Dedicated Global Ledger
+
+Global installations are tracked independently from project installations in a dedicated XDG-compliant global ledger:
+`~/.config/essentials/global-ledger.json` (or `$XDG_CONFIG_HOME/essentials/global-ledger.json`).
+
+```json
+{
+  "version": 1,
+  "repoRoot": "/home/aditya/projects/Essentials",
+  "updatedAt": "2026-10-20T01:55:00+00:00",
+  "targets": {
+    "claude-code": {
+      "path": "/home/aditya/.claude/skills",
+      "installs": {
+        "computer-vision": {
+          "mode": "link",
+          "source": "/home/aditya/projects/Essentials/resources/skills/robotics-ml/robotics-ml-toolkit/computer-vision",
+          "destination": "/home/aditya/.claude/skills/computer-vision",
+          "sha256": "...",
+          "installedAt": "2026-10-20T01:55:00+00:00"
+        }
+      }
+    },
+    "shared-agents": {
+      "path": "/home/aditya/.agents/skills",
+      "installs": {}
+    }
+  }
+}
+```
+
+### Safety & Non-Destructive Invariants
+
+1. **Unmanaged User Skill Immunity**: If an unmanaged skill exists in any target directory (e.g. `~/.agents/skills/reverse-engineer-anything`), Essentials detects it as user-owned and will **never delete, overwrite, or modify it**.
+2. **Collision Prevention**: If a requested skill shares a name with an unmanaged user skill or directory, setup immediately halts with a conflict error before writing any changes.
+3. **Broken Link Repair**: `global-sync` detects broken symlinks (e.g. if files were moved) and automatically restores valid symlinks to the canonical source.
+4. **Modified Copy Protection**: In copy mode (`--mode copy`), if user modifications are detected in a skill, neither `global-sync` nor `global-uninstall` will overwrite or delete the modified files.
+
 
 

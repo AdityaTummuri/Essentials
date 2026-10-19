@@ -120,7 +120,58 @@ Essentials provides 6 curated bundles designed for specific project archetypes:
 
 ---
 
-## 5. Developer Environment Configurations
+## 5. System-Wide Personal Skill Library
+
+Essentials enables a **single canonical skills library** in your Linux user environment, automatically shared across **OpenCode**, **Claude Code**, and **VS Code with GitHub Copilot**.
+
+When you update or refine a skill in Essentials, changes propagate instantly to all three tools via directory symlinks—without manual syncing or maintaining duplicate copies.
+
+### Discovery Architecture
+
+| Tool | Personal Skills Directory | Format & Discovery |
+| :--- | :--- | :--- |
+| **OpenCode** | `~/.agents/skills/<id>/` | Native Agent Skills standard (`SKILL.md` + YAML frontmatter) |
+| **VS Code Copilot** | `~/.agents/skills/<id>/` | Native Agent Skills standard (shared with OpenCode) |
+| **Claude Code** | `~/.claude/skills/<id>/` | Standard Claude Code personal skills |
+| *OpenCode Dedicated* | `~/.config/opencode/skills/<id>/` | Optional dedicated XDG path |
+| *Copilot Dedicated* | `~/.copilot/skills/<id>/` | Optional dedicated personal directory |
+
+> **Single Source of Truth:** `~/.agents/skills/` is the shared Agent Skills specification directory utilized by both OpenCode and VS Code with GitHub Copilot. Essentials avoids generating redundant duplicate copies or conflicting skill IDs.
+
+### Global Management Commands
+
+```bash
+# 1. Preview global setup without writing changes to disk (dry-run)
+./scripts/essentials setup-global engineering --dry-run
+
+# 2. Setup a curated profile globally (symlinks to canonical library)
+./scripts/essentials setup-global engineering
+
+# 3. Setup individual skills system-wide
+./scripts/essentials setup-global --skills computer-vision,browser-audio
+
+# 4. Inspect global installation status, health, and unmanaged user skills
+./scripts/essentials global-status
+./scripts/essentials global-status --json
+
+# 5. Synchronize global skills against latest Essentials updates (repairs broken links)
+./scripts/essentials global-sync
+
+# 6. Safely remove managed skills globally (never touches unmanaged user skills)
+./scripts/essentials global-uninstall --skills computer-vision
+./scripts/essentials global-uninstall --all --yes
+```
+
+### Safety Guarantees for Global Skills
+
+- **Dedicated Global Ledger:** All system-wide installations are tracked in `~/.config/essentials/global-ledger.json` (or `$XDG_CONFIG_HOME/essentials/global-ledger.json`), keeping project ledgers completely independent.
+- **Unmanaged Skill Protection:** Pre-existing user skills (e.g. `~/.agents/skills/reverse-engineer-anything`) are automatically detected and preserved. Essentials will **never** delete, modify, or overwrite unmanaged skills.
+- **Collision Prevention:** If an Essentials skill name conflicts with an existing unmanaged skill, the setup halts with a conflict warning to protect user files.
+- **User Modification Preservation:** If a skill is installed in copy mode and customized locally, neither `global-sync` nor `global-uninstall` will overwrite or delete it.
+
+---
+
+## 6. Developer Environment Configurations
 
 Essentials includes modular, non-destructive configurations under `configs/`:
 
@@ -133,7 +184,7 @@ Essentials includes modular, non-destructive configurations under `configs/`:
 
 ---
 
-## 6. Project Starter Templates
+## 7. Project Starter Templates
 
 Clean, production-ready baselines are available under `templates/`:
 
@@ -143,38 +194,39 @@ Clean, production-ready baselines are available under `templates/`:
 
 ---
 
-## 7. Safety, Verification & Ledger
+## 8. Safety, Verification & Ledger
 
 Essentials takes security seriously:
 
 1. **Passive Guidance by Default**: All default skills are instructional Markdown (`SKILL.md`). They execute zero background scripts, make no unsolicited network requests, and cannot tamper with system environments.
 2. **Cryptographic Fingerprinting**: Every vendored `SKILL.md` is fingerprinted with SHA-256 in `resources/resources.json`. Tampering triggers validation failure.
 3. **No Supply-Chain Hooks**: Vendored skills are forbidden from including `settings.json`, `hooks.json`, or `.mcp.json`.
-4. **Non-Destructive Uninstall**: An installation ledger (`.essentials-ledger.json`) tracks managed files. If a developer edits an installed file, **Essentials will refuse to delete it** during uninstallation.
+4. **Non-Destructive Uninstall**: An installation ledger (`.essentials-ledger.json` for projects, `global-ledger.json` for personal skills) tracks managed files. If a developer edits an installed file, **Essentials will refuse to delete it** during uninstallation.
 5. **Audited Held Resources**: Complex tools with active scripts or credential management (such as `oil-motion`) are strictly audited and held outside default profiles.
 
 > Read the complete security policy in [SECURITY.md](SECURITY.md) and review records in [resources/docs/SECURITY-REVIEW.md](resources/docs/SECURITY-REVIEW.md).
 
 ---
 
-## 8. Repository Structure
+## 9. Repository Structure
 
 ```text
 Essentials/
 ├── .agents/                     # Canonical agent skills and lockfile
 ├── resources/                   # Central audited resource library
-│   ├── skills/                  # Vendored skills (design, motion, threejs, engineering)
+│   ├── skills/                  # Vendored skills (design, motion, threejs, engineering, audio, robotics-ml)
 │   ├── docs/                    # Security audit records and held decisions
 │   ├── catalogues/              # Source lists and alternatives comparisons
 │   ├── scripts/                 # Core engine and library validation
 │   └── resources.json           # Authoritative manifest
-├── adapters/                    # Multi-agent adapters (Claude, Cursor, Gemini, Codex, Windsurf, Copilot)
+├── adapters/                    # Multi-agent adapters (Claude, OpenCode, Cursor, Gemini, Codex, Windsurf, Copilot)
 ├── configs/                     # Modular developer environment configs (Git, shell, editor)
 ├── templates/                   # Clean starter templates (Python, portfolio, dashboard)
 ├── scripts/
 │   ├── essentials               # Unified CLI executable
-│   └── essentials_cli.py        # CLI engine (pure Python stdlib)
-├── tests/                       # End-to-end integration test suite
+│   ├── essentials_cli.py        # CLI engine (pure Python stdlib)
+│   └── global_manager.py        # Global skill manager (OpenCode, Claude, Copilot)
+├── tests/                       # End-to-end integration and global manager test suites
 ├── docs/                        # Architecture, agent matrix, and profile guides
 ├── CHANGELOG.md                 # Version history
 ├── CONTRIBUTING.md              # Contributor onboarding
@@ -184,7 +236,7 @@ Essentials/
 
 ---
 
-## 9. Contributing & License
+## 10. Contributing & License
 
 Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting skills, adapters, or templates.
 

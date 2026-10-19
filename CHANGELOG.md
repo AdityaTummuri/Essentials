@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.2.0] - 2026-10-20
+
+### Added
+- **System-Wide Personal Skill Management**:
+  - Unified personal skill library on Linux shared across **OpenCode**, **Claude Code**, and **VS Code with GitHub Copilot**.
+  - Symlink-first propagation ensures edits in canonical `resources/skills/` reflect in real-time across all three environments with zero manual file duplication.
+- **New CLI Commands**:
+  - `setup-global`: Installs selected presets or skills globally with `--strategy shared` (default: `~/.claude/skills` + `~/.agents/skills`), `--strategy dedicated`, or `--strategy all`. Supports `--dry-run`.
+  - `global-status`: Audits system-wide installations, checks health of symlinks/copies, and reports unmanaged user skills.
+  - `global-sync`: Synchronizes globally installed skills with canonical updates and automatically repairs broken symlinks.
+  - `global-uninstall`: Safely uninstalls Essentials-managed global skills while guaranteeing unmanaged user skills and user-modified copies are untouched.
+- **Dedicated Global Installation Ledger**: Tracks system-wide installations at `~/.config/essentials/global-ledger.json` (or `$XDG_CONFIG_HOME/essentials/global-ledger.json`), maintaining strict separation from project-level installations.
+- **OpenCode Adapter (`adapters/opencode.py`)**: Added dedicated OpenCode adapter supporting both the universal Agent Skills standard (`.agents/skills/`) and OpenCode's dedicated config path (`.config/opencode/skills/`).
+- **Global Integration Test Suite (`tests/test_global_manager.py`)**: 10 comprehensive tests covering dry-run safety, path resolution, YAML frontmatter compliance, multi-agent integrations, unmanaged user skill preservation, name collision prevention, link repair, and corrupted ledger recovery.
+
+---
+
 ## [2.1.0] - 2026-10-20
 
 ### Added
