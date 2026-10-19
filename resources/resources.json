@@ -8,7 +8,8 @@
     "motion": "Animation and interaction design",
     "threejs": "Three.js, WebGL, and 3D scene engineering",
     "mods": "Claude Code mods (behavior and UI changes). Review before enabling.",
-    "catalogues": "Discovery lists and non-skill dependencies. Not installable."
+    "catalogues": "Discovery lists and non-skill dependencies. Not installable.",
+    "engineering": "Software craftsmanship: code review, testing, API design, and Git hygiene"
   },
   "presets": {
     "portfolio": {
@@ -55,6 +56,22 @@
         "design-md",
         "animation-performance",
         "review-animations"
+      ]
+    },
+    "python-dev": {
+      "description": "Modern Python development: code review, automated testing, and Git hygiene.",
+      "skills": [
+        "code-review",
+        "test-driven-development",
+        "git-hygiene"
+      ]
+    },
+    "engineering": {
+      "description": "Core software engineering suite: code review, TDD, and Git hygiene.",
+      "skills": [
+        "code-review",
+        "test-driven-development",
+        "git-hygiene"
       ]
     }
   },
@@ -1894,6 +1911,126 @@
       },
       "supportedAgents": [],
       "safeForDefault": false
+    },
+    {
+      "id": "code-review",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering/universal-dev-skills",
+      "path": "skills/engineering/universal-dev-skills/code-review",
+      "description": "Perform structured, rigorous code reviews focusing on correctness, edge cases, error handling, security, performance, and architecture.",
+      "useCases": "Code review, pull request audits, correctness and security checks",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "resources/skills/engineering/universal-dev-skills/code-review"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
+      },
+      "skillMd": {
+        "sha256": "d941c9f60405733aedade5f44b093f4c19f9ddbddc9d949b8e4c4ec952cff2e8"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "test-driven-development",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering/universal-dev-skills",
+      "path": "skills/engineering/universal-dev-skills/test-driven-development",
+      "description": "Design and implement comprehensive automated test suites following Red-Green-Refactor, boundary testing, and regression prevention.",
+      "useCases": "Unit testing, TDD methodology, test automation, regression testing",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "resources/skills/engineering/universal-dev-skills/test-driven-development"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
+      },
+      "skillMd": {
+        "sha256": "eae05e7576bc906a75c9dacb5abc256bbb806f89225107c5cd254286c1827e5f"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "git-hygiene",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering/universal-dev-skills",
+      "path": "skills/engineering/universal-dev-skills/git-hygiene",
+      "description": "Maintain clean, atomic, conventional commit histories, branch workflows, and safe conflict resolution strategies.",
+      "useCases": "Git branching, atomic conventional commits, rebase workflows, repo maintenance",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "resources/skills/engineering/universal-dev-skills/git-hygiene"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
+      },
+      "skillMd": {
+        "sha256": "999ba4a6ae075d9702de307263e23bc5e36a087ebbe8a6989a2488d4ab7f3be8"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     }
   ]
 }
