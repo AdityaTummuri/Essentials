@@ -9,7 +9,11 @@
     "threejs": "Three.js, WebGL, and 3D scene engineering",
     "mods": "Claude Code mods (behavior and UI changes). Review before enabling.",
     "catalogues": "Discovery lists and non-skill dependencies. Not installable.",
-    "engineering": "Software craftsmanship: code review, testing, API design, and Git hygiene"
+    "engineering": "Software craftsmanship: code review, testing, API design, and Git hygiene",
+    "robotics-ml": "Robotics, computer vision, dataset curation, and edge neural inference",
+    "audio": "Web Audio API, spatial soundscapes, and reactive audio visualizers",
+    "testing": "Automated visual regression, snapshot testing, and quality engineering",
+    "product": "Product leadership, OKR cascades, design systems, and UX specifications"
   },
   "presets": {
     "portfolio": {
@@ -44,7 +48,8 @@
         "animation-performance",
         "review-animations",
         "design-motion-principles",
-        "apple-design"
+        "apple-design",
+        "browser-audio"
       ]
     },
     "dashboard": {
@@ -59,19 +64,48 @@
       ]
     },
     "python-dev": {
-      "description": "Modern Python development: code review, automated testing, and Git hygiene.",
+      "description": "Modern Python development: code review, TDD, Git hygiene, API design, and security audit.",
       "skills": [
         "code-review",
         "test-driven-development",
-        "git-hygiene"
+        "git-hygiene",
+        "api-design",
+        "security-audit"
       ]
     },
     "engineering": {
-      "description": "Core software engineering suite: code review, TDD, and Git hygiene.",
+      "description": "Core software engineering suite: code review, TDD, Git hygiene, API design, security, and CI/CD.",
       "skills": [
         "code-review",
         "test-driven-development",
-        "git-hygiene"
+        "git-hygiene",
+        "api-design",
+        "security-audit",
+        "ci-cd-workflow"
+      ]
+    },
+    "robotics-ml": {
+      "description": "Robotics, computer vision, model evaluation, and edge inference optimization.",
+      "skills": [
+        "computer-vision",
+        "model-evaluation",
+        "dataset-curation",
+        "edge-inference"
+      ]
+    },
+    "full-stack": {
+      "description": "Comprehensive full-stack engineering, design systems, visual testing, and architecture.",
+      "skills": [
+        "code-review",
+        "test-driven-development",
+        "git-hygiene",
+        "api-design",
+        "security-audit",
+        "frontend-design",
+        "ui-ux-pro-max",
+        "design-md",
+        "visual-regression",
+        "ci-cd-workflow"
       ]
     }
   },
@@ -2021,6 +2055,446 @@
       },
       "skillMd": {
         "sha256": "0c47d9967b4259907188f951581e8715fe5afe4425c7d177bfbfa825fd27b20b"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "computer-vision",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "robotics-ml",
+      "collection": "robotics-ml/robotics-ml-toolkit",
+      "path": "skills/robotics-ml/robotics-ml-toolkit/computer-vision",
+      "description": "Architect and implement real-time computer vision pipelines, camera calibration, feature extraction, object detection, and optical flow.",
+      "useCases": "Computer vision, OpenCV, camera calibration, object detection, optical flow, PyTorch vision",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "resources/skills/robotics-ml/robotics-ml-toolkit/computer-vision"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
+      },
+      "skillMd": {
+        "sha256": "8df7f98f10ccf6b7b37d300c021c3e8e71b8b2bc702690b47dad84f99a1a57c8"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "model-evaluation",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "robotics-ml",
+      "collection": "robotics-ml/robotics-ml-toolkit",
+      "path": "skills/robotics-ml/robotics-ml-toolkit/model-evaluation",
+      "description": "Rigorously evaluate ML models across classification, regression, and detection metrics, preventing data leakage and benchmarking inference latency.",
+      "useCases": "Machine learning validation, PR-AUC, metrics, data leakage prevention, latency benchmarking",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "resources/skills/robotics-ml/robotics-ml-toolkit/model-evaluation"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
+      },
+      "skillMd": {
+        "sha256": "8899e60626294a5da286d982f5f61be65eed741e1b310df561510b4cb802f3e8"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "dataset-curation",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "robotics-ml",
+      "collection": "robotics-ml/robotics-ml-toolkit",
+      "path": "skills/robotics-ml/robotics-ml-toolkit/dataset-curation",
+      "description": "Curate, validate, and version datasets for machine learning and robotics, mitigating class imbalance, labeling drift, and schema violations.",
+      "useCases": "Dataset preparation, data validation, schema enforcement, class imbalance, DVC versioning",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "resources/skills/robotics-ml/robotics-ml-toolkit/dataset-curation"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
+      },
+      "skillMd": {
+        "sha256": "984fbb9a26b25526960ca1f34c9b66f9b3e185f00f9aa58cc379b7a9e58da962"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "edge-inference",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "robotics-ml",
+      "collection": "robotics-ml/robotics-ml-toolkit",
+      "path": "skills/robotics-ml/robotics-ml-toolkit/edge-inference",
+      "description": "Optimize and deploy deep learning models for edge devices and robotics using ONNX Runtime, TensorRT, INT8 quantization, and hardware acceleration.",
+      "useCases": "Edge AI, ONNX Runtime, TensorRT, INT8 quantization, Jetson embedded deployment",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "resources/skills/robotics-ml/robotics-ml-toolkit/edge-inference"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
+      },
+      "skillMd": {
+        "sha256": "8dd28105d9b7be28473b2156f07742875ad8ab7c22b6f209eb35f264d6f291bf"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "browser-audio",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "audio",
+      "collection": "audio/web-audio-toolkit",
+      "path": "skills/audio/web-audio-toolkit/browser-audio",
+      "description": "Implement interactive Web Audio API soundscapes, spatial 3D audio, user-gesture unlock lifecycles, and audio-reactive WebGL shader visualizers.",
+      "useCases": "Web Audio API, spatial audio, sound effects, audio visualizers, AudioContext lifecycle",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "resources/skills/audio/web-audio-toolkit/browser-audio"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
+      },
+      "skillMd": {
+        "sha256": "a8c1246d0ff72f5292b4e3c197ff5f8cfb118bd2442da6d12e89709401ff2762"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "visual-regression",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "testing",
+      "collection": "testing/visual-testing-toolkit",
+      "path": "skills/testing/visual-testing-toolkit/visual-regression",
+      "description": "Implement automated visual regression testing, pixel-diffing thresholds, headless browser consistency, and screenshot snapshot baselines.",
+      "useCases": "Visual testing, snapshot testing, Playwright, pixelmatch, UI regression prevention",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "resources/skills/testing/visual-testing-toolkit/visual-regression"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
+      },
+      "skillMd": {
+        "sha256": "20e163511f3068cf258c8300e246c3e5c49335bf495582dc9118943bb30e4302"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "api-design",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering/universal-dev-skills",
+      "path": "skills/engineering/universal-dev-skills/api-design",
+      "description": "Design clean, scalable, backward-compatible APIs following RESTful/RPC standards, idempotency keys, pagination, and error schemas.",
+      "useCases": "REST API design, idempotency keys, cursor pagination, error formatting, schema design",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "resources/skills/engineering/universal-dev-skills/api-design"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
+      },
+      "skillMd": {
+        "sha256": "08517a4af9b4bdbc3719888639309aea03bb181dbaa605284ceaa1c5c4b0e4fa"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "security-audit",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering/universal-dev-skills",
+      "path": "skills/engineering/universal-dev-skills/security-audit",
+      "description": "Audit codebases for OWASP Top 10 vulnerabilities, supply-chain risks, insecure deserialization, secret leakage, and permission flaws.",
+      "useCases": "Security review, vulnerability audits, OWASP Top 10, dependency auditing, secret scanning",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "resources/skills/engineering/universal-dev-skills/security-audit"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
+      },
+      "skillMd": {
+        "sha256": "774e2e485887eda09548e3e460111393d84f6d60578f9adc970ab59f4f9a6ab8"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "ci-cd-workflow",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering/universal-dev-skills",
+      "path": "skills/engineering/universal-dev-skills/ci-cd-workflow",
+      "description": "Architect secure, reproducible CI/CD pipelines using GitHub Actions, matrix testing, dependency caching, and least-privilege permissions.",
+      "useCases": "CI/CD workflows, GitHub Actions, matrix testing, artifact caching, pipeline security",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "resources/skills/engineering/universal-dev-skills/ci-cd-workflow"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
+      },
+      "skillMd": {
+        "sha256": "c09aac88336326e31473fa6d6c7dedde45cda88cf86a5a8a8642e4fdec572eb1"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "product-strategist",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "product",
+      "collection": "product/product-management-toolkit",
+      "path": "skills/product/product-management-toolkit/product-strategist",
+      "description": "Strategic product leadership toolkit for Head of Product covering OKR cascade generation, quarterly planning, competitive landscape analysis, and vision docs.",
+      "useCases": "Product strategy, OKR cascades, product vision documents, quarterly roadmap planning",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "resources/skills/product/product-management-toolkit/product-strategist"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
+      },
+      "skillMd": {
+        "sha256": "35c32740d1082ef76153a74a89091d618478b2099a67cb2aefa3cdfbadd66f85"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "ui-design-system",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "product",
+      "collection": "product/product-management-toolkit",
+      "path": "skills/product/product-management-toolkit/ui-design-system",
+      "description": "UI design system toolkit for Senior UI Designer including design token generation, component documentation, responsive calculations, and developer handoff.",
+      "useCases": "Design systems, design tokens, typography scales, color palettes, developer handoff",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "resources/skills/product/product-management-toolkit/ui-design-system"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
+      },
+      "skillMd": {
+        "sha256": "e14618d7638c1c98b594bfb71b88899234453796200e144624d83f2505664287"
       },
       "supportedAgents": [
         "claude-code",
