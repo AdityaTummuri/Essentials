@@ -12,14 +12,15 @@ Essentials provides a curated, security-reviewed, canonical collection of AI age
 Essentials is a modular toolkit designed to give developers and their AI coding agents consistent, high-leverage capabilities across different IDEs, terminals, and workflows.
 
 Instead of hunting for prompts, manually copying `.cursorrules` or `.claude/skills` across dozens of projects, or trusting unreviewed scripts from the internet, Essentials gives you:
-- **Canonical Skill Library**: 40+ curated, security-reviewed skills spanning 3D WebGL (Three.js), UI/UX art direction, motion principles, software craftsmanship, and data dashboards.
+- **Canonical Skill Library**: 51 curated, security-reviewed skills spanning 3D WebGL (Three.js), UI/UX art direction, motion principles, software craftsmanship, robotics/ML, browser audio, and data dashboards.
 - **Universal Multi-Agent Adapters**: Write a skill once; deploy it natively to Claude Code, Cursor MDC rules, Gemini CLI, Codex, Windsurf, or Copilot.
-- **Safe Installation Engine**: Project-local, non-destructive CLI with dry-run previews, conflict protection, and an installation ledger that protects user edits.
+- **Safe Installation & Sync Engine**: Project-local, non-destructive CLI with dry-run previews, synchronization, conflict protection, and an installation ledger that protects user edits.
 - **Developer Environment Configurations**: Modular, opt-in configurations for Git, Bash, Zsh, and EditorConfig.
 - **Production Starters**: Clean baselines for modern Python, interactive 3D portfolios, and metric dashboards.
 
 ### Who is it for?
 - **Full-Stack & Frontend Engineers** building high-craft web apps, creative portfolios, and data dashboards.
+- **Robotics & ML Practitioners** implementing real-time computer vision, model validation, and edge quantization.
 - **AI-Native Developers** working across multiple AI coding agents who need consistent instructions and tools.
 - **Engineering Teams** seeking safe, auditable agent skills without remote script execution or prompt injection risks.
 
@@ -54,47 +55,66 @@ cd Essentials
 # 2. Browse available skills, presets, and supported agents
 ./scripts/essentials list
 
-# 3. Validate library integrity and cryptographic hashes
+# 3. Search for specific skills by keyword
+./scripts/essentials search vision
+
+# 4. Inspect skill provenance, security status, and license
+./scripts/essentials inspect computer-vision
+
+# 5. Validate library integrity and cryptographic hashes
 ./scripts/essentials validate
 
-# 4. Preview installing a curated profile into your project (dry run)
+# 6. Preview installing a curated profile into your project (dry run)
 ./scripts/essentials install portfolio --target ~/projects/my-portfolio --dry-run
 
-# 5. Install for your preferred agent (e.g., Cursor)
+# 7. Install for your preferred agent (e.g., Cursor)
 ./scripts/essentials install portfolio --target ~/projects/my-portfolio --agent cursor --yes
 ```
 
 ---
 
-## 4. Browsing & Installing Skills
+## 4. Browsing, Installing & Synchronizing Skills
 
 ### Presets
-Essentials provides curated bundles designed for specific project archetypes:
+Essentials provides 6 curated bundles designed for specific project archetypes:
 
-- **`portfolio`** (30 skills): High-end creative web engineering — Three.js scenes, PBR materials, shaders, postprocessing, animation budgeting, audio, and visual design systems.
+- **`portfolio`** (31 skills): High-end creative web engineering — Three.js scenes, PBR materials, shaders, postprocessing, animation budgeting, Web Audio API, and visual design systems.
 - **`dashboard`** (6 skills): Data-dense internal tools and analytics platforms — UI reasoning, typography, responsive grids, and restrained motion.
-- **`python-dev`** (3 skills): Modern Python development — test-driven development, code review protocols, and Git hygiene.
-- **`engineering`** (3 skills): Software craftsmanship — TDD, code review, and atomic Git commit workflows.
+- **`python-dev`** (5 skills): Modern Python development — test-driven development, code review protocols, Git hygiene, API design, and security review.
+- **`engineering`** (6 skills): Software craftsmanship — TDD, code review, atomic Git commits, REST/RPC API schemas, security audits, and hardened CI/CD.
+- **`robotics-ml`** (4 skills): Robotics, computer vision, data leakage prevention, dataset curation, and edge ONNX/TensorRT quantization.
+- **`full-stack`** (10 skills): Comprehensive full-stack engineering, design systems, visual regression testing, and architecture.
 
-### Targeted Installation Commands
+### Targeted CLI Commands
 
 ```bash
+# Search available skills across categories
+./scripts/essentials search "audio"
+./scripts/essentials search "testing" --category testing
+
+# Inspect provenance and license of any skill or preset
+./scripts/essentials inspect browser-audio
+./scripts/essentials inspect robotics-ml
+
 # Install a curated profile into a project
 ./scripts/essentials install dashboard --target ~/projects/analytics-ui
 
-# Install for a specific agent (e.g. Cursor, Claude, Codex, Gemini, Windsurf)
-./scripts/essentials install dashboard --target ~/projects/analytics-ui --agent cursor
+# Install for a specific agent (e.g. Cursor, Claude, Codex, Gemini, Windsurf, Copilot)
+./scripts/essentials install robotics-ml --target ~/projects/robot-vision --agent cursor
 
 # Install specific individual skills
-./scripts/essentials install --skills code-review,git-hygiene --target ~/projects/api-service --agent claude
+./scripts/essentials install --skills code-review,api-design --target ~/projects/api-service --agent claude
 
 # Choose symlink (default for local development) or copy mode (for shared repos)
 ./scripts/essentials install portfolio --target ~/projects/showcase --mode copy --yes
 
+# Synchronize installed project skills with canonical updates
+./scripts/essentials sync --target ~/projects/my-portfolio
+
 # Inspect installation status and file integrity in a project
 ./scripts/essentials status --target ~/projects/my-portfolio
 
-# Safely uninstall skills managed by Essentials
+# Safely uninstall skills managed by Essentials (preserves user-edited files)
 ./scripts/essentials uninstall --target ~/projects/my-portfolio --yes
 ```
 

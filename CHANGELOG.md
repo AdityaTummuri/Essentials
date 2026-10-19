@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.1.0] - 2026-10-20
+
+### Added
+- **Single Source of Truth Architecture**: Established `resources/skills/` as canonical reviewed source library and `.agents/skills/` as active synchronized workspace mirror.
+- **11 New Curated Skills (51 Total)**:
+  - Robotics & ML (`robotics-ml/`): `computer-vision`, `model-evaluation`, `dataset-curation`, `edge-inference`.
+  - Web Audio (`audio/`): `browser-audio` (AudioContext lifecycle, HRTF spatial audio, WebGL visualizers).
+  - Visual Testing (`testing/`): `visual-regression` (automated Playwright/pixelmatch snapshots).
+  - Software Craftsmanship (`engineering/`): `api-design`, `security-audit`, `ci-cd-workflow`.
+  - Product Strategy (`product/`): `product-strategist`, `ui-design-system`.
+- **New Presets**: Added `robotics-ml` (4 skills), `engineering` (6 skills), and `full-stack` (10 skills). Expanded `portfolio` to 31 skills with `browser-audio`.
+- **Enhanced CLI Subcommands (`scripts/essentials`)**:
+  - `search`: Keyword and category search across skill metadata.
+  - `inspect`: Detailed provenance, license, security review, and agent discovery viewer.
+  - `sync`: Project-wide skill synchronization reconciling local installations with canonical library updates while protecting user customizations.
+- **Extended Test Suite**: Added 5 new integration tests covering `search`, `inspect`, `sync`, paths containing spaces, and corrupted ledger recovery (35 total tests passing across test suites).
+- **Upstream Maintenance Audit (`docs/UPSTREAM_AUDIT.md`)**: Complete provenance and audit record tracking commit pins, licenses, and review decisions for all cataloged skills.
+
+---
+
 ## [2.0.0] - 2026-10-20
 
 ### Added

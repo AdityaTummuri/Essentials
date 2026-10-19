@@ -20,13 +20,24 @@ Because agent skills provide system prompts and context to autonomous AI coding 
 
 A full audit of all candidate resources was performed. The following resources have specific security classifications:
 
-### Audited & Approved for Default Profiles
+### Security Classification Tiers
+
+- **Level 1 (Static Instructions Reviewed)**: Pure markdown instructions (`SKILL.md`). Zero runtime scripts, zero network access, zero hook execution. Completely safe for default project installations.
+- **Level 2 (Offline Tooling Reviewed)**: Contains standalone local scripts for dataset validation or data lookup that never execute automatically during installation.
+- **Level 3 (Runtime / Script Execution)**: Contains scripts that make network calls, spawn subprocesses, or access system keyrings. Strictly held and excluded from default profiles.
+
+### Audited & Approved Collections for Default Profiles
 - `threejs/cesartevisual-threejs-skills` (24 skills): Pure markdown instructions, no scripts or hooks.
 - `motion/emil-design-eng` (8 skills): Pure markdown animation instructions.
 - `motion/design-motion-principles`: Static reference guides.
 - `frontend/frontend-design`: Static interface aesthetic guidelines.
 - `design/design-md`: Static design system documentation templates.
-- `design/ui-ux-pro-max`: Static UI reasoning catalogs and styling rules. Python helpers in `scripts/` are local data lookup scripts that are never run automatically by the installer.
+- `design/ui-ux-pro-max`: Static UI reasoning catalogs and styling rules.
+- `engineering/universal-dev-skills` (6 skills): Rigorous code review, TDD, Git hygiene, API design, security audit, CI/CD hardening.
+- `robotics-ml/robotics-ml-toolkit` (4 skills): Computer vision, model evaluation, dataset curation, and edge quantization guidance.
+- `audio/web-audio-toolkit` (1 skill): Web Audio API, spatial soundscapes, and audio visualizer shaders.
+- `testing/visual-testing-toolkit` (1 skill): Automated visual regression testing and snapshot baselines.
+- `product/product-management-toolkit` (2 skills): Executive product strategy, OKR cascades, and UI design systems.
 
 ### Held Resources (Excluded from Default Installation)
 The following resources contain executable code, subprocesses, or network calls and are **held** (not installable in default profiles):

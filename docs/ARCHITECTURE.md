@@ -89,3 +89,33 @@ When Essentials installs skills into a project:
    - For copies: the file contents have not been modified by the developer since installation.
    - If a developer edited an installed skill, **Essentials refuses to delete it**, protecting user work.
 
+---
+
+## 4. Single Source of Truth & Synchronization
+
+The repository maintains an explicit hierarchy between canonical sources and active mirrors:
+
+1. **`resources/skills/` is Canonical**:
+   All 51 reviewed skills reside under `resources/skills/`. This directory is strictly auditable: every collection contains an explicit `LICENSE` and `SOURCE.md`, and every `SKILL.md` is cryptographically hashed in `resources/resources.json`.
+2. **`.agents/skills/` is a Synchronized Workspace Mirror**:
+   For local agent tools (like Antigravity or Gemini CLI) operating directly inside the Essentials workspace, `.agents/skills/` provides the active toolset. Running `./scripts/essentials sync` verifies and synchronizes skills from the canonical library into any target project or workspace.
+3. **Duplicate Resolution**:
+   Duplicate sets (such as overlapping Three.js skills from older third-party dumps) are strictly resolved in favor of the canonical set (`cesartevisual-threejs-skills`), ensuring predictable precedence and deterministic discovery.
+
+---
+
+## 5. CLI Architecture & Operations
+
+The Essentials CLI (`./scripts/essentials`) is implemented exclusively in the Python standard library with zero runtime pip dependencies.
+
+### Command Execution Model:
+- **`list`**: Scans the authoritative manifest and displays skills by category, presets, and supported agents.
+- **`search <query>`**: Full-text keyword search across skill IDs, descriptions, categories, and use cases.
+- **`inspect <skill-id>`**: Deep provenance viewer showing upstream commit, license, security review notes, and discovery paths.
+- **`validate`**: Cryptographic hash integrity checker, forbidden file blocker, and schema validator.
+- **`install <preset|skills>`**: Multi-agent installer with dry-run preview, conflict detection, and ledger recording.
+- **`sync`**: Reconciles target project installations against the canonical library, updating unchanged skills while protecting local modifications.
+- **`status`**: Audits project ledger integrity and flags missing or tampered files.
+- **`uninstall`**: Safe atomic uninstaller protecting developer customizations.
+
+
