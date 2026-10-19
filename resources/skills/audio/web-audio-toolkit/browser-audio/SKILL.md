@@ -47,3 +47,4 @@ Use this skill when building interactive browser soundscapes, game audio, spatia
 ### 4. Accessibility & User Controls
 - **Global Mute Control**: Always provide a prominent, accessible audio toggle button with `aria-label` and persisted `localStorage` state.
 - **Respect User Preferences**: If `prefers-reduced-motion` is enabled, tone down reactive flashing or disorienting low-frequency visual tremors.
+

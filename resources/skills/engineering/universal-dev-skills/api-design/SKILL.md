@@ -46,3 +46,4 @@ Use this skill when designing HTTP REST endpoints, GraphQL schemas, or internal 
     ]
   }
   ```
+

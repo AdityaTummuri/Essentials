@@ -25,3 +25,4 @@ Use this skill when collecting training datasets, designing annotation schemas, 
 - Track raw data, intermediate transformations, and final model training splits using deterministic tools (e.g. DVC, Git LFS, or Content-Addressable Storage).
 - Fingerprint datasets with SHA-256 manifests to guarantee exact experimental reproducibility.
 - Record metadata: source environment, sensor hardware revision, capture lighting conditions, and legal licensing terms.
+

@@ -5,3 +5,4 @@
 - **Pinned Date**: 2026-10-20
 - **Scope**: Canonical guidance for computer vision pipelines, machine learning model evaluation, dataset curation, and edge inference optimization.
 - **Safety**: Pure instructional Markdown (`SKILL.md`). Zero runtime scripts or network activity.
+

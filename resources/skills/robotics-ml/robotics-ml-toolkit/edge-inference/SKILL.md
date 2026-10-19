@@ -32,3 +32,4 @@ Use this skill when optimizing neural networks for edge compute devices (NVIDIA 
   - ARM/Embedded: **NNAPI** or **XNNPACK**.
 - Pre-allocate memory buffers and pin host memory (`cudaHostAlloc`) to avoid allocation overhead during real-time control loops.
 - Set thermal profiles and power limits (e.g. `nvpmodel -m 0` on Jetson) for sustained robotics operation without throttling.
+

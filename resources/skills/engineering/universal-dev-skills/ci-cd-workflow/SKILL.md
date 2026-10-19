@@ -29,3 +29,4 @@ Use this skill when designing, reviewing, or hardening continuous integration an
 - Cache package dependencies (`actions/cache` or built-in tool setup caching) keyed by lockfile hashes (`hashFiles('**/poetry.lock')`).
 - Run tests against a matrix of supported runtime versions and operating systems (Linux, macOS, Windows where applicable).
 - Separate fast validation gates (linters, formatters, unit tests) from slow integration/e2e stages to give developers rapid feedback.
+

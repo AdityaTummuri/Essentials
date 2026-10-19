@@ -32,3 +32,4 @@ Use this skill when implementing automated UI regression tests, visual snapshot 
 ### 3. CI Baseline Management
 - Store reference snapshots in Git LFS or object storage.
 - When intentional UI redesigns occur, update baselines via a dedicated `--update-snapshots` CI run with peer review approval.
+

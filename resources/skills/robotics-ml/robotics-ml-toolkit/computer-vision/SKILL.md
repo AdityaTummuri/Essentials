@@ -30,3 +30,4 @@ Use this skill when developing, debugging, or optimizing computer vision pipelin
 ### 4. Edge Performance & Threading
 - Decouple image capture from inference: run the video frame grabber in a dedicated thread to prevent camera buffer overflows and latency lag.
 - Prefer GPU zero-copy memory transfers (`cv2.cuda_GpuMat` or direct PyTorch tensor mapping) when streaming to neural accelerators.
+

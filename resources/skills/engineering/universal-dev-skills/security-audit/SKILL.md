@@ -27,3 +27,4 @@ Use this skill when auditing source code, reviewing third-party dependencies, or
 ### 4. Secret Leakage & Hardening
 - Audit repositories for hardcoded API keys, private keys, and passwords using tools like `trufflehog` or `gitleaks`.
 - Verify all public endpoints enforce rate limiting to mitigate denial-of-service and brute-force credential stuffing.
+

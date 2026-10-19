@@ -84,3 +84,4 @@ Last Audited: **2026-10-20**
 | **`ui-styling`** | External | **Held** | Subprocess execution of `npx`, plus 5.8 MB of binary font bloat. |
 | **`design-system`** | External | **Held** | Unsolicited network downloads of images from pexels.com. |
 | **`brand`** | External | **Held** | Executes child processes via `execFileSync`. |
+
