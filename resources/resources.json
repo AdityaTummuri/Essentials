@@ -1,0 +1,1514 @@
+{
+  "schemaVersion": 1,
+  "updated": "2026-10-19",
+  "description": "Central library of Claude Code skills, mods, and catalogues. Installable entries are vendored copies with pinned sources.",
+  "categories": {
+    "design": "Visual design systems, UI/UX rules, DESIGN.md authoring",
+    "frontend": "Frontend implementation and aesthetic direction",
+    "motion": "Animation and interaction design",
+    "threejs": "Three.js, WebGL, and 3D scene engineering",
+    "mods": "Claude Code mods (behavior and UI changes). Review before enabling.",
+    "catalogues": "Discovery lists and non-skill dependencies. Not installable."
+  },
+  "presets": {
+    "portfolio": {
+      "description": "Premium portfolio sites: Three.js scenes, shaders, motion, audio, and frontend art direction.",
+      "skills": [
+        "threejs-scene",
+        "threejs-materials",
+        "threejs-lighting",
+        "threejs-shaders",
+        "threejs-postprocessing",
+        "threejs-animation",
+        "threejs-geometry",
+        "threejs-particles",
+        "threejs-audio",
+        "threejs-interaction",
+        "threejs-performance",
+        "threejs-accessibility",
+        "threejs-html",
+        "threejs-r3f",
+        "threejs-web",
+        "threejs-product-viewer",
+        "threejs-assets",
+        "threejs-debugging",
+        "threejs-testing",
+        "threejs-deployment",
+        "frontend-design",
+        "ui-ux-pro-max",
+        "design",
+        "design-md",
+        "emil-design-eng",
+        "animate",
+        "animation-performance",
+        "review-animations",
+        "design-motion-principles",
+        "apple-design"
+      ]
+    },
+    "dashboard": {
+      "description": "Data dashboards: information hierarchy, readability, and restrained motion. No 3D.",
+      "skills": [
+        "frontend-design",
+        "ui-ux-pro-max",
+        "design",
+        "design-md",
+        "animation-performance",
+        "review-animations"
+      ]
+    }
+  },
+  "resources": [
+    {
+      "id": "threejs-scene",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "threejs",
+      "collection": "threejs/cesartevisual-threejs-skills",
+      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-scene",
+      "description": "Build or correct Three.js scene hierarchies, camera framing, coordinate transforms, and responsive renderer lifecycles.",
+      "useCases": "Scene hierarchy, camera framing, coordinate conventions",
+      "source": {
+        "repo": "https://github.com/cesartevisual/threejs-skills",
+        "commit": "84f9bcb4bea1f7a28d57fe7f0af78f7f9c3dc467",
+        "commitDate": "2026-09-10",
+        "upstreamPath": "skills/threejs-scene"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "672300368113d314fc9475872142edd8fbe2e9d34cf5c2fe49173c18ccd6385f"
+      }
+    },
+    {
+      "id": "threejs-materials",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "threejs",
+      "collection": "threejs/cesartevisual-threejs-skills",
+      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-materials",
+      "description": "Implement Three.js PBR materials, texture mapping, transparency, and color-management fixes.",
+      "useCases": "PBR materials, texture mapping, transparency, color-management fixes",
+      "source": {
+        "repo": "https://github.com/cesartevisual/threejs-skills",
+        "commit": "84f9bcb4bea1f7a28d57fe7f0af78f7f9c3dc467",
+        "commitDate": "2026-09-10",
+        "upstreamPath": "skills/threejs-materials"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "95d0293de21e315b7ead8664193f3dadb35e25d59211d926d3a8373a0d09f85b"
+      }
+    },
+    {
+      "id": "threejs-lighting",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "threejs",
+      "collection": "threejs/cesartevisual-threejs-skills",
+      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-lighting",
+      "description": "Light Three.js scenes using environment maps, direct lights, baked light, and tuned shadow maps.",
+      "useCases": "Environment maps, direct lights, baked lighting",
+      "source": {
+        "repo": "https://github.com/cesartevisual/threejs-skills",
+        "commit": "84f9bcb4bea1f7a28d57fe7f0af78f7f9c3dc467",
+        "commitDate": "2026-09-10",
+        "upstreamPath": "skills/threejs-lighting"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "8ae65b5033f65eac4362174d30f91112234a601edfc95b5c750b276c17f00491"
+      }
+    },
+    {
+      "id": "threejs-shaders",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "threejs",
+      "collection": "threejs/cesartevisual-threejs-skills",
+      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-shaders",
+      "description": "Write and debug Three.js GLSL shaders, custom material effects, uniforms, and shader deformation.",
+      "useCases": "Custom GLSL shaders, uniforms, material effects",
+      "source": {
+        "repo": "https://github.com/cesartevisual/threejs-skills",
+        "commit": "84f9bcb4bea1f7a28d57fe7f0af78f7f9c3dc467",
+        "commitDate": "2026-09-10",
+        "upstreamPath": "skills/threejs-shaders"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "96d58846953680f1c3565f67a2ea0e694f06d8d31106377f2451de1e233ad883"
+      }
+    },
+    {
+      "id": "threejs-postprocessing",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "threejs",
+      "collection": "threejs/cesartevisual-threejs-skills",
+      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-postprocessing",
+      "description": "Add or debug Three.js bloom, antialiasing, ambient occlusion, depth effects, and render-target composition.",
+      "useCases": "Bloom, antialiasing, ambient occlusion, depth effects",
+      "source": {
+        "repo": "https://github.com/cesartevisual/threejs-skills",
+        "commit": "84f9bcb4bea1f7a28d57fe7f0af78f7f9c3dc467",
+        "commitDate": "2026-09-10",
+        "upstreamPath": "skills/threejs-postprocessing"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "e4bbab3413c5f272f339966347c3d3d459b6cda8f5739843ec44302e5f7271d6"
+      }
+    },
+    {
+      "id": "threejs-animation",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "threejs",
+      "collection": "threejs/cesartevisual-threejs-skills",
+      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-animation",
+      "description": "Implement Three.js animation clips, skeletal animation, transitions, scroll timelines, and frame-independent motion.",
+      "useCases": "Animation clips, skeletal animation, transitions",
+      "source": {
+        "repo": "https://github.com/cesartevisual/threejs-skills",
+        "commit": "84f9bcb4bea1f7a28d57fe7f0af78f7f9c3dc467",
+        "commitDate": "2026-09-10",
+        "upstreamPath": "skills/threejs-animation"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "18b18c25ecf0e94b0208b16f8290bafc37e94da27ff5aa9697d326738769bdad"
+      }
+    },
+    {
+      "id": "threejs-geometry",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "threejs",
+      "collection": "threejs/cesartevisual-threejs-skills",
+      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-geometry",
+      "description": "Create or optimize Three.js BufferGeometry, procedural meshes, instanced objects, and geometry attributes.",
+      "useCases": "BufferGeometry, procedural meshes, instancing",
+      "source": {
+        "repo": "https://github.com/cesartevisual/threejs-skills",
+        "commit": "84f9bcb4bea1f7a28d57fe7f0af78f7f9c3dc467",
+        "commitDate": "2026-09-10",
+        "upstreamPath": "skills/threejs-geometry"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "d51f3bff65299e6a9006c328e62ea1178738dc9c06407def34e07bb9af2443f7"
+      }
+    },
+    {
+      "id": "threejs-particles",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "threejs",
+      "collection": "threejs/cesartevisual-threejs-skills",
+      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-particles",
+      "description": "Build Three.js particle systems, point clouds, large repeated datasets, and CPU or GPU simulations.",
+      "useCases": "Particle systems, point clouds, large repeated datasets",
+      "source": {
+        "repo": "https://github.com/cesartevisual/threejs-skills",
+        "commit": "84f9bcb4bea1f7a28d57fe7f0af78f7f9c3dc467",
+        "commitDate": "2026-09-10",
+        "upstreamPath": "skills/threejs-particles"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "a0f63aae0245ec8c1ddeb3bf471ba7f27f233095b10b7841f6805935902e28a3"
+      }
+    },
+    {
+      "id": "threejs-audio",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "threejs",
+      "collection": "threejs/cesartevisual-threejs-skills",
+      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-audio",
+      "description": "Add Three.js spatial audio, user-controlled playback, listener movement, and audio lifecycle handling.",
+      "useCases": "Spatial audio with user-controlled playback",
+      "source": {
+        "repo": "https://github.com/cesartevisual/threejs-skills",
+        "commit": "84f9bcb4bea1f7a28d57fe7f0af78f7f9c3dc467",
+        "commitDate": "2026-09-10",
+        "upstreamPath": "skills/threejs-audio"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "e62d294c529a8e862d0b3bb6cd8a5545a6c8cd70a66428271db6056ac778f1e4"
+      }
+    },
+    {
+      "id": "threejs-interaction",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "threejs",
+      "collection": "threejs/cesartevisual-threejs-skills",
+      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-interaction",
+      "description": "Implement Three.js pointer picking, orbit controls, object dragging, selection, and synchronized HTML controls.",
+      "useCases": "Pointer picking, orbit controls, dragging",
+      "source": {
+        "repo": "https://github.com/cesartevisual/threejs-skills",
+        "commit": "84f9bcb4bea1f7a28d57fe7f0af78f7f9c3dc467",
+        "commitDate": "2026-09-10",
+        "upstreamPath": "skills/threejs-interaction"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "b14af462a8766f07c1a5136f140aefde2eaa3b2fde5656d1da29ecb22eaeefe9"
+      }
+    },
+    {
+      "id": "threejs-performance",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "threejs",
+      "collection": "threejs/cesartevisual-threejs-skills",
+      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-performance",
+      "description": "Profile and optimize Three.js frame time, GPU workload, asset memory, and resource leaks.",
+      "useCases": "Frame time, GPU workload, memory profiling and optimization",
+      "source": {
+        "repo": "https://github.com/cesartevisual/threejs-skills",
+        "commit": "84f9bcb4bea1f7a28d57fe7f0af78f7f9c3dc467",
+        "commitDate": "2026-09-10",
+        "upstreamPath": "skills/threejs-performance"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "0d2617bacfb947b415ced97430a17a555fdbf41d21e7bcf5777f2a10141c0fbb"
+      }
+    },
+    {
+      "id": "threejs-accessibility",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "threejs",
+      "collection": "threejs/cesartevisual-threejs-skills",
+      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-accessibility",
+      "description": "Make Three.js interactions usable with keyboards, assistive technology, reduced motion, and non-3D fallbacks.",
+      "useCases": "Keyboard and assistive-technology access to 3D interactions",
+      "source": {
+        "repo": "https://github.com/cesartevisual/threejs-skills",
+        "commit": "84f9bcb4bea1f7a28d57fe7f0af78f7f9c3dc467",
+        "commitDate": "2026-09-10",
+        "upstreamPath": "skills/threejs-accessibility"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "01448e2c6533677f46e1e609a7da3c9e7e03a95bae70f6cb9942187c8c178cf8"
+      }
+    },
+    {
+      "id": "threejs-html",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "threejs",
+      "collection": "threejs/cesartevisual-threejs-skills",
+      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-html",
+      "description": "Integrate Three.js with responsive HTML, Next.js or other frameworks, scroll sections, overlays, and multiple views.",
+      "useCases": "Responsive HTML and framework integration",
+      "source": {
+        "repo": "https://github.com/cesartevisual/threejs-skills",
+        "commit": "84f9bcb4bea1f7a28d57fe7f0af78f7f9c3dc467",
+        "commitDate": "2026-09-10",
+        "upstreamPath": "skills/threejs-html"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "3ec4d2d5b096c218085a93083bde8ccad54a9bcc6762b8848f9e27775a658813"
+      }
+    },
+    {
+      "id": "threejs-r3f",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "threejs",
+      "collection": "threejs/cesartevisual-threejs-skills",
+      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-r3f",
+      "description": "Build or fix React Three Fiber scenes, Drei helpers, Suspense loading, events, and React lifecycle integration.",
+      "useCases": "React Three Fiber scenes, Drei helpers, Suspense loading",
+      "source": {
+        "repo": "https://github.com/cesartevisual/threejs-skills",
+        "commit": "84f9bcb4bea1f7a28d57fe7f0af78f7f9c3dc467",
+        "commitDate": "2026-09-10",
+        "upstreamPath": "skills/threejs-r3f"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "ce47c21e58b2ff9281450ca41e3f191a06030e8217399d4f074767ad6ee6fe4f"
+      }
+    },
+    {
+      "id": "threejs-web",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "threejs",
+      "collection": "threejs/cesartevisual-threejs-skills",
+      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-web",
+      "description": "Plan and implement complete Three.js web experiences, or select focused skills for an existing 3D feature.",
+      "useCases": "Planning complete Three.js web experiences",
+      "source": {
+        "repo": "https://github.com/cesartevisual/threejs-skills",
+        "commit": "84f9bcb4bea1f7a28d57fe7f0af78f7f9c3dc467",
+        "commitDate": "2026-09-10",
+        "upstreamPath": "skills/threejs-web"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "32c6857d1e230ac58c27c95e0ddf6814a95ba26ee0e15b126e1d517ca44562b1"
+      }
+    },
+    {
+      "id": "threejs-product-viewer",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "threejs",
+      "collection": "threejs/cesartevisual-threejs-skills",
+      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-product-viewer",
+      "description": "Build Three.js product viewers with material variants, camera presets, hotspots, configuration state, and image export.",
+      "useCases": "Product viewers with material variants and camera presets",
+      "source": {
+        "repo": "https://github.com/cesartevisual/threejs-skills",
+        "commit": "84f9bcb4bea1f7a28d57fe7f0af78f7f9c3dc467",
+        "commitDate": "2026-09-10",
+        "upstreamPath": "skills/threejs-product-viewer"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "31a61c11480044865c447e337fa98ac85f9c8608b692343f35b7500e6f79fa07"
+      }
+    },
+    {
+      "id": "threejs-assets",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "threejs",
+      "collection": "threejs/cesartevisual-threejs-skills",
+      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-assets",
+      "description": "Load, validate, compress, cache, and release glTF models, textures, decoder assets, and user-supplied 3D files.",
+      "useCases": "Loading, validating and compressing glTF models and textures",
+      "source": {
+        "repo": "https://github.com/cesartevisual/threejs-skills",
+        "commit": "84f9bcb4bea1f7a28d57fe7f0af78f7f9c3dc467",
+        "commitDate": "2026-09-10",
+        "upstreamPath": "skills/threejs-assets"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "1bee02f2634d382a30621721f55b8a12d7bc692c8bcfd02090be97d1f8b408bd"
+      }
+    },
+    {
+      "id": "threejs-debugging",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "threejs",
+      "collection": "threejs/cesartevisual-threejs-skills",
+      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-debugging",
+      "description": "Diagnose Three.js black canvases, missing meshes, wrong colors, flicker, picking bugs, and context loss.",
+      "useCases": "Black canvases, missing meshes, wrong colors, flicker",
+      "source": {
+        "repo": "https://github.com/cesartevisual/threejs-skills",
+        "commit": "84f9bcb4bea1f7a28d57fe7f0af78f7f9c3dc467",
+        "commitDate": "2026-09-10",
+        "upstreamPath": "skills/threejs-debugging"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "61f51bbaf0c88104532c7bed7c0f65a75fa9a9f882f5c79187cbe9046786df50"
+      }
+    },
+    {
+      "id": "threejs-testing",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "threejs",
+      "collection": "threejs/cesartevisual-threejs-skills",
+      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-testing",
+      "description": "Test Three.js features with browser checks, deterministic visual fixtures, lifecycle tests, and device-specific evidence.",
+      "useCases": "Browser checks and deterministic visual fixtures",
+      "source": {
+        "repo": "https://github.com/cesartevisual/threejs-skills",
+        "commit": "84f9bcb4bea1f7a28d57fe7f0af78f7f9c3dc467",
+        "commitDate": "2026-09-10",
+        "upstreamPath": "skills/threejs-testing"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "2f8357c965aa8044737e79b2db7338da6e7897e8099316fcf1159d7f98c79907"
+      }
+    },
+    {
+      "id": "threejs-deployment",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "threejs",
+      "collection": "threejs/cesartevisual-threejs-skills",
+      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-deployment",
+      "description": "Prepare and verify Three.js web builds, asset hosting, decoder paths, caching, and deployment compatibility.",
+      "useCases": "Web build preparation, asset hosting, decoder paths",
+      "source": {
+        "repo": "https://github.com/cesartevisual/threejs-skills",
+        "commit": "84f9bcb4bea1f7a28d57fe7f0af78f7f9c3dc467",
+        "commitDate": "2026-09-10",
+        "upstreamPath": "skills/threejs-deployment"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "a6e6a92bec721441eb5796d1d3f3652f096d0707e273a3b57b93f843c77eb765"
+      }
+    },
+    {
+      "id": "threejs-webgpu",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "threejs",
+      "collection": "threejs/cesartevisual-threejs-skills",
+      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-webgpu",
+      "description": "Build or migrate Three.js WebGPURenderer, TSL node materials, and GPU compute features.",
+      "useCases": "WebGPURenderer and TSL node materials",
+      "source": {
+        "repo": "https://github.com/cesartevisual/threejs-skills",
+        "commit": "84f9bcb4bea1f7a28d57fe7f0af78f7f9c3dc467",
+        "commitDate": "2026-09-10",
+        "upstreamPath": "skills/threejs-webgpu"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "3dbaae86427519c526bc59a2fdb913dce1102734a38ed6324b96a7f95a1f4f79"
+      }
+    },
+    {
+      "id": "threejs-physics",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "threejs",
+      "collection": "threejs/cesartevisual-threejs-skills",
+      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-physics",
+      "description": "Integrate Rapier or another physics engine with Three.js, including colliders, fixed timesteps, and render synchronization.",
+      "useCases": "Rapier physics integration",
+      "source": {
+        "repo": "https://github.com/cesartevisual/threejs-skills",
+        "commit": "84f9bcb4bea1f7a28d57fe7f0af78f7f9c3dc467",
+        "commitDate": "2026-09-10",
+        "upstreamPath": "skills/threejs-physics"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "482709854b29b548969897b237ffd764bcdc1ba1541f3f69fa9b6d941e795152"
+      }
+    },
+    {
+      "id": "threejs-xr",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "threejs",
+      "collection": "threejs/cesartevisual-threejs-skills",
+      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-xr",
+      "description": "Implement Three.js VR or AR sessions, XR input, reference spaces, hit testing, and session lifecycle.",
+      "useCases": "VR and AR sessions and XR input",
+      "source": {
+        "repo": "https://github.com/cesartevisual/threejs-skills",
+        "commit": "84f9bcb4bea1f7a28d57fe7f0af78f7f9c3dc467",
+        "commitDate": "2026-09-10",
+        "upstreamPath": "skills/threejs-xr"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "5db9de7f48e8ce4a583db7224bf58fdc955f5b47881bdc842da8f1c4e4d10857"
+      }
+    },
+    {
+      "id": "threejs-spatial-data",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "threejs",
+      "collection": "threejs/cesartevisual-threejs-skills",
+      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-spatial-data",
+      "description": "Integrate Three.js BIM/IFC, GIS, CAD, measurements, clipping, and large-coordinate datasets.",
+      "useCases": "BIM/IFC, GIS and CAD data, measurements, clipping",
+      "source": {
+        "repo": "https://github.com/cesartevisual/threejs-skills",
+        "commit": "84f9bcb4bea1f7a28d57fe7f0af78f7f9c3dc467",
+        "commitDate": "2026-09-10",
+        "upstreamPath": "skills/threejs-spatial-data"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "9b4456b9223e2fad00b795852072d0306befa1ac326595230d264a1431b16f3e"
+      }
+    },
+    {
+      "id": "apple-design",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "motion",
+      "collection": "motion/emil-design-eng",
+      "path": "skills/motion/emil-design-eng/apple-design",
+      "description": "Apple's approach to interface design and fluid, physical motion, translated for the web. Use when building or reviewing gesture-driven UI, spring animations, drag/swipe/sheet interactions, momentum and interruptible transitions, translucent materials and depth, typography (optical sizing, tracking, leading), reduced-motion, or the design foundations (feedback, spatial consistency, restraint) behind Apple-style interfaces.",
+      "useCases": "Apple-style interface design and fluid physical motion",
+      "source": {
+        "repo": "https://github.com/emilkowalski/skills",
+        "commit": "2d228630ba1446365f614a108cb8252f1feda202",
+        "commitDate": "2026-10-11",
+        "upstreamPath": "skills/apple-design"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "77bb63b7043bb93aca2ff4ab040c249484eef35682bb6ff7163433c31d30adc7"
+      }
+    },
+    {
+      "id": "emil-design-eng",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "motion",
+      "collection": "motion/emil-design-eng",
+      "path": "skills/motion/emil-design-eng/emil-design-eng",
+      "description": "This skill encodes Emil Kowalski's philosophy on UI polish, component design, animation decisions, and the invisible details that make software feel great.",
+      "useCases": "UI polish and component craft (Emil Kowalski's approach)",
+      "source": {
+        "repo": "https://github.com/emilkowalski/skills",
+        "commit": "2d228630ba1446365f614a108cb8252f1feda202",
+        "commitDate": "2026-10-11",
+        "upstreamPath": "skills/emil-design-eng"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "ffbe68e6007fb42cb8149f089b400a1ca007d59ba23e8948e2be4476f3175939"
+      }
+    },
+    {
+      "id": "animate",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "motion",
+      "collection": "motion/emil-design-eng",
+      "path": "skills/motion/emil-design-eng/animate",
+      "description": "Build an animation from scratch, making the decisions in the order that determines whether it feels right — should it animate at all, what purpose, which tool, which properties, which curve and duration, how it interrupts, how it exits. Writes the implementation. Use when asked to animate something, add motion, make a component feel alive, or build a transition. For critiquing existing motion use review-animations; for auditing a whole codebase use improve-animations.",
+      "useCases": "Building an animation from scratch in a decision order",
+      "source": {
+        "repo": "https://github.com/emilkowalski/skills",
+        "commit": "2d228630ba1446365f614a108cb8252f1feda202",
+        "commitDate": "2026-10-11",
+        "upstreamPath": "skills/animate"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "b8ede161270458e6ae2e45e8a1985373515d4c63de5568ddb0f9012d7634356c"
+      }
+    },
+    {
+      "id": "animation-vocabulary",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "motion",
+      "collection": "motion/emil-design-eng",
+      "path": "skills/motion/emil-design-eng/animation-vocabulary",
+      "description": "Reverse-lookup glossary that turns a vague description of a web animation or motion effect into its exact term (\"the bouncy thing when a popover opens\" → Pop in; \"the iOS rubber-band scroll\" → Rubber-banding). Use when the user asks \"what's it called when…\", or describes a motion effect without knowing its name and wants the right word to prompt an AI or designer with. For naming an effect, not designing or building one.",
+      "useCases": "Turning vague animation descriptions into precise terms",
+      "source": {
+        "repo": "https://github.com/emilkowalski/skills",
+        "commit": "2d228630ba1446365f614a108cb8252f1feda202",
+        "commitDate": "2026-10-11",
+        "upstreamPath": "skills/animation-vocabulary"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "40d2b27adfdfeb0570a9f20e7d0255109d9233c50603878bcd0dcd04c923fd94"
+      }
+    },
+    {
+      "id": "animation-performance",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "motion",
+      "collection": "motion/emil-design-eng",
+      "path": "skills/motion/emil-design-eng/animation-performance",
+      "description": "Keep web animations inside the frame budget — animate composite-only properties, keep motion off the main thread when the page is busy, and find the cause when an animation drops frames. Covers the layout/paint/composite pipeline, cheaper property swaps, CSS vs WAAPI vs requestAnimationFrame, Framer Motion's hardware-accelerated path, React re-rendering per frame, inherited CSS variable recalculation, blur cost, and when `will-change` actually helps. Use when an animation is janky, choppy, stutters, or drops frames; when choosing which property to animate; when deciding between CSS and JS animation on performance grounds; or when reaching for `will-change` or GPU layers. For choosing easing, duration, or whether to animate at all use animate; for reviewing motion as a whole use review-animations.",
+      "useCases": "Keeping animations inside the frame budget (composite-only props)",
+      "source": {
+        "repo": "https://github.com/emilkowalski/skills",
+        "commit": "2d228630ba1446365f614a108cb8252f1feda202",
+        "commitDate": "2026-10-11",
+        "upstreamPath": "skills/animation-performance"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "ceb9dd3fe912615830f725a0120ccf8d012d15a6218001a5cd6c15d38e39a957"
+      }
+    },
+    {
+      "id": "review-animations",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "motion",
+      "collection": "motion/emil-design-eng",
+      "path": "skills/motion/emil-design-eng/review-animations",
+      "description": "Reviews animation and motion code against a high craft bar derived from Emil Kowalski's design engineering philosophy. Default to flagging; approval is earned.",
+      "useCases": "Reviewing animation code against a craft bar",
+      "source": {
+        "repo": "https://github.com/emilkowalski/skills",
+        "commit": "2d228630ba1446365f614a108cb8252f1feda202",
+        "commitDate": "2026-10-11",
+        "upstreamPath": "skills/review-animations"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "6ff590d29e436766135aa3d137be1fac2a867165c7257fc315b189361f1873af"
+      }
+    },
+    {
+      "id": "find-animation-opportunities",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "motion",
+      "collection": "motion/emil-design-eng",
+      "path": "skills/motion/emil-design-eng/find-animation-opportunities",
+      "description": "Search a codebase or UI for places that don't animate but should, and reject everything that shouldn't. Read-only; it proposes motion with exact values, it does not implement it. Use when the user asks \"what could be animated here?\" or wants to \"make this feel more alive\". For fixing existing animations, use improve-animations or review-animations instead.",
+      "useCases": "Finding static UI that should animate",
+      "source": {
+        "repo": "https://github.com/emilkowalski/skills",
+        "commit": "2d228630ba1446365f614a108cb8252f1feda202",
+        "commitDate": "2026-10-11",
+        "upstreamPath": "skills/find-animation-opportunities"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "d52a377819b84a71930f0c822cfe2849f40301605a2d5c7eccbfa3b257700df2"
+      }
+    },
+    {
+      "id": "improve-animations",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "motion",
+      "collection": "motion/emil-design-eng",
+      "path": "skills/motion/emil-design-eng/improve-animations",
+      "description": "Survey a codebase's animation and motion code as a senior motion advisor, then produce a prioritized audit and self-contained implementation plans for other agents (or cheaper models) to execute. Read-only on source code — it plans improvements, it does not apply them. Use when the user asks to \"improve the animations\", \"audit the motion\", \"make this app feel better\", or wants a roadmap of animation fixes rather than a review of a single diff.",
+      "useCases": "Auditing a codebase's motion system and planning fixes",
+      "source": {
+        "repo": "https://github.com/emilkowalski/skills",
+        "commit": "2d228630ba1446365f614a108cb8252f1feda202",
+        "commitDate": "2026-10-11",
+        "upstreamPath": "skills/improve-animations"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "73962447464433476343e2c12cd08ab39cc99a9e5f3c118c5fb54ed897574ef6"
+      }
+    },
+    {
+      "id": "design-motion-principles",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "motion",
+      "collection": "motion/design-motion-principles",
+      "path": "skills/motion/design-motion-principles",
+      "description": "Motion and interaction design expert based on Emil Kowalski, Jakub Krehel, and Jhey Tompkins' techniques. Two modes — build interactive components with purposeful motion, or audit existing animations to catch AI-slop motion patterns (audit emits a branded HTML report with looping demos). Use when creating, adding, animating, or reviewing UI motion: transitions, hover states, micro-interactions, enter/exit animations, or any motion design work in React, Framer Motion, CSS, or HTML. Provides per-designer perspectives with context-aware weighting.",
+      "useCases": "Motion and interaction design guidance with reference workflows",
+      "source": {
+        "repo": "https://github.com/kylezantos/design-motion-principles",
+        "commit": "4a9ca879f24a361f4dca4174fe2da0f67b5ddee3",
+        "commitDate": "2026-05-30",
+        "upstreamPath": "skills/design-motion-principles"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "599f42dbf011df38f3fcaf1497533af447d91cf97443b92439455af103c25b2e"
+      }
+    },
+    {
+      "id": "ui-ux-pro-max",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "design",
+      "collection": "design/ui-ux-pro-max",
+      "path": "skills/design/ui-ux-pro-max/ui-ux-pro-max",
+      "description": "UI/UX design intelligence for web, mobile, and desktop. This skill should be used when designing, building, reviewing, or fixing interfaces, including pages, components, design systems, accessibility, interaction, responsive layout, typography, color, charts, and stack-specific UI implementation. Searchable local data: 79 searchable styles (50 active), 192 product palettes and reasoning profiles, 74 font pairings, 119 UX guidelines, 105 icons, 17 GSAP presets, 25 chart types, and 22 stacks.",
+      "useCases": "Searchable UI/UX rules, palettes, typography and style data",
+      "source": {
+        "repo": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+        "commit": "56ea9cf174ed86786187daa9de0e6247cb0747e4",
+        "commitDate": "2026-10-15",
+        "upstreamPath": ".claude/skills/ui-ux-pro-max"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Includes helper scripts; static scan found no network or exec calls. Scripts are not run by the installer."
+      },
+      "skillMd": {
+        "sha256": "ea087c341bfb5b23195c7302027268ede86da802554c18a5c4896a6017b439f9"
+      }
+    },
+    {
+      "id": "design",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "design",
+      "collection": "design/ui-ux-pro-max",
+      "path": "skills/design/ui-ux-pro-max/design",
+      "description": "Comprehensive design skill: brand identity, design tokens, UI styling, logo generation (55 styles, Gemini, Atlas Cloud, or MuAPI AI), corporate identity program (50 deliverables, CIP mockups), HTML presentations (Chart.js), banner design (22 styles, social/ads/web/print), icon design (15 styles, SVG, Gemini 3.1 Pro), social photos (HTML→screenshot, multi-platform). Actions: design logo, create CIP, generate mockups, build slides, design banner, generate icon, create social photos, social media images, brand identity, design system. Platforms: Facebook, Twitter, LinkedIn, YouTube, Instagram, Pinterest, TikTok, Threads, Google Ads.",
+      "useCases": "Design-generation workflow with references",
+      "source": {
+        "repo": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+        "commit": "56ea9cf174ed86786187daa9de0e6247cb0747e4",
+        "commitDate": "2026-10-15",
+        "upstreamPath": ".claude/skills/design"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Includes helper scripts; static scan found no network or exec calls. Scripts are not run by the installer."
+      },
+      "skillMd": {
+        "sha256": "e93fe3683b7fa18a9bfcd00c0dc6e12c6859be07b7bfe20145f96ea49b72da13"
+      }
+    },
+    {
+      "id": "design-md",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "design",
+      "collection": "design/design-md",
+      "path": "skills/design/design-md",
+      "description": "Author a DESIGN.md file — a single markdown document that captures a brand's visual identity in tokens + prose so AI agents can build pixel-consistent UI from it. Use when the user has a website, brand guide, style guide, mood board, or existing product and wants to distill it into a DESIGN.md (a la getdesign.md / Google Stitch). Triggers - \"create a DESIGN.md\", \"extract design system\", \"DESIGN.md from this site\", \"capture this brand\", \"make design tokens for an AI agent\", \"Stitch DESIGN.md\", \"awesome-design-md style\".",
+      "useCases": "Authoring DESIGN.md token and brand documents for agents",
+      "source": {
+        "repo": "https://github.com/moesuito/claude-skill-design-md",
+        "commit": "aeddb0d588f8ded1cc4d431c3532dbb76cb12678",
+        "commitDate": "2026-05-06",
+        "upstreamPath": "(repo root)"
+      },
+      "license": "Apache-2.0",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "40fbbd3da57a9210d74b9de2d2a25a1931600692dd05aaee0d15c3a560fcc93f"
+      }
+    },
+    {
+      "id": "frontend-design",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "frontend",
+      "collection": "frontend/frontend-design",
+      "path": "skills/frontend/frontend-design",
+      "description": "Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one. Helps with aesthetic direction, typography, and making choices that don't read as templated defaults.",
+      "useCases": "Distinctive, production-grade frontend aesthetics that avoid generic AI-looking UI",
+      "source": {
+        "repo": "https://github.com/anthropics/skills",
+        "commit": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+        "commitDate": "2026-10-09",
+        "upstreamPath": "skills/frontend-design"
+      },
+      "license": "Apache-2.0",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-19",
+        "notes": "Markdown guidance only; no scripts, hooks, or network calls found."
+      },
+      "skillMd": {
+        "sha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3"
+      }
+    },
+    {
+      "id": "impeccable",
+      "kind": "skill",
+      "status": "held",
+      "installable": false,
+      "category": "design",
+      "path": null,
+      "description": "Design-quality commands (audit, polish, critique, animate, harden) for frontend work.",
+      "useCases": "Design critique and polish passes once reviewed",
+      "source": {
+        "repo": "https://github.com/pbakaus/impeccable",
+        "commit": "aeeb3d8c30b5f95aeeb3e893b0f1a308af8fdb8f",
+        "commitDate": "2026-10-19",
+        "upstreamPath": "plugin/skills/impeccable"
+      },
+      "license": "Apache-2.0",
+      "installMethods": [],
+      "dependencies": [
+        "bun/node (engine download)"
+      ],
+      "securityReview": {
+        "status": "needs-decision",
+        "date": "2026-10-19",
+        "notes": "scripts/impeccable downloads a remote engine at runtime with curl/wget and executes it (sha256 sidecar). plugin/hooks/hooks.json defines hooks. Not vendored until you approve a stripped copy or the full set."
+      }
+    },
+    {
+      "id": "oil-motion",
+      "kind": "skill",
+      "status": "held",
+      "installable": false,
+      "category": "motion",
+      "path": null,
+      "description": "Turns AI-generated or existing video and frame sequences into scroll- and pointer-driven web motion.",
+      "useCases": "Video-to-web motion, scroll-scrubbed sequences",
+      "source": {
+        "repo": "https://github.com/oil-oil/oil-motion",
+        "commit": "07e31f2265f80caa8f2c1df825d85ac24a46307c",
+        "commitDate": "2026-10-04",
+        "upstreamPath": "(repo root)"
+      },
+      "license": "MIT",
+      "installMethods": [],
+      "dependencies": [
+        "python3",
+        "pip requirements",
+        "ffmpeg (assumed)",
+        "image/video API credentials (assumed)"
+      ],
+      "securityReview": {
+        "status": "needs-review",
+        "date": "2026-10-19",
+        "notes": "Contains secure_credentials.py and a credential-ui folder, pip installs in SKILL.md, and a CI workflow that uses sudo apt-get. Needs a full read before vendoring."
+      }
+    },
+    {
+      "id": "ui-styling",
+      "kind": "skill",
+      "status": "held",
+      "installable": false,
+      "category": "design",
+      "path": null,
+      "description": "Tailwind and shadcn/ui styling guidance with 5.8 MB of canvas fonts.",
+      "useCases": "Tailwind and shadcn component work",
+      "source": {
+        "repo": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+        "commit": "56ea9cf174ed86786187daa9de0e6247cb0747e4",
+        "commitDate": "2026-10-15",
+        "upstreamPath": ".claude/skills/ui-styling"
+      },
+      "license": "MIT (plus per-font OFL)",
+      "installMethods": [],
+      "dependencies": [
+        "node/npx (shadcn)"
+      ],
+      "securityReview": {
+        "status": "needs-review",
+        "date": "2026-10-19",
+        "notes": "scripts/shadcn_add.py runs npx via subprocess; the SKILL.md tells the agent to run npm/npx commands."
+      }
+    },
+    {
+      "id": "design-system",
+      "kind": "skill",
+      "status": "held",
+      "installable": false,
+      "category": "design",
+      "path": null,
+      "description": "Design-token architecture and slide design system.",
+      "useCases": "Token systems and tokenized slide decks",
+      "source": {
+        "repo": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+        "commit": "56ea9cf174ed86786187daa9de0e6247cb0747e4",
+        "commitDate": "2026-10-15",
+        "upstreamPath": ".claude/skills/design-system"
+      },
+      "license": "MIT",
+      "installMethods": [],
+      "dependencies": [
+        "python3",
+        "node"
+      ],
+      "securityReview": {
+        "status": "needs-review",
+        "date": "2026-10-19",
+        "notes": "scripts/fetch-background.py downloads images from pexels.com; scripts spawn subprocesses."
+      }
+    },
+    {
+      "id": "brand",
+      "kind": "skill",
+      "status": "held",
+      "installable": false,
+      "category": "design",
+      "path": null,
+      "description": "Brand guideline generation and sync to design tokens.",
+      "useCases": "Brand guideline documents",
+      "source": {
+        "repo": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+        "commit": "56ea9cf174ed86786187daa9de0e6247cb0747e4",
+        "commitDate": "2026-10-15",
+        "upstreamPath": ".claude/skills/brand"
+      },
+      "license": "MIT",
+      "installMethods": [],
+      "dependencies": [
+        "node"
+      ],
+      "securityReview": {
+        "status": "needs-review",
+        "date": "2026-10-19",
+        "notes": "scripts/sync-brand-to-tokens.cjs uses child_process.execFileSync."
+      }
+    },
+    {
+      "id": "vercel-agent-skills",
+      "kind": "catalogue",
+      "status": "not-vendored",
+      "installable": false,
+      "category": "frontend",
+      "path": null,
+      "description": "Vercel's skills: React and Next.js best practices, web design guidelines, view transitions, composition patterns.",
+      "useCases": "React/Next.js implementation guidance",
+      "source": {
+        "repo": "https://github.com/vercel-labs/agent-skills",
+        "commit": "063bee94c3f4df8453406c830b0a7df0f2860278",
+        "commitDate": "2026-08-28",
+        "upstreamPath": "skills/"
+      },
+      "license": "none published (no LICENSE file)",
+      "installMethods": [],
+      "dependencies": [],
+      "securityReview": {
+        "status": "not-applicable",
+        "date": "2026-10-19",
+        "notes": "Not copied: without a license, redistribution is not permitted. Install from source with its own tooling if you accept its terms."
+      }
+    },
+    {
+      "id": "wilwaldon-frontend-toolkit",
+      "kind": "catalogue",
+      "status": "not-vendored",
+      "installable": false,
+      "category": "catalogues",
+      "path": null,
+      "description": "Curated, linked list of frontend design skills, plugins, and MCP servers.",
+      "useCases": "Discovery",
+      "source": {
+        "repo": "https://github.com/wilwaldon/Claude-Code-Frontend-Design-Toolkit",
+        "commit": "2a6d0958e6966e0003896f94ce5003466e89e91d",
+        "commitDate": "2026-04-11",
+        "upstreamPath": "README.md"
+      },
+      "license": "none published (no LICENSE file)",
+      "installMethods": [],
+      "dependencies": [],
+      "securityReview": {
+        "status": "not-applicable",
+        "date": "2026-10-19",
+        "notes": "README only; contains no installable code. Linked, not copied."
+      }
+    },
+    {
+      "id": "awesome-claude-design-skills",
+      "kind": "catalogue",
+      "status": "not-vendored",
+      "installable": false,
+      "category": "catalogues",
+      "path": null,
+      "description": "Daily-updated awesome list of Claude design skills (data, English and Chinese READMEs).",
+      "useCases": "Discovery; updated daily, so link rather than copy",
+      "source": {
+        "repo": "https://github.com/zhuyansen/awesome-claude-design-skills",
+        "commit": "63c24bbd69e44406c2be3a1427ffca8b87d298cb",
+        "commitDate": "2026-10-19",
+        "upstreamPath": "README.md"
+      },
+      "license": "CC0-1.0",
+      "installMethods": [],
+      "dependencies": [],
+      "securityReview": {
+        "status": "not-applicable",
+        "date": "2026-10-19",
+        "notes": "Data and README only."
+      }
+    },
+    {
+      "id": "cloudai-x-threejs-skills",
+      "kind": "catalogue",
+      "status": "not-vendored",
+      "installable": false,
+      "category": "threejs",
+      "path": null,
+      "description": "Alternative 13-skill three.js set, deep and pinned to three r186. Compared in catalogues/threejs-alternatives.md.",
+      "useCases": "Deep reference on asset pipeline, loaders, and r3f when the primary set is not enough",
+      "source": {
+        "repo": "https://github.com/CloudAI-X/threejs-skills",
+        "commit": "0e181866f095b5f06d005133876e926515390d95",
+        "commitDate": "2026-10-19",
+        "upstreamPath": "skills/"
+      },
+      "license": "MIT",
+      "installMethods": [],
+      "dependencies": [],
+      "securityReview": {
+        "status": "not-applicable",
+        "date": "2026-10-19",
+        "notes": "Not installed to avoid duplicating the primary Three.js set."
+      }
+    },
+    {
+      "id": "howler-js",
+      "kind": "dependency",
+      "status": "app-dependency",
+      "installable": false,
+      "category": "catalogues",
+      "path": null,
+      "description": "Web audio library. An application dependency, not a Claude Code skill.",
+      "useCases": "Audio playback in web apps, installed with npm in the project",
+      "source": {
+        "repo": "https://github.com/goldfire/howler.js",
+        "commit": "1d3053576a860e9854645493ad6c4a72c6cc6e45",
+        "commitDate": "2025-11-23",
+        "upstreamPath": "(repo root)"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "npm install howler (in the app)"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "not-applicable",
+        "date": "2026-10-19",
+        "notes": "Install as a normal npm dependency in the project that needs it."
+      }
+    },
+    {
+      "id": "anthropic-document-skills",
+      "kind": "reference",
+      "status": "platform-provided",
+      "installable": false,
+      "category": "catalogues",
+      "path": null,
+      "description": "Anthropic's docx, pdf, pptx, and xlsx skills. Proprietary terms.",
+      "useCases": "Office and PDF file work",
+      "source": {
+        "repo": "https://github.com/anthropics/skills",
+        "commit": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+        "commitDate": "2026-10-09",
+        "upstreamPath": "skills/{docx,pdf,pptx,xlsx}"
+      },
+      "license": "Proprietary (LICENSE.txt in each skill)",
+      "installMethods": [],
+      "dependencies": [],
+      "securityReview": {
+        "status": "not-applicable",
+        "date": "2026-10-19",
+        "notes": "Not copied: proprietary terms. Already provided through the platform's synced skills."
+      }
+    },
+    {
+      "id": "claude-mods-pack",
+      "kind": "mod",
+      "status": "unreviewed",
+      "installable": false,
+      "category": "mods",
+      "path": "mods/claude-mods.pdf",
+      "description": "Guide with three copy-paste mod prompts (Team Room, Saver, Dashboard), sample mods, and one-liners. Mods run inside Claude Code and can add hooks and UI.",
+      "useCases": "Ideas for Claude Code mods. Not installed.",
+      "source": {
+        "repo": null,
+        "commit": null,
+        "commitDate": null,
+        "upstreamPath": null
+      },
+      "license": "Unknown (not stated in the PDF)",
+      "installMethods": [],
+      "dependencies": [],
+      "securityReview": {
+        "status": "needs-review",
+        "date": "2026-10-19",
+        "notes": "A prompt guide, not code. Each mod it describes needs review before generation and enabling. Saver routes prompts to other models, so it changes model use; Dashboard reads Gmail and Calendar. Do not enable automatically."
+      }
+    }
+  ]
+}
