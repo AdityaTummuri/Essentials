@@ -26,6 +26,13 @@ if str(REPO_ROOT) not in sys.path:
 
 from adapters.base import BaseAdapter, sha256_file, tree_digest
 from adapters.registry import get_adapter, list_adapters, supported_agent_names
+from scripts.global_manager import (
+    GlobalManagerError,
+    setup_global,
+    global_status,
+    global_sync,
+    global_uninstall,
+)
 
 MANIFEST_PATH = REPO_ROOT / "resources" / "resources.json"
 LEDGER_NAME = ".essentials-ledger.json"
@@ -766,6 +773,114 @@ def cmd_sync(args: argparse.Namespace) -> int:
     return 0
 
 
+# --------------------------------------------------------------------------- Global Management Commands
+
+def cmd_setup_global(args: argparse.Namespace) -> int:
+    """Setup personal skills globally for OpenCode, Claude Code, and VS Code Copilot."""
+    manifest = load_manifest()
+    installable = get_installable_resources(manifest)
+
+    requested_ids: list[str] = []
+    if getattr(args, "preset", None):
+        for p in args.preset:
+            if p not in manifest.get("presets", {}):
+                raise CLIError(f"unknown preset '{p}'. Available: {', '.join(manifest.get('presets', {}).keys())}")
+            requested_ids.extend(manifest["presets"][p]["skills"])
+
+    if getattr(args, "skills", None):
+        requested_ids.extend(args.skills)
+
+    if getattr(args, "selector", None):
+        for token in args.selector.split(","):
+            token = token.strip()
+            if not token:
+                continue
+            if token in manifest.get("presets", {}):
+                requested_ids.extend(manifest["presets"][token]["skills"])
+            elif token in installable:
+                requested_ids.append(token)
+            else:
+                raise CLIError(f"unknown selector '{token}'. Specify a valid preset name or skill ID.")
+
+    # Deduplicate while preserving order
+    seen: set[str] = set()
+    deduped: list[str] = []
+    for sid in requested_ids:
+        if sid not in seen:
+            seen.add(sid)
+            deduped.append(sid)
+
+    if not deduped:
+        raise CLIError(
+            "no skills or preset selected for global installation. "
+            "Specify a preset (e.g. 'essentials setup-global portfolio' or '--preset engineering') "
+            "or specific skills (e.g. '--skills computer-vision,browser-audio')."
+        )
+
+    mode = getattr(args, "mode", None) or "link"
+    strategy = getattr(args, "strategy", "shared")
+    agents = getattr(args, "agents", None)
+
+    return setup_global(
+        manifest=manifest,
+        requested_skills=deduped,
+        strategy=strategy,
+        agents=agents,
+        mode=mode,
+        dry_run=getattr(args, "dry_run", False),
+        yes=getattr(args, "yes", False),
+    )
+
+
+def cmd_global_status(args: argparse.Namespace) -> int:
+    """Show status of globally installed skills and unmanaged user skills."""
+    manifest = load_manifest()
+    return global_status(manifest=manifest, as_json=getattr(args, "json", False))
+
+
+def cmd_global_sync(args: argparse.Namespace) -> int:
+    """Synchronize globally installed skills against the canonical Essentials library."""
+    manifest = load_manifest()
+    return global_sync(
+        manifest=manifest,
+        dry_run=getattr(args, "dry_run", False),
+        yes=getattr(args, "yes", False),
+    )
+
+
+def cmd_global_uninstall(args: argparse.Namespace) -> int:
+    """Safely uninstall Essentials-managed skills from global agent directories."""
+    manifest = load_manifest()
+    installable = get_installable_resources(manifest)
+
+    requested_ids: list[str] = []
+    if getattr(args, "preset", None):
+        for p in args.preset:
+            if p in manifest.get("presets", {}):
+                requested_ids.extend(manifest["presets"][p]["skills"])
+
+    if getattr(args, "skills", None):
+        requested_ids.extend(args.skills)
+
+    if getattr(args, "selector", None):
+        for token in args.selector.split(","):
+            token = token.strip()
+            if not token:
+                continue
+            if token in manifest.get("presets", {}):
+                requested_ids.extend(manifest["presets"][token]["skills"])
+            else:
+                requested_ids.append(token)
+
+    return global_uninstall(
+        manifest=manifest,
+        skill_ids=requested_ids if requested_ids else None,
+        uninstall_all=getattr(args, "all", False),
+        dry_run=getattr(args, "dry_run", False),
+        yes=getattr(args, "yes", False),
+    )
+
+
 # --------------------------------------------------------------------------- CLI Parser Builder
 
 def build_cli_parser() -> argparse.ArgumentParser:
@@ -844,6 +959,58 @@ def build_cli_parser() -> argparse.ArgumentParser:
     p_uninstall.add_argument("--yes", "-y", action="store_true", help="Skip interactive confirmation prompts")
     p_uninstall.set_defaults(func=cmd_uninstall)
 
+    # setup-global
+    p_setup_global = subparsers.add_parser("setup-global", help="Setup system-wide personal skills for OpenCode, Claude Code, and Copilot")
+    p_setup_global.add_argument("selector", nargs="?", help="Preset name (e.g. 'portfolio') or comma-separated skill id(s)")
+    p_setup_global.add_argument("--preset", "-p", action="append", help="Preset name to install globally (repeatable)")
+    p_setup_global.add_argument(
+        "--skills", "-s",
+        type=lambda s: [x.strip() for x in s.split(",") if x.strip()],
+        action="append",
+        help="Comma-separated skill IDs to install globally (repeatable)",
+    )
+    p_setup_global.add_argument(
+        "--strategy",
+        choices=["shared", "dedicated", "all"],
+        default="shared",
+        help="Target distribution strategy: shared (default: ~/.agents + ~/.claude), dedicated, or all",
+    )
+    p_setup_global.add_argument(
+        "--agents", "-a",
+        type=lambda s: [x.strip() for x in s.split(",") if x.strip()],
+        help="Comma-separated target agents (e.g. claude, opencode, copilot, shared, all)",
+    )
+    p_setup_global.add_argument("--mode", "-m", choices=["link", "copy"], default="link", help="Install mode: symlink (default) or copy")
+    p_setup_global.add_argument("--dry-run", action="store_true", help="Preview planned global changes without writing to disk")
+    p_setup_global.add_argument("--yes", "-y", action="store_true", help="Skip confirmation prompts")
+    p_setup_global.set_defaults(func=cmd_setup_global)
+
+    # global-status
+    p_global_status = subparsers.add_parser("global-status", help="Inspect global installation status, unmanaged user skills, and health")
+    p_global_status.add_argument("--json", action="store_true", help="Output in machine-readable JSON format")
+    p_global_status.set_defaults(func=cmd_global_status)
+
+    # global-sync
+    p_global_sync = subparsers.add_parser("global-sync", help="Synchronize globally installed skills to latest canonical library versions")
+    p_global_sync.add_argument("--dry-run", action="store_true", help="Preview sync actions without modifying files")
+    p_global_sync.add_argument("--yes", "-y", action="store_true", help="Skip confirmation prompts")
+    p_global_sync.set_defaults(func=cmd_global_sync)
+
+    # global-uninstall
+    p_global_uninstall = subparsers.add_parser("global-uninstall", help="Safely remove Essentials-managed skills from global agent directories")
+    p_global_uninstall.add_argument("selector", nargs="?", help="Optional preset name or skill ID(s) to uninstall")
+    p_global_uninstall.add_argument("--preset", "-p", action="append", help="Preset name to uninstall (repeatable)")
+    p_global_uninstall.add_argument(
+        "--skills", "-s",
+        type=lambda s: [x.strip() for x in s.split(",") if x.strip()],
+        action="append",
+        help="Comma-separated skill IDs to uninstall (repeatable)",
+    )
+    p_global_uninstall.add_argument("--all", action="store_true", help="Uninstall all Essentials-managed global skills")
+    p_global_uninstall.add_argument("--dry-run", action="store_true", help="Preview removal without deleting files")
+    p_global_uninstall.add_argument("--yes", "-y", action="store_true", help="Skip confirmation prompts")
+    p_global_uninstall.set_defaults(func=cmd_global_uninstall)
+
     return parser
 
 
@@ -862,7 +1029,7 @@ def main(argv: list[str] | None = None) -> int:
 
     try:
         return args.func(args)
-    except CLIError as exc:
+    except (CLIError, GlobalManagerError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 2
     except KeyboardInterrupt:
