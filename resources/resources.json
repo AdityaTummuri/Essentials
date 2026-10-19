@@ -88,7 +88,16 @@
       },
       "skillMd": {
         "sha256": "672300368113d314fc9475872142edd8fbe2e9d34cf5c2fe49173c18ccd6385f"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "threejs-materials",
@@ -119,7 +128,16 @@
       },
       "skillMd": {
         "sha256": "95d0293de21e315b7ead8664193f3dadb35e25d59211d926d3a8373a0d09f85b"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "threejs-lighting",
@@ -150,7 +168,16 @@
       },
       "skillMd": {
         "sha256": "8ae65b5033f65eac4362174d30f91112234a601edfc95b5c750b276c17f00491"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "threejs-shaders",
@@ -181,7 +208,16 @@
       },
       "skillMd": {
         "sha256": "96d58846953680f1c3565f67a2ea0e694f06d8d31106377f2451de1e233ad883"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "threejs-postprocessing",
@@ -212,7 +248,16 @@
       },
       "skillMd": {
         "sha256": "e4bbab3413c5f272f339966347c3d3d459b6cda8f5739843ec44302e5f7271d6"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "threejs-animation",
@@ -243,7 +288,16 @@
       },
       "skillMd": {
         "sha256": "18b18c25ecf0e94b0208b16f8290bafc37e94da27ff5aa9697d326738769bdad"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "threejs-geometry",
@@ -274,7 +328,16 @@
       },
       "skillMd": {
         "sha256": "d51f3bff65299e6a9006c328e62ea1178738dc9c06407def34e07bb9af2443f7"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "threejs-particles",
@@ -305,7 +368,16 @@
       },
       "skillMd": {
         "sha256": "a0f63aae0245ec8c1ddeb3bf471ba7f27f233095b10b7841f6805935902e28a3"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "threejs-audio",
@@ -336,7 +408,16 @@
       },
       "skillMd": {
         "sha256": "e62d294c529a8e862d0b3bb6cd8a5545a6c8cd70a66428271db6056ac778f1e4"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "threejs-interaction",
@@ -367,7 +448,16 @@
       },
       "skillMd": {
         "sha256": "b14af462a8766f07c1a5136f140aefde2eaa3b2fde5656d1da29ecb22eaeefe9"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "threejs-performance",
@@ -398,7 +488,16 @@
       },
       "skillMd": {
         "sha256": "0d2617bacfb947b415ced97430a17a555fdbf41d21e7bcf5777f2a10141c0fbb"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "threejs-accessibility",
@@ -429,7 +528,16 @@
       },
       "skillMd": {
         "sha256": "01448e2c6533677f46e1e609a7da3c9e7e03a95bae70f6cb9942187c8c178cf8"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "threejs-html",
@@ -460,7 +568,16 @@
       },
       "skillMd": {
         "sha256": "3ec4d2d5b096c218085a93083bde8ccad54a9bcc6762b8848f9e27775a658813"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "threejs-r3f",
@@ -491,7 +608,16 @@
       },
       "skillMd": {
         "sha256": "ce47c21e58b2ff9281450ca41e3f191a06030e8217399d4f074767ad6ee6fe4f"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "threejs-web",
@@ -522,7 +648,16 @@
       },
       "skillMd": {
         "sha256": "32c6857d1e230ac58c27c95e0ddf6814a95ba26ee0e15b126e1d517ca44562b1"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "threejs-product-viewer",
@@ -553,7 +688,16 @@
       },
       "skillMd": {
         "sha256": "31a61c11480044865c447e337fa98ac85f9c8608b692343f35b7500e6f79fa07"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "threejs-assets",
@@ -584,7 +728,16 @@
       },
       "skillMd": {
         "sha256": "1bee02f2634d382a30621721f55b8a12d7bc692c8bcfd02090be97d1f8b408bd"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "threejs-debugging",
@@ -615,7 +768,16 @@
       },
       "skillMd": {
         "sha256": "61f51bbaf0c88104532c7bed7c0f65a75fa9a9f882f5c79187cbe9046786df50"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "threejs-testing",
@@ -646,7 +808,16 @@
       },
       "skillMd": {
         "sha256": "2f8357c965aa8044737e79b2db7338da6e7897e8099316fcf1159d7f98c79907"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "threejs-deployment",
@@ -677,7 +848,16 @@
       },
       "skillMd": {
         "sha256": "a6e6a92bec721441eb5796d1d3f3652f096d0707e273a3b57b93f843c77eb765"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "threejs-webgpu",
@@ -708,7 +888,16 @@
       },
       "skillMd": {
         "sha256": "3dbaae86427519c526bc59a2fdb913dce1102734a38ed6324b96a7f95a1f4f79"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "threejs-physics",
@@ -739,7 +928,16 @@
       },
       "skillMd": {
         "sha256": "482709854b29b548969897b237ffd764bcdc1ba1541f3f69fa9b6d941e795152"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "threejs-xr",
@@ -770,7 +968,16 @@
       },
       "skillMd": {
         "sha256": "5db9de7f48e8ce4a583db7224bf58fdc955f5b47881bdc842da8f1c4e4d10857"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "threejs-spatial-data",
@@ -801,7 +1008,16 @@
       },
       "skillMd": {
         "sha256": "9b4456b9223e2fad00b795852072d0306befa1ac326595230d264a1431b16f3e"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "apple-design",
@@ -832,7 +1048,16 @@
       },
       "skillMd": {
         "sha256": "77bb63b7043bb93aca2ff4ab040c249484eef35682bb6ff7163433c31d30adc7"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "emil-design-eng",
@@ -863,7 +1088,16 @@
       },
       "skillMd": {
         "sha256": "ffbe68e6007fb42cb8149f089b400a1ca007d59ba23e8948e2be4476f3175939"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "animate",
@@ -873,7 +1107,7 @@
       "category": "motion",
       "collection": "motion/emil-design-eng",
       "path": "skills/motion/emil-design-eng/animate",
-      "description": "Build an animation from scratch, making the decisions in the order that determines whether it feels right — should it animate at all, what purpose, which tool, which properties, which curve and duration, how it interrupts, how it exits. Writes the implementation. Use when asked to animate something, add motion, make a component feel alive, or build a transition. For critiquing existing motion use review-animations; for auditing a whole codebase use improve-animations.",
+      "description": "Build an animation from scratch, making the decisions in the order that determines whether it feels right \u2014 should it animate at all, what purpose, which tool, which properties, which curve and duration, how it interrupts, how it exits. Writes the implementation. Use when asked to animate something, add motion, make a component feel alive, or build a transition. For critiquing existing motion use review-animations; for auditing a whole codebase use improve-animations.",
       "useCases": "Building an animation from scratch in a decision order",
       "source": {
         "repo": "https://github.com/emilkowalski/skills",
@@ -894,7 +1128,16 @@
       },
       "skillMd": {
         "sha256": "b8ede161270458e6ae2e45e8a1985373515d4c63de5568ddb0f9012d7634356c"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "animation-vocabulary",
@@ -904,7 +1147,7 @@
       "category": "motion",
       "collection": "motion/emil-design-eng",
       "path": "skills/motion/emil-design-eng/animation-vocabulary",
-      "description": "Reverse-lookup glossary that turns a vague description of a web animation or motion effect into its exact term (\"the bouncy thing when a popover opens\" → Pop in; \"the iOS rubber-band scroll\" → Rubber-banding). Use when the user asks \"what's it called when…\", or describes a motion effect without knowing its name and wants the right word to prompt an AI or designer with. For naming an effect, not designing or building one.",
+      "description": "Reverse-lookup glossary that turns a vague description of a web animation or motion effect into its exact term (\"the bouncy thing when a popover opens\" \u2192 Pop in; \"the iOS rubber-band scroll\" \u2192 Rubber-banding). Use when the user asks \"what's it called when\u2026\", or describes a motion effect without knowing its name and wants the right word to prompt an AI or designer with. For naming an effect, not designing or building one.",
       "useCases": "Turning vague animation descriptions into precise terms",
       "source": {
         "repo": "https://github.com/emilkowalski/skills",
@@ -925,7 +1168,16 @@
       },
       "skillMd": {
         "sha256": "40d2b27adfdfeb0570a9f20e7d0255109d9233c50603878bcd0dcd04c923fd94"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "animation-performance",
@@ -935,7 +1187,7 @@
       "category": "motion",
       "collection": "motion/emil-design-eng",
       "path": "skills/motion/emil-design-eng/animation-performance",
-      "description": "Keep web animations inside the frame budget — animate composite-only properties, keep motion off the main thread when the page is busy, and find the cause when an animation drops frames. Covers the layout/paint/composite pipeline, cheaper property swaps, CSS vs WAAPI vs requestAnimationFrame, Framer Motion's hardware-accelerated path, React re-rendering per frame, inherited CSS variable recalculation, blur cost, and when `will-change` actually helps. Use when an animation is janky, choppy, stutters, or drops frames; when choosing which property to animate; when deciding between CSS and JS animation on performance grounds; or when reaching for `will-change` or GPU layers. For choosing easing, duration, or whether to animate at all use animate; for reviewing motion as a whole use review-animations.",
+      "description": "Keep web animations inside the frame budget \u2014 animate composite-only properties, keep motion off the main thread when the page is busy, and find the cause when an animation drops frames. Covers the layout/paint/composite pipeline, cheaper property swaps, CSS vs WAAPI vs requestAnimationFrame, Framer Motion's hardware-accelerated path, React re-rendering per frame, inherited CSS variable recalculation, blur cost, and when `will-change` actually helps. Use when an animation is janky, choppy, stutters, or drops frames; when choosing which property to animate; when deciding between CSS and JS animation on performance grounds; or when reaching for `will-change` or GPU layers. For choosing easing, duration, or whether to animate at all use animate; for reviewing motion as a whole use review-animations.",
       "useCases": "Keeping animations inside the frame budget (composite-only props)",
       "source": {
         "repo": "https://github.com/emilkowalski/skills",
@@ -956,7 +1208,16 @@
       },
       "skillMd": {
         "sha256": "ceb9dd3fe912615830f725a0120ccf8d012d15a6218001a5cd6c15d38e39a957"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "review-animations",
@@ -987,7 +1248,16 @@
       },
       "skillMd": {
         "sha256": "6ff590d29e436766135aa3d137be1fac2a867165c7257fc315b189361f1873af"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "find-animation-opportunities",
@@ -1018,7 +1288,16 @@
       },
       "skillMd": {
         "sha256": "d52a377819b84a71930f0c822cfe2849f40301605a2d5c7eccbfa3b257700df2"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "improve-animations",
@@ -1028,7 +1307,7 @@
       "category": "motion",
       "collection": "motion/emil-design-eng",
       "path": "skills/motion/emil-design-eng/improve-animations",
-      "description": "Survey a codebase's animation and motion code as a senior motion advisor, then produce a prioritized audit and self-contained implementation plans for other agents (or cheaper models) to execute. Read-only on source code — it plans improvements, it does not apply them. Use when the user asks to \"improve the animations\", \"audit the motion\", \"make this app feel better\", or wants a roadmap of animation fixes rather than a review of a single diff.",
+      "description": "Survey a codebase's animation and motion code as a senior motion advisor, then produce a prioritized audit and self-contained implementation plans for other agents (or cheaper models) to execute. Read-only on source code \u2014 it plans improvements, it does not apply them. Use when the user asks to \"improve the animations\", \"audit the motion\", \"make this app feel better\", or wants a roadmap of animation fixes rather than a review of a single diff.",
       "useCases": "Auditing a codebase's motion system and planning fixes",
       "source": {
         "repo": "https://github.com/emilkowalski/skills",
@@ -1049,7 +1328,16 @@
       },
       "skillMd": {
         "sha256": "73962447464433476343e2c12cd08ab39cc99a9e5f3c118c5fb54ed897574ef6"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "design-motion-principles",
@@ -1059,7 +1347,7 @@
       "category": "motion",
       "collection": "motion/design-motion-principles",
       "path": "skills/motion/design-motion-principles",
-      "description": "Motion and interaction design expert based on Emil Kowalski, Jakub Krehel, and Jhey Tompkins' techniques. Two modes — build interactive components with purposeful motion, or audit existing animations to catch AI-slop motion patterns (audit emits a branded HTML report with looping demos). Use when creating, adding, animating, or reviewing UI motion: transitions, hover states, micro-interactions, enter/exit animations, or any motion design work in React, Framer Motion, CSS, or HTML. Provides per-designer perspectives with context-aware weighting.",
+      "description": "Motion and interaction design expert based on Emil Kowalski, Jakub Krehel, and Jhey Tompkins' techniques. Two modes \u2014 build interactive components with purposeful motion, or audit existing animations to catch AI-slop motion patterns (audit emits a branded HTML report with looping demos). Use when creating, adding, animating, or reviewing UI motion: transitions, hover states, micro-interactions, enter/exit animations, or any motion design work in React, Framer Motion, CSS, or HTML. Provides per-designer perspectives with context-aware weighting.",
       "useCases": "Motion and interaction design guidance with reference workflows",
       "source": {
         "repo": "https://github.com/kylezantos/design-motion-principles",
@@ -1080,7 +1368,16 @@
       },
       "skillMd": {
         "sha256": "599f42dbf011df38f3fcaf1497533af447d91cf97443b92439455af103c25b2e"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "ui-ux-pro-max",
@@ -1111,7 +1408,16 @@
       },
       "skillMd": {
         "sha256": "ea087c341bfb5b23195c7302027268ede86da802554c18a5c4896a6017b439f9"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "design",
@@ -1121,7 +1427,7 @@
       "category": "design",
       "collection": "design/ui-ux-pro-max",
       "path": "skills/design/ui-ux-pro-max/design",
-      "description": "Comprehensive design skill: brand identity, design tokens, UI styling, logo generation (55 styles, Gemini, Atlas Cloud, or MuAPI AI), corporate identity program (50 deliverables, CIP mockups), HTML presentations (Chart.js), banner design (22 styles, social/ads/web/print), icon design (15 styles, SVG, Gemini 3.1 Pro), social photos (HTML→screenshot, multi-platform). Actions: design logo, create CIP, generate mockups, build slides, design banner, generate icon, create social photos, social media images, brand identity, design system. Platforms: Facebook, Twitter, LinkedIn, YouTube, Instagram, Pinterest, TikTok, Threads, Google Ads.",
+      "description": "Comprehensive design skill: brand identity, design tokens, UI styling, logo generation (55 styles, Gemini, Atlas Cloud, or MuAPI AI), corporate identity program (50 deliverables, CIP mockups), HTML presentations (Chart.js), banner design (22 styles, social/ads/web/print), icon design (15 styles, SVG, Gemini 3.1 Pro), social photos (HTML\u2192screenshot, multi-platform). Actions: design logo, create CIP, generate mockups, build slides, design banner, generate icon, create social photos, social media images, brand identity, design system. Platforms: Facebook, Twitter, LinkedIn, YouTube, Instagram, Pinterest, TikTok, Threads, Google Ads.",
       "useCases": "Design-generation workflow with references",
       "source": {
         "repo": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
@@ -1142,7 +1448,16 @@
       },
       "skillMd": {
         "sha256": "e93fe3683b7fa18a9bfcd00c0dc6e12c6859be07b7bfe20145f96ea49b72da13"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "design-md",
@@ -1152,7 +1467,7 @@
       "category": "design",
       "collection": "design/design-md",
       "path": "skills/design/design-md",
-      "description": "Author a DESIGN.md file — a single markdown document that captures a brand's visual identity in tokens + prose so AI agents can build pixel-consistent UI from it. Use when the user has a website, brand guide, style guide, mood board, or existing product and wants to distill it into a DESIGN.md (a la getdesign.md / Google Stitch). Triggers - \"create a DESIGN.md\", \"extract design system\", \"DESIGN.md from this site\", \"capture this brand\", \"make design tokens for an AI agent\", \"Stitch DESIGN.md\", \"awesome-design-md style\".",
+      "description": "Author a DESIGN.md file \u2014 a single markdown document that captures a brand's visual identity in tokens + prose so AI agents can build pixel-consistent UI from it. Use when the user has a website, brand guide, style guide, mood board, or existing product and wants to distill it into a DESIGN.md (a la getdesign.md / Google Stitch). Triggers - \"create a DESIGN.md\", \"extract design system\", \"DESIGN.md from this site\", \"capture this brand\", \"make design tokens for an AI agent\", \"Stitch DESIGN.md\", \"awesome-design-md style\".",
       "useCases": "Authoring DESIGN.md token and brand documents for agents",
       "source": {
         "repo": "https://github.com/moesuito/claude-skill-design-md",
@@ -1173,7 +1488,16 @@
       },
       "skillMd": {
         "sha256": "40fbbd3da57a9210d74b9de2d2a25a1931600692dd05aaee0d15c3a560fcc93f"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "frontend-design",
@@ -1204,7 +1528,16 @@
       },
       "skillMd": {
         "sha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3"
-      }
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
     },
     {
       "id": "impeccable",
@@ -1230,7 +1563,9 @@
         "status": "needs-decision",
         "date": "2026-10-19",
         "notes": "scripts/impeccable downloads a remote engine at runtime with curl/wget and executes it (sha256 sidecar). plugin/hooks/hooks.json defines hooks. Not vendored until you approve a stripped copy or the full set."
-      }
+      },
+      "supportedAgents": [],
+      "safeForDefault": false
     },
     {
       "id": "oil-motion",
@@ -1259,7 +1594,9 @@
         "status": "needs-review",
         "date": "2026-10-19",
         "notes": "Contains secure_credentials.py and a credential-ui folder, pip installs in SKILL.md, and a CI workflow that uses sudo apt-get. Needs a full read before vendoring."
-      }
+      },
+      "supportedAgents": [],
+      "safeForDefault": false
     },
     {
       "id": "ui-styling",
@@ -1285,7 +1622,9 @@
         "status": "needs-review",
         "date": "2026-10-19",
         "notes": "scripts/shadcn_add.py runs npx via subprocess; the SKILL.md tells the agent to run npm/npx commands."
-      }
+      },
+      "supportedAgents": [],
+      "safeForDefault": false
     },
     {
       "id": "design-system",
@@ -1312,7 +1651,9 @@
         "status": "needs-review",
         "date": "2026-10-19",
         "notes": "scripts/fetch-background.py downloads images from pexels.com; scripts spawn subprocesses."
-      }
+      },
+      "supportedAgents": [],
+      "safeForDefault": false
     },
     {
       "id": "brand",
@@ -1338,7 +1679,9 @@
         "status": "needs-review",
         "date": "2026-10-19",
         "notes": "scripts/sync-brand-to-tokens.cjs uses child_process.execFileSync."
-      }
+      },
+      "supportedAgents": [],
+      "safeForDefault": false
     },
     {
       "id": "vercel-agent-skills",
@@ -1362,7 +1705,9 @@
         "status": "not-applicable",
         "date": "2026-10-19",
         "notes": "Not copied: without a license, redistribution is not permitted. Install from source with its own tooling if you accept its terms."
-      }
+      },
+      "supportedAgents": [],
+      "safeForDefault": false
     },
     {
       "id": "wilwaldon-frontend-toolkit",
@@ -1386,7 +1731,9 @@
         "status": "not-applicable",
         "date": "2026-10-19",
         "notes": "README only; contains no installable code. Linked, not copied."
-      }
+      },
+      "supportedAgents": [],
+      "safeForDefault": false
     },
     {
       "id": "awesome-claude-design-skills",
@@ -1410,7 +1757,9 @@
         "status": "not-applicable",
         "date": "2026-10-19",
         "notes": "Data and README only."
-      }
+      },
+      "supportedAgents": [],
+      "safeForDefault": false
     },
     {
       "id": "cloudai-x-threejs-skills",
@@ -1434,7 +1783,9 @@
         "status": "not-applicable",
         "date": "2026-10-19",
         "notes": "Not installed to avoid duplicating the primary Three.js set."
-      }
+      },
+      "supportedAgents": [],
+      "safeForDefault": false
     },
     {
       "id": "howler-js",
@@ -1460,7 +1811,9 @@
         "status": "not-applicable",
         "date": "2026-10-19",
         "notes": "Install as a normal npm dependency in the project that needs it."
-      }
+      },
+      "supportedAgents": [],
+      "safeForDefault": false
     },
     {
       "id": "anthropic-document-skills",
@@ -1484,7 +1837,9 @@
         "status": "not-applicable",
         "date": "2026-10-19",
         "notes": "Not copied: proprietary terms. Already provided through the platform's synced skills."
-      }
+      },
+      "supportedAgents": [],
+      "safeForDefault": false
     },
     {
       "id": "claude-mods-pack",
@@ -1508,7 +1863,37 @@
         "status": "needs-review",
         "date": "2026-10-19",
         "notes": "A prompt guide, not code. Each mod it describes needs review before generation and enabling. Saver routes prompts to other models, so it changes model use; Dashboard reads Gmail and Calendar. Do not enable automatically."
-      }
+      },
+      "supportedAgents": [],
+      "safeForDefault": false
+    },
+    {
+      "id": "oil-frontend",
+      "kind": "skill",
+      "status": "held",
+      "installable": false,
+      "category": "frontend",
+      "path": null,
+      "description": "Frontend implementation, state management, and component architecture guidance.",
+      "useCases": "Frontend state, component architecture, responsive design",
+      "source": {
+        "repo": "https://github.com/oil-oil/oil-frontend",
+        "commit": "626c1c00eca1e435d5d9e5b608af1d7d587da469",
+        "commitDate": "2026-09-27",
+        "upstreamPath": "(repo root)"
+      },
+      "license": "MIT",
+      "installMethods": [],
+      "dependencies": [
+        "python3 (for recommend_once.py)"
+      ],
+      "securityReview": {
+        "status": "needs-review",
+        "date": "2026-10-20",
+        "notes": "Contains recommend_once.py which writes state to XDG_STATE_HOME and outputs promotional upsell messages for paid skills. Excluded from default profiles."
+      },
+      "supportedAgents": [],
+      "safeForDefault": false
     }
   ]
 }
