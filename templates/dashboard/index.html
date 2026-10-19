@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analytics Dashboard | Essentials Starter</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --primary: #38bdf8;
+      --success: #34d399;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 2rem; }
+    header { margin-bottom: 2rem; }
+    h1 { font-size: 1.75rem; font-weight: 600; }
+    p.sub { color: var(--muted); margin-top: 0.25rem; font-size: 0.95rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 0.75rem; padding: 1.5rem; }
+    .metric-title { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
+    .metric-value { font-size: 2.25rem; font-weight: 700; margin: 0.5rem 0; color: var(--text); }
+    .metric-change { font-size: 0.85rem; color: var(--success); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Analytics Overview</h1>
+    <p class="sub">Production metric dashboard template designed with Essentials UI reasoning.</p>
+  </header>
+  <main class="grid">
+    <div class="card">
+      <div class="metric-title">Active Sessions</div>
+      <div class="metric-value">14,280</div>
+      <div class="metric-change">↑ 12.4% vs last week</div>
+    </div>
+    <div class="card">
+      <div class="metric-title">Conversion Rate</div>
+      <div class="metric-value">3.82%</div>
+      <div class="metric-change">↑ 0.4% vs baseline</div>
+    </div>
+    <div class="card">
+      <div class="metric-title">Median Latency</div>
+      <div class="metric-value">42ms</div>
+      <div class="metric-change">P99: 110ms</div>
+    </div>
+  </main>
+</body>
+</html>
+

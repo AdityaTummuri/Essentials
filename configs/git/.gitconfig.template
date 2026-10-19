@@ -1,0 +1,36 @@
+# Essentials recommended Git configuration template
+# Copy or include into ~/.gitconfig or project-local .git/config
+
+[init]
+    defaultBranch = main
+
+[core]
+    autocrlf = input
+    editor = nano
+    whitespace = trailing-space,space-before-tab
+
+[pull]
+    rebase = true
+
+[push]
+    autoSetupRemote = true
+    default = simple
+
+[rebase]
+    autoStash = true
+
+[diff]
+    colorMoved = default
+    algorithm = histogram
+
+[merge]
+    conflictStyle = zdiff3
+
+[alias]
+    st = status -sb
+    co = checkout
+    br = branch -v
+    ci = commit
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    undo = reset --soft HEAD~1
+
