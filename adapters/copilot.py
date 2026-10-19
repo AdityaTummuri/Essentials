@@ -89,3 +89,4 @@ class CopilotAdapter(BaseAdapter):
         if record.get("sha256") and sha256_file(dest) != record["sha256"]:
             return False, "prompt content modified"
         return True, "valid"
+

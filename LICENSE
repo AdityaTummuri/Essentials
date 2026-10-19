@@ -27,3 +27,4 @@ Each vendored collection retains its original upstream license and copyright not
 located in its respective directory under `resources/skills/<category>/<collection>/LICENSE`
 or documented in `resources/resources.json`.
 See `resources/docs/SECURITY-REVIEW.md` and individual `SOURCE.md` files for attribution details.
+

@@ -10,3 +10,4 @@ if ! command -v python3 >/dev/null 2>&1; then
 fi
 
 exec python3 -I "$here/essentials_cli.py" "$@"
+

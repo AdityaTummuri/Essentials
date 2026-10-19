@@ -65,3 +65,4 @@ class BaseAdapter:
     ) -> tuple[bool, str]:
         """Verify the integrity of an existing installation."""
         raise NotImplementedError
+

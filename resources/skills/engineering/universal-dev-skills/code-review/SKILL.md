@@ -31,3 +31,4 @@ Use this skill when auditing, reviewing, or critiquing code changes, pull reques
 ### 5. Architectural Cleanliness & Maintainability
 - Keep functions single-responsibility and concise.
 - Preserve existing codebase conventions and documentation integrity.
+

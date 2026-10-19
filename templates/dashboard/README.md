@@ -16,3 +16,4 @@ Pair with the `dashboard` skills preset:
 ```bash
 ./scripts/essentials install dashboard --target .
 ```
+

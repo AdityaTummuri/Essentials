@@ -97,3 +97,4 @@ class CodexAdapter(BaseAdapter):
         elif record.get("sha256") and sha256_file(skill_md) != record["sha256"]:
             return False, "SKILL.md content changed"
         return True, "valid"
+

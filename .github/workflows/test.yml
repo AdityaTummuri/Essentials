@@ -34,3 +34,4 @@ jobs:
       - name: Run Resource Library Core Tests
         run: |
           python3 -m unittest discover -s resources/scripts/tests -v
+

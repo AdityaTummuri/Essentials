@@ -44,3 +44,4 @@ def list_adapters() -> list[BaseAdapter]:
 def supported_agent_names() -> list[str]:
     """Return unique primary names of all supported agents."""
     return [a.name for a in _ADAPTERS]
+

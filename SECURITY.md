@@ -55,3 +55,4 @@ If you discover a security vulnerability, compromised upstream skill, or malicio
    - Steps to reproduce or verify.
 
 Reports will be acknowledged within 48 hours, and compromised skills will be immediately revoked from the manifest and held.
+

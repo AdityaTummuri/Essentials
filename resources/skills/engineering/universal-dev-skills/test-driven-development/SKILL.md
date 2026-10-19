@@ -28,3 +28,4 @@ Use this skill when designing test plans, writing unit/integration tests, or imp
 - **Arrange-Act-Assert**: Structure every test clearly into setup, execution, and verification.
 - **Independent Tests**: Tests must never rely on execution order or shared mutable global state.
 - **Descriptive Names**: Name tests after the requirement: `test_empty_input_raises_value_error()`.
+

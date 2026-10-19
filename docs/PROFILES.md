@@ -58,3 +58,4 @@ Instead of hunting through individual skills, developers can install a cohesive 
 1. **Only Static-Reviewed Skills**: All skills bundled into profiles must be approved in `resources/resources.json` with `securityReview.status = "static-reviewed"` and `safeForDefault = true`.
 2. **Zero Arbitrary Code Execution**: No skill inside a default profile runs background code, network requests, or scripts.
 3. **Held Items Excluded**: Tools like `oil-motion` (which runs a local HTTP credential server and spawns ffmpeg) are strictly excluded from profiles and require individual, manual installation.
+

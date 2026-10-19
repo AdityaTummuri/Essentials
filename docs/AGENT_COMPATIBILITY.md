@@ -46,3 +46,4 @@ Essentials aims for pragmatic, honest compatibility across AI coding agents. We 
 ### 5. GitHub Copilot
 - **Mechanism**: Copilot reads instructions from `.github/copilot-instructions.md` and repository prompt files in `.github/prompts/`.
 - **Adapter**: Generates prompt instruction blocks in `.github/prompts/<skill-id>.prompt.md`.
+

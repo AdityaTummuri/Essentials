@@ -17,3 +17,4 @@ Essentials provides modular, safe, and transparent environment configurations fo
 | **Git** | `git/.gitignore.template` | Multi-language, security-conscious gitignore | Copy or append to project `.gitignore` |
 | **Shell** | `shell/essentials.bash` | Modular, safe bash aliases and navigation shortcuts | Source in `~/.bashrc`: `source /path/to/configs/shell/essentials.bash` |
 | **Shell** | `shell/essentials.zsh` | Zsh history, auto-cd, and workflow aliases | Source in `~/.zshrc`: `source /path/to/configs/shell/essentials.zsh` |
+

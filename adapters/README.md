@@ -21,3 +21,4 @@ To add support for a new agent:
 2. Define `name`, `aliases`, `description`, and `discovery_path`.
 3. Implement `get_destination_path`, `install`, `uninstall`, and `verify`.
 4. Register the new adapter in `adapters/registry.py`.
+

@@ -52,3 +52,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Initial scaffold: bare-minimum Python template with `.gitignore`, `main.py`, and `requirements.txt`.
+

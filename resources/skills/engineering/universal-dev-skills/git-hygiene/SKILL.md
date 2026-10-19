@@ -25,3 +25,4 @@ Use this skill when staging changes, writing commit messages, branching, rebasin
 - **Pre-Commit Verification**: Always run `git diff` and relevant tests before creating commits.
 - **Never Force-Push Public Branches**: Protect shared team history. Use revert commits when amending public branches.
 - **Zero Secrets**: Ensure `.env`, local tokens, and keys are guarded by `.gitignore` before every stage.
+

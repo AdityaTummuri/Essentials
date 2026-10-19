@@ -88,3 +88,4 @@ When Essentials installs skills into a project:
    - For symlinks: the symlink still points to the Essentials source.
    - For copies: the file contents have not been modified by the developer since installation.
    - If a developer edited an installed skill, **Essentials refuses to delete it**, protecting user work.
+

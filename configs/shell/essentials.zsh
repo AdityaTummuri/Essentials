@@ -28,3 +28,4 @@ alias gd='git diff'
 alias py='python3'
 alias venv-activate='[ -f .venv/bin/activate ] && source .venv/bin/activate || echo "No .venv/bin/activate found"'
 alias pyclean='find . -type d -name __pycache__ -exec rm -rf {} +; find . -type f -name "*.py[co]" -delete'
+

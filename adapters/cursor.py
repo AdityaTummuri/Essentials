@@ -108,3 +108,4 @@ class CursorAdapter(BaseAdapter):
         if record.get("sha256") and sha256_file(dest) != record["sha256"]:
             return False, "rule content modified"
         return True, "valid"
+
