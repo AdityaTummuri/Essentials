@@ -10,6 +10,7 @@ from adapters.codex import CodexAdapter
 from adapters.cursor import CursorAdapter
 from adapters.windsurf import WindsurfAdapter
 from adapters.copilot import CopilotAdapter
+from adapters.opencode import OpenCodeAdapter
 
 _ADAPTERS: list[BaseAdapter] = [
     ClaudeCodeAdapter(),
@@ -18,6 +19,7 @@ _ADAPTERS: list[BaseAdapter] = [
     CursorAdapter(),
     WindsurfAdapter(),
     CopilotAdapter(),
+    OpenCodeAdapter(),
 ]
 
 _LOOKUP: dict[str, BaseAdapter] = {}
