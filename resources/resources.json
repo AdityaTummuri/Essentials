@@ -2094,7 +2094,7 @@
         "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
       },
       "skillMd": {
-        "sha256": "8df7f98f10ccf6b7b37d300c021c3e8e71b8b2bc702690b47dad84f99a1a57c8"
+        "sha256": "64a2a09eec2f012e20db0ef3e39daf08145ea0cfc007592e82eb6bc61d38744a"
       },
       "supportedAgents": [
         "claude-code",
@@ -2134,7 +2134,7 @@
         "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
       },
       "skillMd": {
-        "sha256": "8899e60626294a5da286d982f5f61be65eed741e1b310df561510b4cb802f3e8"
+        "sha256": "8719807465c881ae52b0d238d7063666e0cdaa24aa816240c770de7052614a60"
       },
       "supportedAgents": [
         "claude-code",
@@ -2174,7 +2174,7 @@
         "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
       },
       "skillMd": {
-        "sha256": "984fbb9a26b25526960ca1f34c9b66f9b3e185f00f9aa58cc379b7a9e58da962"
+        "sha256": "6523369ac2071d8c7d1042ab11a99613fffa0c1c777493db97fa3003b714aae4"
       },
       "supportedAgents": [
         "claude-code",
@@ -2214,7 +2214,7 @@
         "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
       },
       "skillMd": {
-        "sha256": "8dd28105d9b7be28473b2156f07742875ad8ab7c22b6f209eb35f264d6f291bf"
+        "sha256": "c7621c4f44db780d24409c2c4015e532b03af265e8e153af69e4b74d8e50ab3a"
       },
       "supportedAgents": [
         "claude-code",
@@ -2254,7 +2254,7 @@
         "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
       },
       "skillMd": {
-        "sha256": "a8c1246d0ff72f5292b4e3c197ff5f8cfb118bd2442da6d12e89709401ff2762"
+        "sha256": "c094b2079262a598082b499419d3702da80f0c6a41d052970fa39dfb6b61fc13"
       },
       "supportedAgents": [
         "claude-code",
@@ -2294,7 +2294,7 @@
         "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
       },
       "skillMd": {
-        "sha256": "20e163511f3068cf258c8300e246c3e5c49335bf495582dc9118943bb30e4302"
+        "sha256": "7af652b801e2f5196d31d469bc3f46a9606cb716b52fc57dbeb9dd21b6c034f4"
       },
       "supportedAgents": [
         "claude-code",
@@ -2334,7 +2334,7 @@
         "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
       },
       "skillMd": {
-        "sha256": "08517a4af9b4bdbc3719888639309aea03bb181dbaa605284ceaa1c5c4b0e4fa"
+        "sha256": "471ac8eaa4855346495c4105a2c5b03fc10c82a0154027a17205ef4038f49984"
       },
       "supportedAgents": [
         "claude-code",
@@ -2374,7 +2374,7 @@
         "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
       },
       "skillMd": {
-        "sha256": "774e2e485887eda09548e3e460111393d84f6d60578f9adc970ab59f4f9a6ab8"
+        "sha256": "e1dbeeb90980ad73798bdce53196a98f51c8e8f4cec525aa962b05583305c6df"
       },
       "supportedAgents": [
         "claude-code",
@@ -2414,7 +2414,7 @@
         "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
       },
       "skillMd": {
-        "sha256": "c09aac88336326e31473fa6d6c7dedde45cda88cf86a5a8a8642e4fdec572eb1"
+        "sha256": "4f17f7d10e7525f0ffc7c3731cab70e39d3db8db45ae1f523e7fc9088b0eac4e"
       },
       "supportedAgents": [
         "claude-code",
