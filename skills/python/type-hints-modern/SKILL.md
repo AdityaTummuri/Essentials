@@ -60,3 +60,4 @@ Verify typing without runtime overhead:
 ```bash
 mypy src/ --strict
 ```
+

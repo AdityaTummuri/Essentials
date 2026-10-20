@@ -5,3 +5,4 @@ Curated collection of modern Python patterns, static typing, Asyncio, Pytest, an
 - **License**: MIT
 - **Maintained by**: Essentials Toolkit
 - **Compatibility**: Python 3.10+
+

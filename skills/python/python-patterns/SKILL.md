@@ -67,3 +67,4 @@ class ValidationError(AppError):
 class ResourceNotFoundError(AppError):
     """Raised when requested resource does not exist."""
 ```
+

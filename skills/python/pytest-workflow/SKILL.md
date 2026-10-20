@@ -76,3 +76,4 @@ pytest tests/unit -v -x
 # Run with coverage report
 pytest --cov=src/my_pkg --cov-report=term-missing tests/
 ```
+
