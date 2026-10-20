@@ -15,7 +15,7 @@ Because **skills are just folders**, you don't need a special installer to use a
 
 ## 1. Available Profiles
 
-### 🎨 `portfolio` (28 skills)
+### 🎨 `portfolio` (31 skills)
 *For creative developers, agency websites, interactive 3D portfolios, and showcase sites.*
 - **Focus**: High-fidelity art direction, Three.js 3D scenes, shaders, PBR materials, postprocessing, animation, Web Audio API, and UI elegance.
 - **Skills Included**:

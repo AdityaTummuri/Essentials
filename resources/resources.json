@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updated": "2026-10-19",
+  "updated": "2026-10-20",
   "description": "Central library of Claude Code skills, mods, and catalogues. Installable entries are vendored copies with pinned sources.",
   "categories": {
     "design": "Visual design systems, UI/UX rules, DESIGN.md authoring",
@@ -1454,8 +1454,8 @@
       "dependencies": [],
       "securityReview": {
         "status": "static-reviewed",
-        "date": "2026-10-19",
-        "notes": "Includes helper scripts; static scan found no network or exec calls. Scripts are not run by the installer."
+        "date": "2026-10-20",
+        "notes": "Audited 2026-10-20. All scripts use only the Python standard library. No network, subprocess, or credential access. Writes only with --persist, to a user-specified output directory, via a temporary file and atomic replace. SKILL.md examples reference ${CLAUDE_PLUGIN_ROOT}, which is not set for personal installs."
       },
       "skillMd": {
         "sha256": "ea087c341bfb5b23195c7302027268ede86da802554c18a5c4896a6017b439f9"
@@ -1494,8 +1494,8 @@
       "dependencies": [],
       "securityReview": {
         "status": "static-reviewed",
-        "date": "2026-10-19",
-        "notes": "Includes helper scripts; static scan found no network or exec calls. Scripts are not run by the installer."
+        "date": "2026-10-20",
+        "notes": "Audited 2026-10-20. Logo, icon and CIP generators call external image APIs (Google Gemini, AtlasCloud, MuAPI) with keys from the environment, load .env files from the skill folder, the parent folder, ~/.claude/skills/ and ~/.claude/, and write downloaded images to disk. SKILL.md documents running them. Not safe by default. Held-resource policy in SECURITY.md would exclude these generators."
       },
       "skillMd": {
         "sha256": "e93fe3683b7fa18a9bfcd00c0dc6e12c6859be07b7bfe20145f96ea49b72da13"
@@ -1508,7 +1508,7 @@
         "windsurf",
         "copilot"
       ],
-      "safeForDefault": true
+      "safeForDefault": false
     },
     {
       "id": "design-md",
@@ -2526,6 +2526,9 @@
         "status": "static-reviewed",
         "date": "2026-10-20",
         "notes": "Pure markdown instructions; no executable code or network calls."
+      },
+      "skillMd": {
+        "sha256": "64cd625940021842c2f3cf8aa079d919a236e08c56b74ce5b6566c86ede1c037"
       }
     },
     {
@@ -2548,6 +2551,9 @@
         "status": "static-reviewed",
         "date": "2026-10-20",
         "notes": "Pure markdown instructions; no executable code or network calls."
+      },
+      "skillMd": {
+        "sha256": "100971f7dec85142e91137757938ed65db34a80e4cc4a64fb158fd3076fe1801"
       }
     },
     {
@@ -2570,6 +2576,9 @@
         "status": "static-reviewed",
         "date": "2026-10-20",
         "notes": "Pure markdown instructions; no executable code or network calls."
+      },
+      "skillMd": {
+        "sha256": "41c9fb38d83db3b13a2d58ceb6b92853aae147e78e0bbeb58f04fce805a6850c"
       }
     },
     {
@@ -2592,6 +2601,9 @@
         "status": "static-reviewed",
         "date": "2026-10-20",
         "notes": "Pure markdown instructions; no executable code or network calls."
+      },
+      "skillMd": {
+        "sha256": "e07ab333525972b537ddd22f4c61456cdb1db8870e8ee305442a3d79ccdfda03"
       }
     },
     {
@@ -2614,7 +2626,1024 @@
         "status": "static-reviewed",
         "date": "2026-10-20",
         "notes": "Pure markdown instructions; no executable code or network calls."
+      },
+      "skillMd": {
+        "sha256": "cdb40aeb3e25eb15e43487571a03ce4c91503c10321d056dc7c5d9c7012dd720"
       }
+    },
+    {
+      "id": "writing-plans",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/writing-plans",
+      "description": "Turn an approved design into a bite-sized, test-first implementation plan with exact file paths.",
+      "useCases": "Implementation planning, task decomposition",
+      "source": {
+        "repo": "https://github.com/obra/superpowers",
+        "commit": "bb92a77",
+        "commitDate": "2026-10-09",
+        "upstreamPath": "skills/writing-plans"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Markdown only. Upstream: obra/superpowers."
+      },
+      "skillMd": {
+        "sha256": "a6c67c1900064347c2a329990dd3c555657c51c3ec53b259a08aa01a2c26139a"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "verification-before-completion",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/verification-before-completion",
+      "description": "Require fresh verification evidence before claiming work is complete or passing.",
+      "useCases": "Verified completion, pre-commit checks",
+      "source": {
+        "repo": "https://github.com/obra/superpowers",
+        "commit": "bb92a77",
+        "commitDate": "2026-10-09",
+        "upstreamPath": "skills/verification-before-completion"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Markdown only. Upstream: obra/superpowers."
+      },
+      "skillMd": {
+        "sha256": "2befe7fc55bcadaa3d97dd9e8efeb633d2561c0ebe74c5a8b17c4d9e7e4520b3"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "receiving-code-review",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/receiving-code-review",
+      "description": "Evaluate code-review feedback technically before implementing it, without performative agreement.",
+      "useCases": "Handling review comments",
+      "source": {
+        "repo": "https://github.com/obra/superpowers",
+        "commit": "bb92a77",
+        "commitDate": "2026-10-09",
+        "upstreamPath": "skills/receiving-code-review"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Markdown only. Upstream: obra/superpowers."
+      },
+      "skillMd": {
+        "sha256": "091df1629510af1b92fc4abd6f96732ebedb4cb2c0f3457e8f2740b0504a2438"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "requesting-code-review",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/requesting-code-review",
+      "description": "Dispatch a focused code-review pass on a finished change with a precise review brief.",
+      "useCases": "Pre-merge review, review briefs",
+      "source": {
+        "repo": "https://github.com/obra/superpowers",
+        "commit": "bb92a77",
+        "commitDate": "2026-10-09",
+        "upstreamPath": "skills/requesting-code-review"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Markdown and a reviewer prompt template. Upstream: obra/superpowers."
+      },
+      "skillMd": {
+        "sha256": "2180e14a448e9410bec88e6646a2d1f0ce7fdd58de27388c1e052e929679d2bc"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "systematic-debugging",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/systematic-debugging",
+      "description": "Find root cause before fixing: reproduce, trace data flow, test one hypothesis at a time.",
+      "useCases": "Debugging, root-cause analysis, flaky tests",
+      "source": {
+        "repo": "https://github.com/obra/superpowers",
+        "commit": "bb92a77",
+        "commitDate": "2026-10-09",
+        "upstreamPath": "skills/systematic-debugging"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Markdown only. find-polluter.sh and TypeScript example intentionally excluded. Upstream: obra/superpowers."
+      },
+      "skillMd": {
+        "sha256": "51c6435d98c83c42c96ba7c35725a0b2c376cd487fb1a4e6bd0ddbe7e33ef202"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "acquire-codebase-knowledge",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/acquire-codebase-knowledge",
+      "description": "Map an unfamiliar codebase into structured architecture, stack, conventions, and concerns documents.",
+      "useCases": "Codebase onboarding and mapping",
+      "source": {
+        "repo": "https://github.com/github/awesome-copilot",
+        "commit": "613efc8",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "skills/acquire-codebase-knowledge"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Bundled scripts/scan.py runs only read-only git log and rev-parse commands and writes only to a path the user gives. Upstream: github/awesome-copilot."
+      },
+      "skillMd": {
+        "sha256": "a86527533d2ee4df27063af24402b9e1a345c33bba3cf423c96da7cdb3864a60"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": false
+    },
+    {
+      "id": "threat-model-analyst",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/threat-model-analyst",
+      "description": "STRIDE-A threat modelling of repositories and systems with data-flow diagrams and findings.",
+      "useCases": "Threat analysis, security design review",
+      "source": {
+        "repo": "https://github.com/github/awesome-copilot",
+        "commit": "613efc8",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "skills/threat-model-analyst"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Markdown and reference templates only. Upstream: github/awesome-copilot."
+      },
+      "skillMd": {
+        "sha256": "cdd72b75b224b20f006cb31602b0b68d0ea27c22a25c9a6458a2cf0b90a25fb3"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "secret-scanning",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/secret-scanning",
+      "description": "Configure GitHub secret scanning, push protection, custom patterns, and remediation of leaked secrets.",
+      "useCases": "Secrets detection, push protection",
+      "source": {
+        "repo": "https://github.com/github/awesome-copilot",
+        "commit": "613efc8",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "skills/secret-scanning"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Markdown only. Upstream: github/awesome-copilot."
+      },
+      "skillMd": {
+        "sha256": "ebbaf8a49777e8be6d8c220b91bbee935b2aaab81b3ee976562484a339d750db"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "github-actions-hardening",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/github-actions-hardening",
+      "description": "Security review of GitHub Actions workflows: token permissions, injection, supply chain, and triggers.",
+      "useCases": "CI/CD security review",
+      "source": {
+        "repo": "https://github.com/github/awesome-copilot",
+        "commit": "613efc8",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "skills/github-actions-hardening"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Markdown only. Upstream: github/awesome-copilot."
+      },
+      "skillMd": {
+        "sha256": "31a8e7483d978e6267941edefebbe42aaa946bb3d43c9095aa3db343d4a8ff06"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "dependabot",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/dependabot",
+      "description": "Configure and triage Dependabot version and security updates.",
+      "useCases": "Dependency auditing, update automation",
+      "source": {
+        "repo": "https://github.com/github/awesome-copilot",
+        "commit": "613efc8",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "skills/dependabot"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Markdown only. Upstream: github/awesome-copilot."
+      },
+      "skillMd": {
+        "sha256": "2b5f3af7d8a5555d330d4d72ba9ad6140e85215d006dd9d7a92ee0dae76bbf82"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "refactor",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/refactor",
+      "description": "Surgical refactoring that preserves behaviour: extract functions, rename, reduce complexity.",
+      "useCases": "Refactoring, maintainability",
+      "source": {
+        "repo": "https://github.com/github/awesome-copilot",
+        "commit": "613efc8",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "skills/refactor"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Markdown only. Upstream: github/awesome-copilot."
+      },
+      "skillMd": {
+        "sha256": "58a38edd230cdcdd866939906321c8ba6f47c98a70d0cda373360196ee2ca1a7"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "mcp-builder",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/mcp-builder",
+      "description": "Guide for building MCP servers that expose external services as well-designed tools, with evaluation harness.",
+      "useCases": "MCP server development and evaluation",
+      "source": {
+        "repo": "https://github.com/anthropics/skills",
+        "commit": "dbd4588",
+        "commitDate": "2026-10-09",
+        "upstreamPath": "skills/mcp-builder"
+      },
+      "license": "Apache-2.0",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Bundled Python: evaluation.py calls the Anthropic API with the user's own key and needs the mcp/anthropic packages; connections.py opens MCP client connections. Not run on install. Upstream: anthropics/skills."
+      },
+      "skillMd": {
+        "sha256": "0f4592dcb53cf2b5d6b7febee6b4152018b565551a1c29e3c612f57b218ab295"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": false
+    },
+    {
+      "id": "caveman",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/caveman",
+      "description": "Terse response style that keeps technical content and drops filler. Lightweight skill only; no hooks, proxy, or installer.",
+      "useCases": "Lower-token responses",
+      "source": {
+        "repo": "https://github.com/JuliusBrussee/caveman",
+        "commit": "bad48a0",
+        "commitDate": "2026-10-17",
+        "upstreamPath": "skills/caveman"
+      },
+      "license": "Apache-2.0",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Markdown only. Status reporting refers to host hooks that are not installed by this skill. Upstream: JuliusBrussee/caveman (Apache-2.0, see NOTICE in that repo)."
+      },
+      "skillMd": {
+        "sha256": "415d43518f2b1a9498c15a445d4657117b129ee5e81b19454ce348439cc6672b"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "ollama-local-models",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/ollama-local-models",
+      "description": "Discover, size, run, and benchmark local Ollama models; decide when local inference beats a cloud call.",
+      "useCases": "Local LLMs, Ollama benchmarking",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "skills/engineering/ollama-local-models"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Original Essentials skill. Markdown only; uses read-only Ollama and curl commands."
+      },
+      "skillMd": {
+        "sha256": "d96097568b5d5d032e2474f65108ab09b7b556621638b7ac87a13d5b3b610cd7"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "webapp-testing",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "testing",
+      "collection": "testing",
+      "path": "skills/testing/webapp-testing",
+      "description": "Test local web apps with native Playwright Python scripts: server lifecycle, element discovery, console logs, screenshots.",
+      "useCases": "Browser testing of local web apps",
+      "source": {
+        "repo": "https://github.com/anthropics/skills",
+        "commit": "dbd4588",
+        "commitDate": "2026-10-09",
+        "upstreamPath": "skills/webapp-testing"
+      },
+      "license": "Apache-2.0",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Bundled Python: with_server.py starts the user's own server commands and waits for ports on localhost; examples use Playwright. Not run on install. Upstream: anthropics/skills."
+      },
+      "skillMd": {
+        "sha256": "51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": false
+    },
+    {
+      "id": "test-gap-audit",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "testing",
+      "collection": "testing",
+      "path": "skills/testing/test-gap-audit",
+      "description": "Read-only audit of missing, weak, stale, or mis-scoped test coverage.",
+      "useCases": "Test coverage gap analysis",
+      "source": {
+        "repo": "https://github.com/github/awesome-copilot",
+        "commit": "613efc8",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "skills/test-gap-audit"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Bundled scripts/coverage_map.py runs the project's coverage tools via subprocess and reads results; read-only. Upstream: github/awesome-copilot."
+      },
+      "skillMd": {
+        "sha256": "a7747ac0b60d33ec6a44b9703ae11e8f6bf7aede251f117cc46599d182bfef21"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": false
+    },
+    {
+      "id": "playwright-generate-test",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "testing",
+      "collection": "testing",
+      "path": "skills/testing/playwright-generate-test",
+      "description": "Generate a Playwright test from a scenario using the Playwright MCP tools.",
+      "useCases": "E2E test generation",
+      "source": {
+        "repo": "https://github.com/github/awesome-copilot",
+        "commit": "613efc8",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "skills/playwright-generate-test"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Markdown only. Requires the Playwright MCP server to be configured. Upstream: github/awesome-copilot."
+      },
+      "skillMd": {
+        "sha256": "79dbb1a49fc5a6502788ccba1a4bd30769a017a1cc31d9db329d1326ea3d898f"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "web-design-reviewer",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "design",
+      "collection": "design",
+      "path": "skills/design/web-design-reviewer",
+      "description": "Visually inspect a running website with a browser, find design and accessibility issues, and fix them.",
+      "useCases": "Visual QA, design review, frontend debugging",
+      "source": {
+        "repo": "https://github.com/github/awesome-copilot",
+        "commit": "613efc8",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "skills/web-design-reviewer"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Markdown and reference checklists only. Requires a browser tool such as Playwright MCP. Upstream: github/awesome-copilot."
+      },
+      "skillMd": {
+        "sha256": "a08a147cfe555dabe30f2c8f2e267f287e992f74f2b802e68989884338e23b17"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "ros2-debugging",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "robotics-ml",
+      "collection": "robotics-ml",
+      "path": "skills/robotics-ml/ros2-debugging",
+      "description": "Diagnose ROS 2 systems: discovery, topic and QoS mismatches, launch and parameter problems, colcon build failures.",
+      "useCases": "ROS 2 debugging",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "skills/robotics-ml/ros2-debugging"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Original Essentials skill. Markdown only."
+      },
+      "skillMd": {
+        "sha256": "e94301f326ea0ae8ffef32147502dc0742e54bffbc22973193faf03cb64c987d"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "esp32-embedded-debugging",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "robotics-ml",
+      "collection": "robotics-ml",
+      "path": "skills/robotics-ml/esp32-embedded-debugging",
+      "description": "Debug ESP32 firmware: boot loops, brownouts, watchdog resets, serial output, flashing, peripheral wiring.",
+      "useCases": "ESP32 and serial debugging",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "skills/robotics-ml/esp32-embedded-debugging"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Original Essentials skill. Markdown only."
+      },
+      "skillMd": {
+        "sha256": "eeb744448b94c3996fa5805d6182ab277612ce1112973d51f00e371e17fd6dcb"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "pytorch-experiments",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "robotics-ml",
+      "collection": "robotics-ml",
+      "path": "skills/robotics-ml/pytorch-experiments",
+      "description": "Reproducible PyTorch training and evaluation: seeding, leakage-safe splits, resumable checkpoints, GPU benchmarking, ONNX export verification.",
+      "useCases": "PyTorch training, benchmarking, ONNX export",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "skills/robotics-ml/pytorch-experiments"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Original Essentials skill. Markdown only."
+      },
+      "skillMd": {
+        "sha256": "49616adb9aaa4996b1db8a3eccdeb53499f71b77c1028c2ce7b2d2dd68473cfa"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "brainstorming",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/brainstorming",
+      "description": "Clarify requirements and explore design options before implementation; optional local visual companion.",
+      "useCases": "Requirements clarification, design exploration",
+      "source": {
+        "repo": "https://github.com/obra/superpowers",
+        "commit": "bb92a77",
+        "commitDate": "2026-10-09",
+        "upstreamPath": "skills/brainstorming"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Includes a localhost companion server (Node stdlib, token-protected, opt-in browser open). Start only after the user approves. Brand logo is loaded by the browser unless telemetry is disabled. Upstream: obra/superpowers."
+      },
+      "skillMd": {
+        "sha256": "6ee10d1481b8a2580d5336ff66c5c08acc9d4b251b13bbc3bfd31be99c261d43"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": false
+    },
+    {
+      "id": "subagent-driven-development",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/subagent-driven-development",
+      "description": "Execute an implementation plan by dispatching one subagent per task with two-stage review.",
+      "useCases": "Subagent-driven implementation with review gates",
+      "source": {
+        "repo": "https://github.com/obra/superpowers",
+        "commit": "bb92a77",
+        "commitDate": "2026-10-09",
+        "upstreamPath": "skills/subagent-driven-development"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Shell helpers (task-brief, review-package, sdd-workspace) use read-only git commands and write only under .superpowers/sdd/ in the working repo. Upstream: obra/superpowers."
+      },
+      "skillMd": {
+        "sha256": "8dde5589ee083fb4999106d116f01c8fdaf3116a8a9813fdedeb80329de49046"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": false
+    },
+    {
+      "id": "executing-plans",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/executing-plans",
+      "description": "Execute a written plan inline, one task at a time, with ledgered progress and review.",
+      "useCases": "Inline plan execution",
+      "source": {
+        "repo": "https://github.com/obra/superpowers",
+        "commit": "bb92a77",
+        "commitDate": "2026-10-09",
+        "upstreamPath": "skills/executing-plans"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Shell helpers write a progress ledger under .superpowers/sdd/ and call the subagent-driven-development helpers. References finishing-a-development-branch and using-git-worktrees, which are not vendored. Upstream: obra/superpowers."
+      },
+      "skillMd": {
+        "sha256": "f38e8f2ddcf079f65493adc713c1fed78421dfaf5f4dbf6b3a6b2b1d95466e71"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": false
+    },
+    {
+      "id": "skill-creator",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/skill-creator",
+      "description": "Create, evaluate, benchmark, and improve agent skills, including description optimisation.",
+      "useCases": "Skill authoring and evaluation",
+      "source": {
+        "repo": "https://github.com/anthropics/skills",
+        "commit": "dbd4588",
+        "commitDate": "2026-10-09",
+        "upstreamPath": "skills/skill-creator"
+      },
+      "license": "Apache-2.0",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Bundled Python runs claude -p as a subprocess for evals (costs model calls), starts a localhost-only review server, and loads Google Fonts and a sheetjs CDN script in HTML viewers. Not run on install. Upstream: anthropics/skills."
+      },
+      "skillMd": {
+        "sha256": "dcd4803e61e913e6fc27294184cd3a71f09f5e924ff20c8a9a20173e7b3c2bcf"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": false
+    },
+    {
+      "id": "reverse-engineer-anything",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/reverse-engineer-anything",
+      "description": "Reverse engineer native, managed, Electron, packaged, firmware, and browser targets with REA evidence tools.",
+      "useCases": "Binary and package analysis with REA",
+      "source": {
+        "repo": "https://github.com/morluto/rea",
+        "commit": "3b79af28",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "skills/reverse-engineer-anything"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Markdown only. Instructs the agent to run npx rea-agents@6.5.0 for diagnostics and, after approval, to write MCP client configuration. Byte-identical to the rea-agents 6.5.0 bundled skill. Upstream: morluto/rea."
+      },
+      "skillMd": {
+        "sha256": "3456aab99d48c3294726065c9d5bd586bc165f2849fd5a3d5080381630564715"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": false
     }
   ]
 }

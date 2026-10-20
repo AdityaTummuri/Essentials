@@ -7,6 +7,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [Unreleased]
+
+### Added
+- 26 skills under existing categories, bringing the library to 82 (validated, 8 categories). Upstream sources are recorded in `resources/resources.json` and `docs/UPSTREAM_AUDIT.md`:
+  - Superpowers (MIT): `writing-plans`, `brainstorming`, `executing-plans`, `subagent-driven-development`, `systematic-debugging`, `verification-before-completion`, `requesting-code-review`, `receiving-code-review`.
+  - awesome-copilot (MIT): `acquire-codebase-knowledge`, `threat-model-analyst`, `secret-scanning`, `github-actions-hardening`, `dependabot`, `refactor`, `test-gap-audit`, `playwright-generate-test`, `web-design-reviewer`.
+  - Anthropic (Apache-2.0): `mcp-builder`, `webapp-testing`, `skill-creator`.
+  - caveman (Apache-2.0): `caveman`, lightweight skill only.
+  - rea-agents 6.5.0 (MIT): `reverse-engineer-anything`, moved from the untracked `skills/` folder into `engineering/`. Content unchanged.
+  - Original: `ollama-local-models`, `ros2-debugging`, `esp32-embedded-debugging`, `pytorch-experiments`.
+- Provenance catalog entries and SOURCE.md attribution for all third-party additions.
+- `tests/test_catalog.py`: catalog coverage, id uniqueness, SKILL.md hash checks, no symlinks or forbidden artifacts under `skills/`, and the `safeForDefault` rule for code-bearing skills.
+- `docs/SKILL_CATALOG.md`, `docs/AGENT_TOOLKIT.md`, `docs/INSTALLATION_STATUS.md`.
+
+### Changed
+- `design` is marked `safeForDefault: false`. Its image generators call external APIs with user keys and write downloads.
+- Skill counts in README, ARCHITECTURE, SECURITY, and PROFILES updated to the computed values. The `portfolio` profile header now says 31.
+
+### Fixed
+- Five python skill catalog entries were missing their `skillMd.sha256` hash.
+- The engineering and testing SOURCE.md safety statements now reflect bundled scripts.
+- SECURITY.md no longer says all skills are free of scripts.
+- `skills/reverse-engineer-anything/` moved into a category, so `./scripts/essentials validate` passes.
+
+---
+
 ## [3.0.0] - 2026-10-20
 
 ### Changed
