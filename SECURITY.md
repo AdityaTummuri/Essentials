@@ -8,7 +8,7 @@ Because agent skills provide system prompts and instructions to autonomous AI co
 
 ### Core Security Rules
 
-1. **Passive Guidance by Default**: All skills in `skills/` are strictly instructional markdown (`SKILL.md`). They do not execute background scripts, make unsolicited network requests, or tamper with system environments.
+1. **Passive Guidance by Default**: Skills in `skills/` are instructional markdown (`SKILL.md`). Some bundle scripts that run only when the agent is asked to use them. Every such skill is marked `safeForDefault: false` in `resources/resources.json` unless its scripts were audited as local-only. No skill starts background processes or makes network requests on install.
 2. **Strict File Restrictions in Library**: The central skills library enforces strict checks. No skill directory may contain hidden configurations or executable hooks such as `settings.json`, `settings.local.json`, `hooks.json`, `.mcp.json`, or `.claude-plugin/`.
 3. **Cryptographic Verification**: Every vendored `SKILL.md` is fingerprinted with SHA-256 in `resources/resources.json`. Any drift or tampering triggers validation failure during `./scripts/essentials validate`.
 4. **Transparent, User-Controlled Installation**: Skills are distributed as plain directories. Developers copy only the skills they want into their agent's skills directory (e.g. `~/.agents/skills/` or `~/.claude/skills/`). There are no background installers, hidden daemon processes, or system modification scripts.
@@ -20,15 +20,17 @@ Because agent skills provide system prompts and instructions to autonomous AI co
 
 A rigorous security audit of all candidate resources was performed. The repository maintains an explicit distinction between approved static guidance and held resources:
 
-### Approved Collections in `skills/` (56 Total Skills)
+### Approved Collections in `skills/` (82 Total Skills)
 - `skills/threejs/` (24 skills): Pure markdown instructions covering 3D WebGL, shaders, PBR materials, WebGPU, and performance.
-- `skills/design/` (13 skills): Frontend design, UI/UX Pro Max design reasoning, motion principles, and Apple design guidelines.
-- `skills/engineering/` (6 skills): Rigorous code review, TDD, Git hygiene, API design, security audit, CI/CD hardening.
+- `skills/design/` (14 skills): Frontend design, UI/UX Pro Max design reasoning, motion principles, Apple design guidelines, and web design review. The `design` skill bundles image-generation scripts that call external APIs and is marked not safe by default (see the note below).
+- `skills/engineering/` (25 skills): Code review, TDD, Git hygiene, API design, security and threat analysis, CI/CD hardening, planning and debugging workflows, MCP server and skill authoring, and reverse engineering with REA.
 - `skills/python/` (5 skills): Modern Python 3.10+ typing, Pytest workflows, clean architecture, Asyncio, and pyproject.toml packaging.
-- `skills/robotics-ml/` (4 skills): Computer vision pipelines, model evaluation, dataset curation, and edge quantization.
+- `skills/robotics-ml/` (7 skills): Computer vision, model evaluation, dataset curation, edge quantization, and ROS 2, ESP32, and PyTorch debugging.
 - `skills/audio/` (1 skill): Web Audio API, spatial soundscapes, and audio visualizer shaders.
 - `skills/product/` (2 skills): Executive product strategy, OKR cascades, and UI design systems.
-- `skills/testing/` (1 skill): Automated visual regression testing and snapshot baselines.
+- `skills/testing/` (4 skills): Automated visual regression testing, web app testing, Playwright test generation, and test-gap audits.
+
+**Note on `design`.** Its logo, icon, and CIP generators call Gemini, AtlasCloud, or MuAPI with the user's keys, read `.env` files, and write downloads. Section 2 of this policy would hold resources like this. It is kept in the library and marked `safeForDefault: false` pending a decision.
 
 ### Held Resources (Excluded from Canonical Library)
 The following resources contain executable code, subprocesses, or network calls and are **held** (not included in `skills/`):

@@ -10,15 +10,15 @@ Any developer can clone or download Essentials, open the `skills/` directory, se
 
 ```text
 Essentials/
-├── skills/                      # Canonical, ready-to-copy skills library (56 skills)
+├── skills/                      # Canonical, ready-to-copy skills library (82 skills)
 │   ├── threejs/                 # 24 3D WebGL, shaders, performance & WebGPU skills
-│   ├── engineering/             # 6 universal engineering & code-review skills
-│   ├── design/                  # 13 UI/UX, typography, design systems & motion skills
-│   ├── robotics-ml/             # 4 computer vision, edge AI & dataset skills
+│   ├── engineering/             # 25 engineering, planning, debugging, security & code-review skills
+│   ├── design/                  # 14 UI/UX, typography, design systems & motion skills
+│   ├── robotics-ml/             # 7 computer vision, edge AI, dataset, ROS 2 & embedded skills
 │   ├── python/                  # 5 modern Python typing, testing & packaging skills
 │   ├── audio/                   # 1 browser audio & Web Audio API skill
 │   ├── product/                 # 2 product strategy & UI design system skills
-│   └── testing/                 # 1 visual regression & snapshot testing skill
+│   └── testing/                 # 4 visual regression, web app testing, E2E generation & coverage audit skills
 ├── configs/                     # Portable developer configs (Bash, Zsh, Git, EditorConfig)
 ├── templates/                   # Production-ready starter templates (Python, Web, Dashboards)
 ├── docs/                        # Architecture, compatibility, profiles, and audits
@@ -79,7 +79,7 @@ ln -s ~/.agents/skills ~/.claude/skills
 To assist developers without imposing any mandatory runtime dependencies or modifying files unexpectedly, Essentials includes a zero-dependency Python standard library companion CLI:
 
 ```bash
-./scripts/essentials list             # Browse all 56 skills across 8 categories and profiles
+./scripts/essentials list             # Browse all 82 skills across 8 categories and profiles
 ./scripts/essentials search <query>    # Search skills by keyword, category, or triggers
 ./scripts/essentials inspect <id>      # View skill details, frontmatter, paths, and copy command
 ./scripts/essentials inspect <profile> # View all skills and copy command for a curated profile
@@ -108,7 +108,7 @@ The catalog tracks every skill's provenance:
 - **Cryptographic SHA-256**: Hash of every `SKILL.md` to detect accidental drift or tampering.
 
 ### Forbidden Artifacts Enforcement
-The `./scripts/essentials validate` command enforces strict security hygiene:
+`./scripts/essentials validate` and `tests/test_catalog.py` enforce strict security hygiene:
 - No hidden execution hooks: `hooks.json`, `settings.json`, `settings.local.json`.
 - No unreviewed MCP server configurations: `.mcp.json`.
 - No extraneous `.claude-plugin/` or binary executables.

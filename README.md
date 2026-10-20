@@ -38,7 +38,7 @@ Essentials is a complete developer toolkit, not just a skills library:
 
 ```text
 Essentials/
-├── skills/                      # 56 portable, self-contained Agent Skills across 8 categories
+├── skills/                      # 82 portable, self-contained Agent Skills across 8 categories
 │   ├── audio/                   # Web Audio API soundscapes, spatial 3D audio, WebGL visualizers
 │   ├── design/                  # UI/UX Pro Max, DESIGN.md, Apple design language, motion principles
 │   ├── engineering/             # Code review, Git hygiene, TDD, REST/RPC API design, security, CI/CD
@@ -93,7 +93,7 @@ Essentials adheres strictly to the open **Agent Skills** specification (`SKILL.m
 
 ## 4. Skills Catalog by Category
 
-Essentials includes **56 portable skills** organized into 8 domain directories:
+Essentials includes **82 portable skills** organized into 8 domain directories. The complete list with licences, upstream sources, and bundled-code flags is in [docs/SKILL_CATALOG.md](docs/SKILL_CATALOG.md).
 
 ### 🛠️ Engineering (`skills/engineering/`)
 - **`code-review`**: Structured, rigorous code reviews for correctness, performance, edge cases, and maintainability.
@@ -102,6 +102,15 @@ Essentials includes **56 portable skills** organized into 8 domain directories:
 - **`api-design`**: Clean, scalable, backward-compatible REST and RPC API schemas with error envelopes.
 - **`security-audit`**: OWASP Top 10 vulnerability checks, dependency supply-chain auditing, and secret scanning.
 - **`ci-cd-workflow`**: Hardened, reproducible GitHub Actions workflows with caching and security gates.
+- **`writing-plans`**, **`brainstorming`**, **`executing-plans`**, **`subagent-driven-development`**: Requirements clarification, implementation plans, and plan execution (Superpowers).
+- **`systematic-debugging`**, **`verification-before-completion`**, **`requesting-code-review`**, **`receiving-code-review`**: Root-cause debugging and review workflows (Superpowers).
+- **`acquire-codebase-knowledge`**: Maps an unfamiliar codebase into architecture and convention documents.
+- **`threat-model-analyst`**, **`secret-scanning`**, **`github-actions-hardening`**, **`dependabot`**: Threat modelling, secrets detection, Actions security review, and dependency updates.
+- **`refactor`**: Behaviour-preserving refactoring for maintainability.
+- **`mcp-builder`**, **`skill-creator`**: Building MCP servers and authoring or evaluating skills.
+- **`reverse-engineer-anything`**: Binary, package, and runtime analysis with REA evidence tools (rea-agents, MIT).
+- **`ollama-local-models`**: Sizing, running, and benchmarking local Ollama models.
+- **`caveman`**: Terse response style. Lightweight skill only; copy it when you want that style.
 
 ### 🐍 Python Development (`skills/python/`)
 - **`pytest-workflow`**: Deterministic unit and integration testing, fixtures, parametrization, and coverage.
@@ -124,6 +133,7 @@ Essentials includes **56 portable skills** organized into 8 domain directories:
 - **`animation-vocabulary`**: Reverse-lookup glossary translating visual motion concepts into code.
 - **`find-animation-opportunities`**: Pinpointing micro-interactions that elevate UI feel without distraction.
 - **`improve-animations`**: Upgrading existing clunky transitions into smooth, spring-driven interactions.
+- **`web-design-reviewer`**: Visually inspects a running site, finds layout, accessibility, and consistency problems, and fixes them.
 
 ### 🌐 Three.js & WebGL (`skills/threejs/`)
 A complete 24-skill suite covering every facet of modern 3D web graphics:
@@ -139,6 +149,9 @@ A complete 24-skill suite covering every facet of modern 3D web graphics:
 - **`model-evaluation`**: Rigorous validation metrics, leakage prevention, and calibration curves.
 - **`dataset-curation`**: Data validation, stratified sampling, split integrity, and dataset versioning.
 - **`edge-inference`**: ONNX Runtime, TensorRT quantization, pruning, and low-latency edge deployment.
+- **`ros2-debugging`**: ROS 2 discovery, topic and QoS mismatches, launch and colcon failures (original).
+- **`esp32-embedded-debugging`**: ESP32 boot loops, brownouts, watchdog resets, serial and flashing problems (original).
+- **`pytorch-experiments`**: Reproducible training, leakage-safe splits, GPU benchmarking, and ONNX export verification (original).
 
 ### 🔊 Browser Audio (`skills/audio/`)
 - **`browser-audio`**: Interactive Web Audio API soundscapes, HRTF spatial audio, user-gesture unlock lifecycles, and audio-reactive WebGL visualizers.
@@ -149,6 +162,9 @@ A complete 24-skill suite covering every facet of modern 3D web graphics:
 
 ### 🧪 Visual Testing (`skills/testing/`)
 - **`visual-regression`**: Automated visual regression testing, pixel-diff snapshots with Playwright, and thresholding.
+- **`webapp-testing`**: Native Playwright Python scripts for local web apps: server lifecycle, element discovery, console logs.
+- **`playwright-generate-test`**: Generates a Playwright test from a scenario using the Playwright MCP tools.
+- **`test-gap-audit`**: Read-only audit of missing, weak, or stale test coverage.
 
 ---
 

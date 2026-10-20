@@ -1,6 +1,6 @@
 # Upstream Skill Audit & Maintenance Log
 
-This document records the upstream provenance, license verification, security review, and update decisions for all 56 skills cataloged in Essentials.
+This document records the upstream provenance, license verification, security review, and update decisions for all 82 skills cataloged in Essentials (`resources/resources.json`, 2026-10-20).
 
 Last Audited: **2026-10-20**
 
@@ -81,3 +81,25 @@ The following third-party resources were evaluated and classified as **held** (n
 | **`ui-styling`** | External | **Held** | Subprocess execution of `npx`, plus 5.8 MB of binary font bloat. |
 | **`design-system`** | External | **Held** | Unsolicited network downloads of images from external websites. |
 | **`brand`** | External | **Held** | Executes child processes via `execFileSync`. |
+
+---
+
+## 2026-10-20 Acquisition Decisions
+
+Superpowers and Anthropic skills were re-cloned on 2026-10-20 and matched the pinned revisions below. awesome-copilot and caveman were cloned the same day in an earlier pass. Licences were read from each repository. The `rea` revision was resolved from the upstream tag.
+
+| Upstream | Revision | Licence | Adopted | Excluded and why |
+| --- | --- | --- | --- | --- |
+| [obra/superpowers](https://github.com/obra/superpowers) | `bb92a77` (2026-10-09) | MIT | `writing-plans`, `brainstorming`, `executing-plans`, `subagent-driven-development`, `systematic-debugging`, `verification-before-completion`, `requesting-code-review`, `receiving-code-review` | `finishing-a-development-branch` merges, pushes, force-deletes branches, and removes worktrees. `using-git-worktrees` runs `npm install`, `pip install`, and similar automatically in each new worktree. Both are referenced by adopted skills and are provided by the Superpowers plugin in Claude Code. Not vendored. |
+| [anthropics/skills](https://github.com/anthropics/skills) | `dbd4588` (2026-10-09) | Apache-2.0 (per-skill `LICENSE.txt`) | `webapp-testing`, `mcp-builder`, `skill-creator` | `frontend-design` already vendored under `skills/design/`. `skill-creator` is also provided by the platform in Claude Code, so it is not copied to personal directories. |
+| [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) | `bad48a0` (2026-10-17) | Apache-2.0 | `caveman` (skill only) | Proxy, middleware, shell hooks, and installer. |
+| [morluto/rea](https://github.com/morluto/rea) (npm `rea-agents` 6.5.0) | tag `rea-agents-6.5.0` = `3b79af28` | MIT | `reverse-engineer-anything` (moved from untracked `skills/` into `engineering/`, content unchanged, byte-identical to the npm bundle) | None. |
+| [github/awesome-copilot](https://github.com/github/awesome-copilot) | `613efc8` (2026-10-20) | MIT | 9 skills (see `docs/SKILL_CATALOG.md`) | `conventional-commit` duplicates `git-hygiene`. `security-review` overlaps `security-audit`. `diagnose` is an AI-workflow tool, not a code skill. |
+| [code-yeongyu/oh-my-openagent](https://github.com/code-yeongyu/oh-my-openagent) | not vendored | Sustainable Use License 1.0 (not MIT; third-party components keep their own licences) | None | Installer-driven, enables anonymous telemetry by default, and imports API keys, MCP servers, and model settings from other tools. Its licence limits use to internal or non-commercial purposes. Not installed. See `docs/INSTALLATION_STATUS.md`. |
+
+### Safety flag (`safeForDefault`)
+
+`safeForDefault: true` means the skill has no code, or every bundled script was audited and recorded as local-only. `false` means the skill bundles code that runs on request, or its instructions direct the agent to download or run packages or write client configuration. The test suite enforces this for code-bearing skills (`tests/test_catalog.py`). Two audits are on record:
+
+- `ui-ux-pro-max`: stdlib-only scripts, no network, subprocess, or credential access, writes only with `--persist` to a chosen directory. Kept `true`.
+- `design`: image generators call external APIs (Gemini, AtlasCloud, MuAPI) with keys from the environment, read `.env` files from several home-directory paths, and write downloads. Changed to `false`. The held-resource rule would exclude these generators. Decision pending.
