@@ -37,3 +37,7 @@ uv.lock
 # OS generated files
 .DS_Store
 Thumbs.db
+
+# Agent workspace directories & legacy ledgers
+.agents/
+.essentials-ledger.json

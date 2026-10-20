@@ -1,91 +1,127 @@
 # Architecture of Essentials
 
-## 1. Universal Skill Architecture
+## 1. "Skills Are Just Folders" Architecture
 
-The core objective of Essentials is to provide a single, curated, security-reviewed library of developer capabilities and AI agent skills that can be deployed across multiple distinct AI coding agents without duplicating files or maintaining conflicting copies.
+Essentials is an all-in-one developer toolkit. Rather than requiring complex runtime installers, symlink managers, platform-specific translation adapters, or installation ledgers, the skills system operates on a simple, universal principle:
+
+> **Skills are just folders.**
+
+Any developer can clone or download Essentials, open the `skills/` directory, select any skill folder, and copy it directly into their agent's skills directory.
 
 ```text
-                                  ┌─────────────────────────────┐
-                                  │   Canonical Skill Library   │
-                                  │   (resources/skills/ &      │
-                                  │    authoritative manifest)  │
-                                  └──────────────┬──────────────┘
-                                                 │
-                                                 │ essentials CLI /
-                                                 │ setup-project.sh
-                                                 ▼
-                                  ┌─────────────────────────────┐
-                                  │    Multi-Agent Adapters     │
-                                  │   (symlink / copy / rule)   │
-                                  └──────────────┬──────────────┘
-                    ┌────────────────────────────┼───────────────────────────┐
-                    ▼                            ▼                           ▼
-          ┌──────────────────┐         ┌──────────────────┐        ┌──────────────────┐
-          │   Claude Code    │         │  OpenAI Codex &  │        │   Cursor / MDC   │
-          │ (.claude/skills) │         │  Universal Agent │        │ (.cursor/rules/) │
-          │                  │         │ (.agents/skills) │        │                  │
-          └──────────────────┘         └──────────────────┘        └──────────────────┘
+Essentials/
+├── skills/                      # Canonical, ready-to-copy skills library (82 skills)
+│   ├── threejs/                 # 24 3D WebGL, shaders, performance & WebGPU skills
+│   ├── engineering/             # 25 engineering, planning, debugging, security & code-review skills
+│   ├── design/                  # 14 UI/UX, typography, design systems & motion skills
+│   ├── robotics-ml/             # 7 computer vision, edge AI, dataset, ROS 2 & embedded skills
+│   ├── python/                  # 5 modern Python typing, testing & packaging skills
+│   ├── audio/                   # 1 browser audio & Web Audio API skill
+│   ├── product/                 # 2 product strategy & UI design system skills
+│   └── testing/                 # 4 visual regression, web app testing, E2E generation & coverage audit skills
+├── configs/                     # Portable developer configs (Bash, Zsh, Git, EditorConfig)
+├── templates/                   # Production-ready starter templates (Python, Web, Dashboards)
+├── docs/                        # Architecture, compatibility, profiles, and audits
+├── resources/                   # Integrity catalog (resources.json) & research
+├── scripts/                     # Lightweight companion CLI (essentials)
+├── tests/                       # Automated validation & unit test suite
+├── README.md                    # Quickstart & copy-paste instructions
+├── CONTRIBUTING.md              # Skill authoring & verification guide
+├── SECURITY.md                  # Security policies & held resource audits
+└── LICENSE                      # MIT License
 ```
 
-### The Problem with Fragmented Agent Formats
-Different AI coding assistants expect instructions in different directory layouts and metadata formats:
-- **Claude Code**: Looks inside `.claude/skills/<skill-id>/SKILL.md` (or `~/.claude/skills/`).
-- **OpenAI Codex & Standard Agent Skills**: Look inside `.agents/skills/<skill-id>/SKILL.md` or `.codex/skills/`.
-- **Gemini CLI / Antigravity**: Discovers skills directly in `.agents/skills/<skill-id>/SKILL.md`.
-- **Cursor**: Evaluates MDC rule files in `.cursor/rules/<skill-id>.mdc` with frontmatter `globs`, `description`, `alwaysApply`.
-- **Windsurf**: Reads markdown rules in `.windsurf/rules/<skill-id>.md` or `.windsurfrules`.
-- **GitHub Copilot**: Reads instructions from `.github/copilot-instructions.md` or prompt files.
+---
 
-### The Essentials Solution: Canonical Source + Adapters
-Instead of manually copy-pasting or maintaining 5 diverging copies of every skill, Essentials stores **one canonical representation** of each skill (conforming to the Agent Skills standard with YAML frontmatter `name` and `description`). 
+## 2. Universal Agent Skills Standard
 
-When an installation target is selected:
-1. For directory-compatible agents (**Claude Code**, **Gemini CLI**, **Codex**), Essentials links or copies the canonical directory into the agent's expected path.
-2. For format-differentiated agents (**Cursor**, **Windsurf**, **Copilot**), Essentials adapters generate the exact wrapper needed (e.g., adding Cursor MDC frontmatter: `globs: *`, `alwaysApply: false`).
-3. Every operation is recorded in a project-local ledger (`.essentials-ledger.json` or `.resources-library.json`), enabling deterministic, collision-free uninstalls.
+All skills in Essentials adhere strictly to the open **Agent Skills** specification:
+
+```text
+skills/<category>/<skill-id>/
+├── SKILL.md                 # Primary instruction guide with YAML frontmatter
+└── (supporting assets)      # Optional references, templates, recipes, checklists
+```
+
+### Format Specification
+Each `SKILL.md` starts with standard YAML frontmatter:
+```markdown
+---
+name: code-review
+description: "Comprehensive code review guidelines for spotting architectural flaws, performance bottlenecks, and security vulnerabilities."
+---
+
+# Code Review Guidelines
+...
+```
+
+### Discovery Paths across Modern Agents
+Modern AI coding assistants recognize this standard out of the box:
+
+| AI Coding Agent | Global / Personal Discovery Path | Project-Local Discovery Path |
+|---|---|---|
+| **OpenCode** | `~/.agents/skills/<skill-id>/` | `<project>/.agents/skills/<skill-id>/` |
+| **VS Code Copilot** | `~/.agents/skills/<skill-id>/` | `<project>/.agents/skills/<skill-id>/` |
+| **Gemini CLI / Antigravity** | `~/.agents/skills/<skill-id>/` | `<project>/.agents/skills/<skill-id>/` |
+| **OpenAI Codex** | `~/.agents/skills/<skill-id>/` | `<project>/.agents/skills/<skill-id>/` |
+| **Claude Code** | `~/.claude/skills/<skill-id>/` | `<project>/.claude/skills/<skill-id>/` |
+| **Cursor / Windsurf** | `~/.agents/skills/<skill-id>/` | `<project>/.agents/skills/<skill-id>/` |
+
+Because `~/.agents/skills/` is the emerging universal standard, copying skills there makes them immediately available across OpenCode, GitHub Copilot, Gemini CLI, OpenAI Codex, and others. For Claude Code, users can either copy directly to `~/.claude/skills/` or create a one-time directory link:
+```bash
+ln -s ~/.agents/skills ~/.claude/skills
+```
 
 ---
 
-## 2. Manifest & Verification Model
+## 3. Companion CLI Architecture (`./scripts/essentials`)
 
-All resources in Essentials are cataloged in `resources/resources.json`.
-The manifest tracks:
-- **Canonical ID**: Unique identifier across the entire system.
-- **Category & Kind**: e.g., `threejs`, `motion`, `design`, `frontend`.
-- **Status**: `vendored`, `held`, `not-vendored`, `app-dependency`.
-- **Upstream Source**: Repository URL, pinned commit hash, and commit date.
-- **License**: SPDX license identifier (e.g. `MIT`, `Apache-2.0`).
-- **Security Review**: Review status (`static-reviewed`, `needs-review`), review date, audit notes.
-- **Integrity Hashes**: SHA-256 hash of `SKILL.md` and whole-directory tree hash.
-- **Agent Compatibility**: Supported agents and discovery paths.
-- **Default Profile Safety**: Boolean indicating whether the skill is safe for unprompted default installation.
+To assist developers without imposing any mandatory runtime dependencies or modifying files unexpectedly, Essentials includes a zero-dependency Python standard library companion CLI:
 
-### Forbidden Artifacts Policy
-To prevent supply-chain poisoning, the validator enforces that no vendored resource may include:
-- `settings.json` or `settings.local.json`
-- `hooks.json` (arbitrary command execution hooks)
-- `.mcp.json` (unreviewed MCP server declarations)
-- `plugin.json`
-- Symlinks pointing outside the vendored directory
+```bash
+./scripts/essentials list             # Browse all 82 skills across 8 categories and profiles
+./scripts/essentials search <query>    # Search skills by keyword, category, or triggers
+./scripts/essentials inspect <id>      # View skill details, frontmatter, paths, and copy command
+./scripts/essentials inspect <profile> # View all skills and copy command for a curated profile
+./scripts/essentials validate          # Run static verification checks on the entire library
+```
+
+### Design Invariants
+1. **Zero Pip Dependencies**: Runs immediately with standard `python3` on any modern OS.
+2. **Read-Only Inspection**: `list`, `search`, and `inspect` never alter your files, home directory, or git status.
+3. **Copy-Command Generation**: `inspect` outputs the exact `cp -r` command so you stay in total control.
+4. **No Installation Ledgers**: Because skills are plain folders copied by the user, there is no fragile state machine or ledger to corrupt.
 
 ---
 
-## 3. Installation Ledger Mechanics
+## 4. Integrity, Cataloging & Security Model
 
-When Essentials installs skills into a project:
-1. **Safety Check**: Checks if the target path already exists. If an unmanaged file or directory is present, the transaction aborts with a clear conflict report before modifying anything.
-2. **Ledger Record**: Writes metadata to `<project>/.essentials-ledger.json` (or `.claude/.resources-library.json` for Claude Code):
-   ```json
-   {
-     "agent": "cursor",
-     "mode": "copy",
-     "source": "/path/to/resources/skills/...",
-     "sha256": "6723003681...",
-     "installedAt": "2026-10-20T00:00:00Z"
-   }
-   ```
-3. **Safe Uninstall**: When uninstalling, Essentials verifies that:
-   - For symlinks: the symlink still points to the Essentials source.
-   - For copies: the file contents have not been modified by the developer since installation.
-   - If a developer edited an installed skill, **Essentials refuses to delete it**, protecting user work.
+Even though skills are just folders for the end user, Essentials enforces strict repository engineering standards to protect against supply-chain vulnerabilities:
 
+### Authoritative Manifest (`resources/resources.json`)
+The catalog tracks every skill's provenance:
+- **Canonical ID & Category**: Unique skill name and functional category.
+- **Relative Path**: Location within `skills/<category>/<skill-id>`.
+- **Upstream Source**: Git URL, pinned commit hash, and commit date.
+- **License**: SPDX license identifier (MIT, Apache-2.0).
+- **Security Review Status**: `static-reviewed` classification confirming pure markdown guidance with zero background execution.
+- **Cryptographic SHA-256**: Hash of every `SKILL.md` to detect accidental drift or tampering.
+
+### Forbidden Artifacts Enforcement
+`./scripts/essentials validate` and `tests/test_catalog.py` enforce strict security hygiene:
+- No hidden execution hooks: `hooks.json`, `settings.json`, `settings.local.json`.
+- No unreviewed MCP server configurations: `.mcp.json`.
+- No extraneous `.claude-plugin/` or binary executables.
+- Valid YAML frontmatter with non-empty `name` and `description` on every skill.
+- 100% unique skill names across all categories.
+
+---
+
+## 5. Non-Skill Capabilities in the Toolkit
+
+Essentials is an all-in-one developer toolkit, not just a skills directory:
+
+- **Developer Configurations (`configs/`)**: Battle-tested shell dotfiles for Bash, Zsh, Git aliases, and `.editorconfig`.
+- **Starter Templates (`templates/`)**: Production-ready scaffolding for Python applications, creative WebGL projects, and data dashboards.
+- **Documentation (`docs/`)**: In-depth agent compatibility matrix, profile guides, and upstream maintenance logs.
+- **Automated CI (`.github/workflows/test.yml`)**: Continuous integration testing verifying skill structure, manifest integrity, and CLI commands.

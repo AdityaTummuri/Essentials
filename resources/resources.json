@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updated": "2026-10-19",
+  "updated": "2026-10-20",
   "description": "Central library of Claude Code skills, mods, and catalogues. Installable entries are vendored copies with pinned sources.",
   "categories": {
     "design": "Visual design systems, UI/UX rules, DESIGN.md authoring",
@@ -9,7 +9,11 @@
     "threejs": "Three.js, WebGL, and 3D scene engineering",
     "mods": "Claude Code mods (behavior and UI changes). Review before enabling.",
     "catalogues": "Discovery lists and non-skill dependencies. Not installable.",
-    "engineering": "Software craftsmanship: code review, testing, API design, and Git hygiene"
+    "engineering": "Software craftsmanship: code review, testing, API design, and Git hygiene",
+    "robotics-ml": "Robotics, computer vision, dataset curation, and edge neural inference",
+    "audio": "Web Audio API, spatial soundscapes, and reactive audio visualizers",
+    "testing": "Automated visual regression, snapshot testing, and quality engineering",
+    "product": "Product leadership, OKR cascades, design systems, and UX specifications"
   },
   "presets": {
     "portfolio": {
@@ -44,7 +48,8 @@
         "animation-performance",
         "review-animations",
         "design-motion-principles",
-        "apple-design"
+        "apple-design",
+        "browser-audio"
       ]
     },
     "dashboard": {
@@ -59,19 +64,48 @@
       ]
     },
     "python-dev": {
-      "description": "Modern Python development: code review, automated testing, and Git hygiene.",
+      "description": "Modern Python development: code review, TDD, Git hygiene, API design, and security audit.",
       "skills": [
         "code-review",
         "test-driven-development",
-        "git-hygiene"
+        "git-hygiene",
+        "api-design",
+        "security-audit"
       ]
     },
     "engineering": {
-      "description": "Core software engineering suite: code review, TDD, and Git hygiene.",
+      "description": "Core software engineering suite: code review, TDD, Git hygiene, API design, security, and CI/CD.",
       "skills": [
         "code-review",
         "test-driven-development",
-        "git-hygiene"
+        "git-hygiene",
+        "api-design",
+        "security-audit",
+        "ci-cd-workflow"
+      ]
+    },
+    "robotics-ml": {
+      "description": "Robotics, computer vision, model evaluation, and edge inference optimization.",
+      "skills": [
+        "computer-vision",
+        "model-evaluation",
+        "dataset-curation",
+        "edge-inference"
+      ]
+    },
+    "full-stack": {
+      "description": "Comprehensive full-stack engineering, design systems, visual testing, and architecture.",
+      "skills": [
+        "code-review",
+        "test-driven-development",
+        "git-hygiene",
+        "api-design",
+        "security-audit",
+        "frontend-design",
+        "ui-ux-pro-max",
+        "design-md",
+        "visual-regression",
+        "ci-cd-workflow"
       ]
     }
   },
@@ -83,7 +117,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-scene",
+      "path": "skills/threejs/threejs-scene",
       "description": "Build or correct Three.js scene hierarchies, camera framing, coordinate transforms, and responsive renderer lifecycles.",
       "useCases": "Scene hierarchy, camera framing, coordinate conventions",
       "source": {
@@ -123,7 +157,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-materials",
+      "path": "skills/threejs/threejs-materials",
       "description": "Implement Three.js PBR materials, texture mapping, transparency, and color-management fixes.",
       "useCases": "PBR materials, texture mapping, transparency, color-management fixes",
       "source": {
@@ -163,7 +197,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-lighting",
+      "path": "skills/threejs/threejs-lighting",
       "description": "Light Three.js scenes using environment maps, direct lights, baked light, and tuned shadow maps.",
       "useCases": "Environment maps, direct lights, baked lighting",
       "source": {
@@ -203,7 +237,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-shaders",
+      "path": "skills/threejs/threejs-shaders",
       "description": "Write and debug Three.js GLSL shaders, custom material effects, uniforms, and shader deformation.",
       "useCases": "Custom GLSL shaders, uniforms, material effects",
       "source": {
@@ -243,7 +277,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-postprocessing",
+      "path": "skills/threejs/threejs-postprocessing",
       "description": "Add or debug Three.js bloom, antialiasing, ambient occlusion, depth effects, and render-target composition.",
       "useCases": "Bloom, antialiasing, ambient occlusion, depth effects",
       "source": {
@@ -283,7 +317,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-animation",
+      "path": "skills/threejs/threejs-animation",
       "description": "Implement Three.js animation clips, skeletal animation, transitions, scroll timelines, and frame-independent motion.",
       "useCases": "Animation clips, skeletal animation, transitions",
       "source": {
@@ -323,7 +357,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-geometry",
+      "path": "skills/threejs/threejs-geometry",
       "description": "Create or optimize Three.js BufferGeometry, procedural meshes, instanced objects, and geometry attributes.",
       "useCases": "BufferGeometry, procedural meshes, instancing",
       "source": {
@@ -363,7 +397,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-particles",
+      "path": "skills/threejs/threejs-particles",
       "description": "Build Three.js particle systems, point clouds, large repeated datasets, and CPU or GPU simulations.",
       "useCases": "Particle systems, point clouds, large repeated datasets",
       "source": {
@@ -403,7 +437,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-audio",
+      "path": "skills/threejs/threejs-audio",
       "description": "Add Three.js spatial audio, user-controlled playback, listener movement, and audio lifecycle handling.",
       "useCases": "Spatial audio with user-controlled playback",
       "source": {
@@ -443,7 +477,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-interaction",
+      "path": "skills/threejs/threejs-interaction",
       "description": "Implement Three.js pointer picking, orbit controls, object dragging, selection, and synchronized HTML controls.",
       "useCases": "Pointer picking, orbit controls, dragging",
       "source": {
@@ -483,7 +517,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-performance",
+      "path": "skills/threejs/threejs-performance",
       "description": "Profile and optimize Three.js frame time, GPU workload, asset memory, and resource leaks.",
       "useCases": "Frame time, GPU workload, memory profiling and optimization",
       "source": {
@@ -523,7 +557,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-accessibility",
+      "path": "skills/threejs/threejs-accessibility",
       "description": "Make Three.js interactions usable with keyboards, assistive technology, reduced motion, and non-3D fallbacks.",
       "useCases": "Keyboard and assistive-technology access to 3D interactions",
       "source": {
@@ -563,7 +597,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-html",
+      "path": "skills/threejs/threejs-html",
       "description": "Integrate Three.js with responsive HTML, Next.js or other frameworks, scroll sections, overlays, and multiple views.",
       "useCases": "Responsive HTML and framework integration",
       "source": {
@@ -603,7 +637,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-r3f",
+      "path": "skills/threejs/threejs-r3f",
       "description": "Build or fix React Three Fiber scenes, Drei helpers, Suspense loading, events, and React lifecycle integration.",
       "useCases": "React Three Fiber scenes, Drei helpers, Suspense loading",
       "source": {
@@ -643,7 +677,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-web",
+      "path": "skills/threejs/threejs-web",
       "description": "Plan and implement complete Three.js web experiences, or select focused skills for an existing 3D feature.",
       "useCases": "Planning complete Three.js web experiences",
       "source": {
@@ -683,7 +717,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-product-viewer",
+      "path": "skills/threejs/threejs-product-viewer",
       "description": "Build Three.js product viewers with material variants, camera presets, hotspots, configuration state, and image export.",
       "useCases": "Product viewers with material variants and camera presets",
       "source": {
@@ -723,7 +757,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-assets",
+      "path": "skills/threejs/threejs-assets",
       "description": "Load, validate, compress, cache, and release glTF models, textures, decoder assets, and user-supplied 3D files.",
       "useCases": "Loading, validating and compressing glTF models and textures",
       "source": {
@@ -763,7 +797,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-debugging",
+      "path": "skills/threejs/threejs-debugging",
       "description": "Diagnose Three.js black canvases, missing meshes, wrong colors, flicker, picking bugs, and context loss.",
       "useCases": "Black canvases, missing meshes, wrong colors, flicker",
       "source": {
@@ -803,7 +837,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-testing",
+      "path": "skills/threejs/threejs-testing",
       "description": "Test Three.js features with browser checks, deterministic visual fixtures, lifecycle tests, and device-specific evidence.",
       "useCases": "Browser checks and deterministic visual fixtures",
       "source": {
@@ -843,7 +877,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-deployment",
+      "path": "skills/threejs/threejs-deployment",
       "description": "Prepare and verify Three.js web builds, asset hosting, decoder paths, caching, and deployment compatibility.",
       "useCases": "Web build preparation, asset hosting, decoder paths",
       "source": {
@@ -883,7 +917,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-webgpu",
+      "path": "skills/threejs/threejs-webgpu",
       "description": "Build or migrate Three.js WebGPURenderer, TSL node materials, and GPU compute features.",
       "useCases": "WebGPURenderer and TSL node materials",
       "source": {
@@ -923,7 +957,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-physics",
+      "path": "skills/threejs/threejs-physics",
       "description": "Integrate Rapier or another physics engine with Three.js, including colliders, fixed timesteps, and render synchronization.",
       "useCases": "Rapier physics integration",
       "source": {
@@ -963,7 +997,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-xr",
+      "path": "skills/threejs/threejs-xr",
       "description": "Implement Three.js VR or AR sessions, XR input, reference spaces, hit testing, and session lifecycle.",
       "useCases": "VR and AR sessions and XR input",
       "source": {
@@ -1003,7 +1037,7 @@
       "installable": true,
       "category": "threejs",
       "collection": "threejs/cesartevisual-threejs-skills",
-      "path": "skills/threejs/cesartevisual-threejs-skills/threejs-spatial-data",
+      "path": "skills/threejs/threejs-spatial-data",
       "description": "Integrate Three.js BIM/IFC, GIS, CAD, measurements, clipping, and large-coordinate datasets.",
       "useCases": "BIM/IFC, GIS and CAD data, measurements, clipping",
       "source": {
@@ -1041,9 +1075,9 @@
       "kind": "skill",
       "status": "vendored",
       "installable": true,
-      "category": "motion",
+      "category": "design",
       "collection": "motion/emil-design-eng",
-      "path": "skills/motion/emil-design-eng/apple-design",
+      "path": "skills/design/apple-design",
       "description": "Apple's approach to interface design and fluid, physical motion, translated for the web. Use when building or reviewing gesture-driven UI, spring animations, drag/swipe/sheet interactions, momentum and interruptible transitions, translucent materials and depth, typography (optical sizing, tracking, leading), reduced-motion, or the design foundations (feedback, spatial consistency, restraint) behind Apple-style interfaces.",
       "useCases": "Apple-style interface design and fluid physical motion",
       "source": {
@@ -1081,9 +1115,9 @@
       "kind": "skill",
       "status": "vendored",
       "installable": true,
-      "category": "motion",
+      "category": "design",
       "collection": "motion/emil-design-eng",
-      "path": "skills/motion/emil-design-eng/emil-design-eng",
+      "path": "skills/design/emil-design-eng",
       "description": "This skill encodes Emil Kowalski's philosophy on UI polish, component design, animation decisions, and the invisible details that make software feel great.",
       "useCases": "UI polish and component craft (Emil Kowalski's approach)",
       "source": {
@@ -1121,9 +1155,9 @@
       "kind": "skill",
       "status": "vendored",
       "installable": true,
-      "category": "motion",
+      "category": "design",
       "collection": "motion/emil-design-eng",
-      "path": "skills/motion/emil-design-eng/animate",
+      "path": "skills/design/animate",
       "description": "Build an animation from scratch, making the decisions in the order that determines whether it feels right \u2014 should it animate at all, what purpose, which tool, which properties, which curve and duration, how it interrupts, how it exits. Writes the implementation. Use when asked to animate something, add motion, make a component feel alive, or build a transition. For critiquing existing motion use review-animations; for auditing a whole codebase use improve-animations.",
       "useCases": "Building an animation from scratch in a decision order",
       "source": {
@@ -1161,9 +1195,9 @@
       "kind": "skill",
       "status": "vendored",
       "installable": true,
-      "category": "motion",
+      "category": "design",
       "collection": "motion/emil-design-eng",
-      "path": "skills/motion/emil-design-eng/animation-vocabulary",
+      "path": "skills/design/animation-vocabulary",
       "description": "Reverse-lookup glossary that turns a vague description of a web animation or motion effect into its exact term (\"the bouncy thing when a popover opens\" \u2192 Pop in; \"the iOS rubber-band scroll\" \u2192 Rubber-banding). Use when the user asks \"what's it called when\u2026\", or describes a motion effect without knowing its name and wants the right word to prompt an AI or designer with. For naming an effect, not designing or building one.",
       "useCases": "Turning vague animation descriptions into precise terms",
       "source": {
@@ -1201,9 +1235,9 @@
       "kind": "skill",
       "status": "vendored",
       "installable": true,
-      "category": "motion",
+      "category": "design",
       "collection": "motion/emil-design-eng",
-      "path": "skills/motion/emil-design-eng/animation-performance",
+      "path": "skills/design/animation-performance",
       "description": "Keep web animations inside the frame budget \u2014 animate composite-only properties, keep motion off the main thread when the page is busy, and find the cause when an animation drops frames. Covers the layout/paint/composite pipeline, cheaper property swaps, CSS vs WAAPI vs requestAnimationFrame, Framer Motion's hardware-accelerated path, React re-rendering per frame, inherited CSS variable recalculation, blur cost, and when `will-change` actually helps. Use when an animation is janky, choppy, stutters, or drops frames; when choosing which property to animate; when deciding between CSS and JS animation on performance grounds; or when reaching for `will-change` or GPU layers. For choosing easing, duration, or whether to animate at all use animate; for reviewing motion as a whole use review-animations.",
       "useCases": "Keeping animations inside the frame budget (composite-only props)",
       "source": {
@@ -1241,9 +1275,9 @@
       "kind": "skill",
       "status": "vendored",
       "installable": true,
-      "category": "motion",
+      "category": "design",
       "collection": "motion/emil-design-eng",
-      "path": "skills/motion/emil-design-eng/review-animations",
+      "path": "skills/design/review-animations",
       "description": "Reviews animation and motion code against a high craft bar derived from Emil Kowalski's design engineering philosophy. Default to flagging; approval is earned.",
       "useCases": "Reviewing animation code against a craft bar",
       "source": {
@@ -1281,9 +1315,9 @@
       "kind": "skill",
       "status": "vendored",
       "installable": true,
-      "category": "motion",
+      "category": "design",
       "collection": "motion/emil-design-eng",
-      "path": "skills/motion/emil-design-eng/find-animation-opportunities",
+      "path": "skills/design/find-animation-opportunities",
       "description": "Search a codebase or UI for places that don't animate but should, and reject everything that shouldn't. Read-only; it proposes motion with exact values, it does not implement it. Use when the user asks \"what could be animated here?\" or wants to \"make this feel more alive\". For fixing existing animations, use improve-animations or review-animations instead.",
       "useCases": "Finding static UI that should animate",
       "source": {
@@ -1321,9 +1355,9 @@
       "kind": "skill",
       "status": "vendored",
       "installable": true,
-      "category": "motion",
+      "category": "design",
       "collection": "motion/emil-design-eng",
-      "path": "skills/motion/emil-design-eng/improve-animations",
+      "path": "skills/design/improve-animations",
       "description": "Survey a codebase's animation and motion code as a senior motion advisor, then produce a prioritized audit and self-contained implementation plans for other agents (or cheaper models) to execute. Read-only on source code \u2014 it plans improvements, it does not apply them. Use when the user asks to \"improve the animations\", \"audit the motion\", \"make this app feel better\", or wants a roadmap of animation fixes rather than a review of a single diff.",
       "useCases": "Auditing a codebase's motion system and planning fixes",
       "source": {
@@ -1361,9 +1395,9 @@
       "kind": "skill",
       "status": "vendored",
       "installable": true,
-      "category": "motion",
+      "category": "design",
       "collection": "motion/design-motion-principles",
-      "path": "skills/motion/design-motion-principles",
+      "path": "skills/design/design-motion-principles",
       "description": "Motion and interaction design expert based on Emil Kowalski, Jakub Krehel, and Jhey Tompkins' techniques. Two modes \u2014 build interactive components with purposeful motion, or audit existing animations to catch AI-slop motion patterns (audit emits a branded HTML report with looping demos). Use when creating, adding, animating, or reviewing UI motion: transitions, hover states, micro-interactions, enter/exit animations, or any motion design work in React, Framer Motion, CSS, or HTML. Provides per-designer perspectives with context-aware weighting.",
       "useCases": "Motion and interaction design guidance with reference workflows",
       "source": {
@@ -1403,7 +1437,7 @@
       "installable": true,
       "category": "design",
       "collection": "design/ui-ux-pro-max",
-      "path": "skills/design/ui-ux-pro-max/ui-ux-pro-max",
+      "path": "skills/design/ui-ux-pro-max",
       "description": "UI/UX design intelligence for web, mobile, and desktop. This skill should be used when designing, building, reviewing, or fixing interfaces, including pages, components, design systems, accessibility, interaction, responsive layout, typography, color, charts, and stack-specific UI implementation. Searchable local data: 79 searchable styles (50 active), 192 product palettes and reasoning profiles, 74 font pairings, 119 UX guidelines, 105 icons, 17 GSAP presets, 25 chart types, and 22 stacks.",
       "useCases": "Searchable UI/UX rules, palettes, typography and style data",
       "source": {
@@ -1420,8 +1454,8 @@
       "dependencies": [],
       "securityReview": {
         "status": "static-reviewed",
-        "date": "2026-10-19",
-        "notes": "Includes helper scripts; static scan found no network or exec calls. Scripts are not run by the installer."
+        "date": "2026-10-20",
+        "notes": "Audited 2026-10-20. All scripts use only the Python standard library. No network, subprocess, or credential access. Writes only with --persist, to a user-specified output directory, via a temporary file and atomic replace. SKILL.md examples reference ${CLAUDE_PLUGIN_ROOT}, which is not set for personal installs."
       },
       "skillMd": {
         "sha256": "ea087c341bfb5b23195c7302027268ede86da802554c18a5c4896a6017b439f9"
@@ -1443,7 +1477,7 @@
       "installable": true,
       "category": "design",
       "collection": "design/ui-ux-pro-max",
-      "path": "skills/design/ui-ux-pro-max/design",
+      "path": "skills/design/design",
       "description": "Comprehensive design skill: brand identity, design tokens, UI styling, logo generation (55 styles, Gemini, Atlas Cloud, or MuAPI AI), corporate identity program (50 deliverables, CIP mockups), HTML presentations (Chart.js), banner design (22 styles, social/ads/web/print), icon design (15 styles, SVG, Gemini 3.1 Pro), social photos (HTML\u2192screenshot, multi-platform). Actions: design logo, create CIP, generate mockups, build slides, design banner, generate icon, create social photos, social media images, brand identity, design system. Platforms: Facebook, Twitter, LinkedIn, YouTube, Instagram, Pinterest, TikTok, Threads, Google Ads.",
       "useCases": "Design-generation workflow with references",
       "source": {
@@ -1460,8 +1494,8 @@
       "dependencies": [],
       "securityReview": {
         "status": "static-reviewed",
-        "date": "2026-10-19",
-        "notes": "Includes helper scripts; static scan found no network or exec calls. Scripts are not run by the installer."
+        "date": "2026-10-20",
+        "notes": "Audited 2026-10-20. Logo, icon and CIP generators call external image APIs (Google Gemini, AtlasCloud, MuAPI) with keys from the environment, load .env files from the skill folder, the parent folder, ~/.claude/skills/ and ~/.claude/, and write downloaded images to disk. SKILL.md documents running them. Not safe by default. Held-resource policy in SECURITY.md would exclude these generators."
       },
       "skillMd": {
         "sha256": "e93fe3683b7fa18a9bfcd00c0dc6e12c6859be07b7bfe20145f96ea49b72da13"
@@ -1474,7 +1508,7 @@
         "windsurf",
         "copilot"
       ],
-      "safeForDefault": true
+      "safeForDefault": false
     },
     {
       "id": "design-md",
@@ -1521,9 +1555,9 @@
       "kind": "skill",
       "status": "vendored",
       "installable": true,
-      "category": "frontend",
+      "category": "design",
       "collection": "frontend/frontend-design",
-      "path": "skills/frontend/frontend-design",
+      "path": "skills/design/frontend-design",
       "description": "Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one. Helps with aesthetic direction, typography, and making choices that don't read as templated defaults.",
       "useCases": "Distinctive, production-grade frontend aesthetics that avoid generic AI-looking UI",
       "source": {
@@ -1919,7 +1953,7 @@
       "installable": true,
       "category": "engineering",
       "collection": "engineering/universal-dev-skills",
-      "path": "skills/engineering/universal-dev-skills/code-review",
+      "path": "skills/engineering/code-review",
       "description": "Perform structured, rigorous code reviews focusing on correctness, edge cases, error handling, security, performance, and architecture.",
       "useCases": "Code review, pull request audits, correctness and security checks",
       "source": {
@@ -1940,7 +1974,7 @@
         "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
       },
       "skillMd": {
-        "sha256": "d941c9f60405733aedade5f44b093f4c19f9ddbddc9d949b8e4c4ec952cff2e8"
+        "sha256": "7abb31746000583966dca971d3574375ce0c0283dc8404881ac6c1e8805172a3"
       },
       "supportedAgents": [
         "claude-code",
@@ -1959,7 +1993,7 @@
       "installable": true,
       "category": "engineering",
       "collection": "engineering/universal-dev-skills",
-      "path": "skills/engineering/universal-dev-skills/test-driven-development",
+      "path": "skills/engineering/test-driven-development",
       "description": "Design and implement comprehensive automated test suites following Red-Green-Refactor, boundary testing, and regression prevention.",
       "useCases": "Unit testing, TDD methodology, test automation, regression testing",
       "source": {
@@ -1980,7 +2014,7 @@
         "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
       },
       "skillMd": {
-        "sha256": "eae05e7576bc906a75c9dacb5abc256bbb806f89225107c5cd254286c1827e5f"
+        "sha256": "0e759b01983e16f2ab985e3cfbc49c016ab17ae198dd2426747d32ea04620fe6"
       },
       "supportedAgents": [
         "claude-code",
@@ -1999,7 +2033,7 @@
       "installable": true,
       "category": "engineering",
       "collection": "engineering/universal-dev-skills",
-      "path": "skills/engineering/universal-dev-skills/git-hygiene",
+      "path": "skills/engineering/git-hygiene",
       "description": "Maintain clean, atomic, conventional commit histories, branch workflows, and safe conflict resolution strategies.",
       "useCases": "Git branching, atomic conventional commits, rebase workflows, repo maintenance",
       "source": {
@@ -2020,7 +2054,7 @@
         "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
       },
       "skillMd": {
-        "sha256": "999ba4a6ae075d9702de307263e23bc5e36a087ebbe8a6989a2488d4ab7f3be8"
+        "sha256": "0c47d9967b4259907188f951581e8715fe5afe4425c7d177bfbfa825fd27b20b"
       },
       "supportedAgents": [
         "claude-code",
@@ -2031,6 +2065,1585 @@
         "copilot"
       ],
       "safeForDefault": true
+    },
+    {
+      "id": "computer-vision",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "robotics-ml",
+      "collection": "robotics-ml/robotics-ml-toolkit",
+      "path": "skills/robotics-ml/computer-vision",
+      "description": "Architect and implement real-time computer vision pipelines, camera calibration, feature extraction, object detection, and optical flow.",
+      "useCases": "Computer vision, OpenCV, camera calibration, object detection, optical flow, PyTorch vision",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "resources/skills/robotics-ml/robotics-ml-toolkit/computer-vision"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
+      },
+      "skillMd": {
+        "sha256": "64a2a09eec2f012e20db0ef3e39daf08145ea0cfc007592e82eb6bc61d38744a"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "model-evaluation",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "robotics-ml",
+      "collection": "robotics-ml/robotics-ml-toolkit",
+      "path": "skills/robotics-ml/model-evaluation",
+      "description": "Rigorously evaluate ML models across classification, regression, and detection metrics, preventing data leakage and benchmarking inference latency.",
+      "useCases": "Machine learning validation, PR-AUC, metrics, data leakage prevention, latency benchmarking",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "resources/skills/robotics-ml/robotics-ml-toolkit/model-evaluation"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
+      },
+      "skillMd": {
+        "sha256": "8719807465c881ae52b0d238d7063666e0cdaa24aa816240c770de7052614a60"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "dataset-curation",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "robotics-ml",
+      "collection": "robotics-ml/robotics-ml-toolkit",
+      "path": "skills/robotics-ml/dataset-curation",
+      "description": "Curate, validate, and version datasets for machine learning and robotics, mitigating class imbalance, labeling drift, and schema violations.",
+      "useCases": "Dataset preparation, data validation, schema enforcement, class imbalance, DVC versioning",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "resources/skills/robotics-ml/robotics-ml-toolkit/dataset-curation"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
+      },
+      "skillMd": {
+        "sha256": "6523369ac2071d8c7d1042ab11a99613fffa0c1c777493db97fa3003b714aae4"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "edge-inference",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "robotics-ml",
+      "collection": "robotics-ml/robotics-ml-toolkit",
+      "path": "skills/robotics-ml/edge-inference",
+      "description": "Optimize and deploy deep learning models for edge devices and robotics using ONNX Runtime, TensorRT, INT8 quantization, and hardware acceleration.",
+      "useCases": "Edge AI, ONNX Runtime, TensorRT, INT8 quantization, Jetson embedded deployment",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "resources/skills/robotics-ml/robotics-ml-toolkit/edge-inference"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
+      },
+      "skillMd": {
+        "sha256": "c7621c4f44db780d24409c2c4015e532b03af265e8e153af69e4b74d8e50ab3a"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "browser-audio",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "audio",
+      "collection": "audio/web-audio-toolkit",
+      "path": "skills/audio/browser-audio",
+      "description": "Implement interactive Web Audio API soundscapes, spatial 3D audio, user-gesture unlock lifecycles, and audio-reactive WebGL shader visualizers.",
+      "useCases": "Web Audio API, spatial audio, sound effects, audio visualizers, AudioContext lifecycle",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "resources/skills/audio/web-audio-toolkit/browser-audio"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
+      },
+      "skillMd": {
+        "sha256": "c094b2079262a598082b499419d3702da80f0c6a41d052970fa39dfb6b61fc13"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "visual-regression",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "testing",
+      "collection": "testing/visual-testing-toolkit",
+      "path": "skills/testing/visual-regression",
+      "description": "Implement automated visual regression testing, pixel-diffing thresholds, headless browser consistency, and screenshot snapshot baselines.",
+      "useCases": "Visual testing, snapshot testing, Playwright, pixelmatch, UI regression prevention",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "resources/skills/testing/visual-testing-toolkit/visual-regression"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
+      },
+      "skillMd": {
+        "sha256": "7af652b801e2f5196d31d469bc3f46a9606cb716b52fc57dbeb9dd21b6c034f4"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "api-design",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering/universal-dev-skills",
+      "path": "skills/engineering/api-design",
+      "description": "Design clean, scalable, backward-compatible APIs following RESTful/RPC standards, idempotency keys, pagination, and error schemas.",
+      "useCases": "REST API design, idempotency keys, cursor pagination, error formatting, schema design",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "resources/skills/engineering/universal-dev-skills/api-design"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
+      },
+      "skillMd": {
+        "sha256": "471ac8eaa4855346495c4105a2c5b03fc10c82a0154027a17205ef4038f49984"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "security-audit",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering/universal-dev-skills",
+      "path": "skills/engineering/security-audit",
+      "description": "Audit codebases for OWASP Top 10 vulnerabilities, supply-chain risks, insecure deserialization, secret leakage, and permission flaws.",
+      "useCases": "Security review, vulnerability audits, OWASP Top 10, dependency auditing, secret scanning",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "resources/skills/engineering/universal-dev-skills/security-audit"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
+      },
+      "skillMd": {
+        "sha256": "e1dbeeb90980ad73798bdce53196a98f51c8e8f4cec525aa962b05583305c6df"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "ci-cd-workflow",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering/universal-dev-skills",
+      "path": "skills/engineering/ci-cd-workflow",
+      "description": "Architect secure, reproducible CI/CD pipelines using GitHub Actions, matrix testing, dependency caching, and least-privilege permissions.",
+      "useCases": "CI/CD workflows, GitHub Actions, matrix testing, artifact caching, pipeline security",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "resources/skills/engineering/universal-dev-skills/ci-cd-workflow"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
+      },
+      "skillMd": {
+        "sha256": "4f17f7d10e7525f0ffc7c3731cab70e39d3db8db45ae1f523e7fc9088b0eac4e"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "product-strategist",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "product",
+      "collection": "product/product-management-toolkit",
+      "path": "skills/product/product-strategist",
+      "description": "Strategic product leadership toolkit for Head of Product covering OKR cascade generation, quarterly planning, competitive landscape analysis, and vision docs.",
+      "useCases": "Product strategy, OKR cascades, product vision documents, quarterly roadmap planning",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "resources/skills/product/product-management-toolkit/product-strategist"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
+      },
+      "skillMd": {
+        "sha256": "35c32740d1082ef76153a74a89091d618478b2099a67cb2aefa3cdfbadd66f85"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "ui-design-system",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "product",
+      "collection": "product/product-management-toolkit",
+      "path": "skills/product/ui-design-system",
+      "description": "UI design system toolkit for Senior UI Designer including design token generation, component documentation, responsive calculations, and developer handoff.",
+      "useCases": "Design systems, design tokens, typography scales, color palettes, developer handoff",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "resources/skills/product/product-management-toolkit/ui-design-system"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "link",
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable scripts, hooks, or network calls."
+      },
+      "skillMd": {
+        "sha256": "e14618d7638c1c98b594bfb71b88899234453796200e144624d83f2505664287"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "pytest-workflow",
+      "name": "pytest-workflow",
+      "kind": "skill",
+      "status": "vendored",
+      "category": "python",
+      "path": "skills/python/pytest-workflow",
+      "installable": true,
+      "safeForDefault": true,
+      "license": "MIT",
+      "description": "Architect, write, and maintain deterministic unit and integration test suites using Pytest.",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local (2026-10-20)",
+        "upstreamPath": "skills/python/pytest-workflow"
+      },
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable code or network calls."
+      },
+      "skillMd": {
+        "sha256": "64cd625940021842c2f3cf8aa079d919a236e08c56b74ce5b6566c86ede1c037"
+      }
+    },
+    {
+      "id": "python-patterns",
+      "name": "python-patterns",
+      "kind": "skill",
+      "status": "vendored",
+      "category": "python",
+      "path": "skills/python/python-patterns",
+      "installable": true,
+      "safeForDefault": true,
+      "license": "MIT",
+      "description": "Idiomatic modern Python design patterns, dataclasses, protocols, and clean architecture conventions.",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local (2026-10-20)",
+        "upstreamPath": "skills/python/python-patterns"
+      },
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable code or network calls."
+      },
+      "skillMd": {
+        "sha256": "100971f7dec85142e91137757938ed65db34a80e4cc4a64fb158fd3076fe1801"
+      }
+    },
+    {
+      "id": "type-hints-modern",
+      "name": "type-hints-modern",
+      "kind": "skill",
+      "status": "vendored",
+      "category": "python",
+      "path": "skills/python/type-hints-modern",
+      "installable": true,
+      "safeForDefault": true,
+      "license": "MIT",
+      "description": "Python 3.10+ static type hinting, TypeAlias, TypeVar, Self, ParamSpec, and static verification.",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local (2026-10-20)",
+        "upstreamPath": "skills/python/type-hints-modern"
+      },
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable code or network calls."
+      },
+      "skillMd": {
+        "sha256": "41c9fb38d83db3b13a2d58ceb6b92853aae147e78e0bbeb58f04fce805a6850c"
+      }
+    },
+    {
+      "id": "asyncio-patterns",
+      "name": "asyncio-patterns",
+      "kind": "skill",
+      "status": "vendored",
+      "category": "python",
+      "path": "skills/python/asyncio-patterns",
+      "installable": true,
+      "safeForDefault": true,
+      "license": "MIT",
+      "description": "Production asynchronous programming with Asyncio, TaskGroups, timeouts, and concurrency throttling.",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local (2026-10-20)",
+        "upstreamPath": "skills/python/asyncio-patterns"
+      },
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable code or network calls."
+      },
+      "skillMd": {
+        "sha256": "e07ab333525972b537ddd22f4c61456cdb1db8870e8ee305442a3d79ccdfda03"
+      }
+    },
+    {
+      "id": "packaging-pyproject",
+      "name": "packaging-pyproject",
+      "kind": "skill",
+      "status": "vendored",
+      "category": "python",
+      "path": "skills/python/packaging-pyproject",
+      "installable": true,
+      "safeForDefault": true,
+      "license": "MIT",
+      "description": "Standards-compliant Python project packaging, build hooks, pyproject.toml, and distribution.",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local (2026-10-20)",
+        "upstreamPath": "skills/python/packaging-pyproject"
+      },
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Pure markdown instructions; no executable code or network calls."
+      },
+      "skillMd": {
+        "sha256": "cdb40aeb3e25eb15e43487571a03ce4c91503c10321d056dc7c5d9c7012dd720"
+      }
+    },
+    {
+      "id": "writing-plans",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/writing-plans",
+      "description": "Turn an approved design into a bite-sized, test-first implementation plan with exact file paths.",
+      "useCases": "Implementation planning, task decomposition",
+      "source": {
+        "repo": "https://github.com/obra/superpowers",
+        "commit": "bb92a77",
+        "commitDate": "2026-10-09",
+        "upstreamPath": "skills/writing-plans"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Markdown only. Upstream: obra/superpowers."
+      },
+      "skillMd": {
+        "sha256": "a6c67c1900064347c2a329990dd3c555657c51c3ec53b259a08aa01a2c26139a"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "verification-before-completion",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/verification-before-completion",
+      "description": "Require fresh verification evidence before claiming work is complete or passing.",
+      "useCases": "Verified completion, pre-commit checks",
+      "source": {
+        "repo": "https://github.com/obra/superpowers",
+        "commit": "bb92a77",
+        "commitDate": "2026-10-09",
+        "upstreamPath": "skills/verification-before-completion"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Markdown only. Upstream: obra/superpowers."
+      },
+      "skillMd": {
+        "sha256": "2befe7fc55bcadaa3d97dd9e8efeb633d2561c0ebe74c5a8b17c4d9e7e4520b3"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "receiving-code-review",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/receiving-code-review",
+      "description": "Evaluate code-review feedback technically before implementing it, without performative agreement.",
+      "useCases": "Handling review comments",
+      "source": {
+        "repo": "https://github.com/obra/superpowers",
+        "commit": "bb92a77",
+        "commitDate": "2026-10-09",
+        "upstreamPath": "skills/receiving-code-review"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Markdown only. Upstream: obra/superpowers."
+      },
+      "skillMd": {
+        "sha256": "091df1629510af1b92fc4abd6f96732ebedb4cb2c0f3457e8f2740b0504a2438"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "requesting-code-review",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/requesting-code-review",
+      "description": "Dispatch a focused code-review pass on a finished change with a precise review brief.",
+      "useCases": "Pre-merge review, review briefs",
+      "source": {
+        "repo": "https://github.com/obra/superpowers",
+        "commit": "bb92a77",
+        "commitDate": "2026-10-09",
+        "upstreamPath": "skills/requesting-code-review"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Markdown and a reviewer prompt template. Upstream: obra/superpowers."
+      },
+      "skillMd": {
+        "sha256": "2180e14a448e9410bec88e6646a2d1f0ce7fdd58de27388c1e052e929679d2bc"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "systematic-debugging",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/systematic-debugging",
+      "description": "Find root cause before fixing: reproduce, trace data flow, test one hypothesis at a time.",
+      "useCases": "Debugging, root-cause analysis, flaky tests",
+      "source": {
+        "repo": "https://github.com/obra/superpowers",
+        "commit": "bb92a77",
+        "commitDate": "2026-10-09",
+        "upstreamPath": "skills/systematic-debugging"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Markdown only. find-polluter.sh and TypeScript example intentionally excluded. Upstream: obra/superpowers."
+      },
+      "skillMd": {
+        "sha256": "51c6435d98c83c42c96ba7c35725a0b2c376cd487fb1a4e6bd0ddbe7e33ef202"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "acquire-codebase-knowledge",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/acquire-codebase-knowledge",
+      "description": "Map an unfamiliar codebase into structured architecture, stack, conventions, and concerns documents.",
+      "useCases": "Codebase onboarding and mapping",
+      "source": {
+        "repo": "https://github.com/github/awesome-copilot",
+        "commit": "613efc8",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "skills/acquire-codebase-knowledge"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Bundled scripts/scan.py runs only read-only git log and rev-parse commands and writes only to a path the user gives. Upstream: github/awesome-copilot."
+      },
+      "skillMd": {
+        "sha256": "a86527533d2ee4df27063af24402b9e1a345c33bba3cf423c96da7cdb3864a60"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": false
+    },
+    {
+      "id": "threat-model-analyst",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/threat-model-analyst",
+      "description": "STRIDE-A threat modelling of repositories and systems with data-flow diagrams and findings.",
+      "useCases": "Threat analysis, security design review",
+      "source": {
+        "repo": "https://github.com/github/awesome-copilot",
+        "commit": "613efc8",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "skills/threat-model-analyst"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Markdown and reference templates only. Upstream: github/awesome-copilot."
+      },
+      "skillMd": {
+        "sha256": "cdd72b75b224b20f006cb31602b0b68d0ea27c22a25c9a6458a2cf0b90a25fb3"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "secret-scanning",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/secret-scanning",
+      "description": "Configure GitHub secret scanning, push protection, custom patterns, and remediation of leaked secrets.",
+      "useCases": "Secrets detection, push protection",
+      "source": {
+        "repo": "https://github.com/github/awesome-copilot",
+        "commit": "613efc8",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "skills/secret-scanning"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Markdown only. Upstream: github/awesome-copilot."
+      },
+      "skillMd": {
+        "sha256": "ebbaf8a49777e8be6d8c220b91bbee935b2aaab81b3ee976562484a339d750db"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "github-actions-hardening",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/github-actions-hardening",
+      "description": "Security review of GitHub Actions workflows: token permissions, injection, supply chain, and triggers.",
+      "useCases": "CI/CD security review",
+      "source": {
+        "repo": "https://github.com/github/awesome-copilot",
+        "commit": "613efc8",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "skills/github-actions-hardening"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Markdown only. Upstream: github/awesome-copilot."
+      },
+      "skillMd": {
+        "sha256": "31a8e7483d978e6267941edefebbe42aaa946bb3d43c9095aa3db343d4a8ff06"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "dependabot",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/dependabot",
+      "description": "Configure and triage Dependabot version and security updates.",
+      "useCases": "Dependency auditing, update automation",
+      "source": {
+        "repo": "https://github.com/github/awesome-copilot",
+        "commit": "613efc8",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "skills/dependabot"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Markdown only. Upstream: github/awesome-copilot."
+      },
+      "skillMd": {
+        "sha256": "2b5f3af7d8a5555d330d4d72ba9ad6140e85215d006dd9d7a92ee0dae76bbf82"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "refactor",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/refactor",
+      "description": "Surgical refactoring that preserves behaviour: extract functions, rename, reduce complexity.",
+      "useCases": "Refactoring, maintainability",
+      "source": {
+        "repo": "https://github.com/github/awesome-copilot",
+        "commit": "613efc8",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "skills/refactor"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Markdown only. Upstream: github/awesome-copilot."
+      },
+      "skillMd": {
+        "sha256": "58a38edd230cdcdd866939906321c8ba6f47c98a70d0cda373360196ee2ca1a7"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "mcp-builder",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/mcp-builder",
+      "description": "Guide for building MCP servers that expose external services as well-designed tools, with evaluation harness.",
+      "useCases": "MCP server development and evaluation",
+      "source": {
+        "repo": "https://github.com/anthropics/skills",
+        "commit": "dbd4588",
+        "commitDate": "2026-10-09",
+        "upstreamPath": "skills/mcp-builder"
+      },
+      "license": "Apache-2.0",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Bundled Python: evaluation.py calls the Anthropic API with the user's own key and needs the mcp/anthropic packages; connections.py opens MCP client connections. Not run on install. Upstream: anthropics/skills."
+      },
+      "skillMd": {
+        "sha256": "0f4592dcb53cf2b5d6b7febee6b4152018b565551a1c29e3c612f57b218ab295"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": false
+    },
+    {
+      "id": "caveman",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/caveman",
+      "description": "Terse response style that keeps technical content and drops filler. Lightweight skill only; no hooks, proxy, or installer.",
+      "useCases": "Lower-token responses",
+      "source": {
+        "repo": "https://github.com/JuliusBrussee/caveman",
+        "commit": "bad48a0",
+        "commitDate": "2026-10-17",
+        "upstreamPath": "skills/caveman"
+      },
+      "license": "Apache-2.0",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Markdown only. Status reporting refers to host hooks that are not installed by this skill. Upstream: JuliusBrussee/caveman (Apache-2.0, see NOTICE in that repo)."
+      },
+      "skillMd": {
+        "sha256": "415d43518f2b1a9498c15a445d4657117b129ee5e81b19454ce348439cc6672b"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "ollama-local-models",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/ollama-local-models",
+      "description": "Discover, size, run, and benchmark local Ollama models; decide when local inference beats a cloud call.",
+      "useCases": "Local LLMs, Ollama benchmarking",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "skills/engineering/ollama-local-models"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Original Essentials skill. Markdown only; uses read-only Ollama and curl commands."
+      },
+      "skillMd": {
+        "sha256": "d96097568b5d5d032e2474f65108ab09b7b556621638b7ac87a13d5b3b610cd7"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "webapp-testing",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "testing",
+      "collection": "testing",
+      "path": "skills/testing/webapp-testing",
+      "description": "Test local web apps with native Playwright Python scripts: server lifecycle, element discovery, console logs, screenshots.",
+      "useCases": "Browser testing of local web apps",
+      "source": {
+        "repo": "https://github.com/anthropics/skills",
+        "commit": "dbd4588",
+        "commitDate": "2026-10-09",
+        "upstreamPath": "skills/webapp-testing"
+      },
+      "license": "Apache-2.0",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Bundled Python: with_server.py starts the user's own server commands and waits for ports on localhost; examples use Playwright. Not run on install. Upstream: anthropics/skills."
+      },
+      "skillMd": {
+        "sha256": "51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": false
+    },
+    {
+      "id": "test-gap-audit",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "testing",
+      "collection": "testing",
+      "path": "skills/testing/test-gap-audit",
+      "description": "Read-only audit of missing, weak, stale, or mis-scoped test coverage.",
+      "useCases": "Test coverage gap analysis",
+      "source": {
+        "repo": "https://github.com/github/awesome-copilot",
+        "commit": "613efc8",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "skills/test-gap-audit"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Bundled scripts/coverage_map.py runs the project's coverage tools via subprocess and reads results; read-only. Upstream: github/awesome-copilot."
+      },
+      "skillMd": {
+        "sha256": "a7747ac0b60d33ec6a44b9703ae11e8f6bf7aede251f117cc46599d182bfef21"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": false
+    },
+    {
+      "id": "playwright-generate-test",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "testing",
+      "collection": "testing",
+      "path": "skills/testing/playwright-generate-test",
+      "description": "Generate a Playwright test from a scenario using the Playwright MCP tools.",
+      "useCases": "E2E test generation",
+      "source": {
+        "repo": "https://github.com/github/awesome-copilot",
+        "commit": "613efc8",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "skills/playwright-generate-test"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Markdown only. Requires the Playwright MCP server to be configured. Upstream: github/awesome-copilot."
+      },
+      "skillMd": {
+        "sha256": "79dbb1a49fc5a6502788ccba1a4bd30769a017a1cc31d9db329d1326ea3d898f"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "web-design-reviewer",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "design",
+      "collection": "design",
+      "path": "skills/design/web-design-reviewer",
+      "description": "Visually inspect a running website with a browser, find design and accessibility issues, and fix them.",
+      "useCases": "Visual QA, design review, frontend debugging",
+      "source": {
+        "repo": "https://github.com/github/awesome-copilot",
+        "commit": "613efc8",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "skills/web-design-reviewer"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Markdown and reference checklists only. Requires a browser tool such as Playwright MCP. Upstream: github/awesome-copilot."
+      },
+      "skillMd": {
+        "sha256": "a08a147cfe555dabe30f2c8f2e267f287e992f74f2b802e68989884338e23b17"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "ros2-debugging",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "robotics-ml",
+      "collection": "robotics-ml",
+      "path": "skills/robotics-ml/ros2-debugging",
+      "description": "Diagnose ROS 2 systems: discovery, topic and QoS mismatches, launch and parameter problems, colcon build failures.",
+      "useCases": "ROS 2 debugging",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "skills/robotics-ml/ros2-debugging"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Original Essentials skill. Markdown only."
+      },
+      "skillMd": {
+        "sha256": "e94301f326ea0ae8ffef32147502dc0742e54bffbc22973193faf03cb64c987d"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "esp32-embedded-debugging",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "robotics-ml",
+      "collection": "robotics-ml",
+      "path": "skills/robotics-ml/esp32-embedded-debugging",
+      "description": "Debug ESP32 firmware: boot loops, brownouts, watchdog resets, serial output, flashing, peripheral wiring.",
+      "useCases": "ESP32 and serial debugging",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "skills/robotics-ml/esp32-embedded-debugging"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Original Essentials skill. Markdown only."
+      },
+      "skillMd": {
+        "sha256": "eeb744448b94c3996fa5805d6182ab277612ce1112973d51f00e371e17fd6dcb"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "pytorch-experiments",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "robotics-ml",
+      "collection": "robotics-ml",
+      "path": "skills/robotics-ml/pytorch-experiments",
+      "description": "Reproducible PyTorch training and evaluation: seeding, leakage-safe splits, resumable checkpoints, GPU benchmarking, ONNX export verification.",
+      "useCases": "PyTorch training, benchmarking, ONNX export",
+      "source": {
+        "repo": "https://github.com/AdityaTummuri/Essentials",
+        "commit": "local",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "skills/robotics-ml/pytorch-experiments"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Original Essentials skill. Markdown only."
+      },
+      "skillMd": {
+        "sha256": "49616adb9aaa4996b1db8a3eccdeb53499f71b77c1028c2ce7b2d2dd68473cfa"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": true
+    },
+    {
+      "id": "brainstorming",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/brainstorming",
+      "description": "Clarify requirements and explore design options before implementation; optional local visual companion.",
+      "useCases": "Requirements clarification, design exploration",
+      "source": {
+        "repo": "https://github.com/obra/superpowers",
+        "commit": "bb92a77",
+        "commitDate": "2026-10-09",
+        "upstreamPath": "skills/brainstorming"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Includes a localhost companion server (Node stdlib, token-protected, opt-in browser open). Start only after the user approves. Brand logo is loaded by the browser unless telemetry is disabled. Upstream: obra/superpowers."
+      },
+      "skillMd": {
+        "sha256": "6ee10d1481b8a2580d5336ff66c5c08acc9d4b251b13bbc3bfd31be99c261d43"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": false
+    },
+    {
+      "id": "subagent-driven-development",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/subagent-driven-development",
+      "description": "Execute an implementation plan by dispatching one subagent per task with two-stage review.",
+      "useCases": "Subagent-driven implementation with review gates",
+      "source": {
+        "repo": "https://github.com/obra/superpowers",
+        "commit": "bb92a77",
+        "commitDate": "2026-10-09",
+        "upstreamPath": "skills/subagent-driven-development"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Shell helpers (task-brief, review-package, sdd-workspace) use read-only git commands and write only under .superpowers/sdd/ in the working repo. Upstream: obra/superpowers."
+      },
+      "skillMd": {
+        "sha256": "8dde5589ee083fb4999106d116f01c8fdaf3116a8a9813fdedeb80329de49046"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": false
+    },
+    {
+      "id": "executing-plans",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/executing-plans",
+      "description": "Execute a written plan inline, one task at a time, with ledgered progress and review.",
+      "useCases": "Inline plan execution",
+      "source": {
+        "repo": "https://github.com/obra/superpowers",
+        "commit": "bb92a77",
+        "commitDate": "2026-10-09",
+        "upstreamPath": "skills/executing-plans"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Shell helpers write a progress ledger under .superpowers/sdd/ and call the subagent-driven-development helpers. References finishing-a-development-branch and using-git-worktrees, which are not vendored. Upstream: obra/superpowers."
+      },
+      "skillMd": {
+        "sha256": "f38e8f2ddcf079f65493adc713c1fed78421dfaf5f4dbf6b3a6b2b1d95466e71"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": false
+    },
+    {
+      "id": "skill-creator",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/skill-creator",
+      "description": "Create, evaluate, benchmark, and improve agent skills, including description optimisation.",
+      "useCases": "Skill authoring and evaluation",
+      "source": {
+        "repo": "https://github.com/anthropics/skills",
+        "commit": "dbd4588",
+        "commitDate": "2026-10-09",
+        "upstreamPath": "skills/skill-creator"
+      },
+      "license": "Apache-2.0",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Bundled Python runs claude -p as a subprocess for evals (costs model calls), starts a localhost-only review server, and loads Google Fonts and a sheetjs CDN script in HTML viewers. Not run on install. Upstream: anthropics/skills."
+      },
+      "skillMd": {
+        "sha256": "dcd4803e61e913e6fc27294184cd3a71f09f5e924ff20c8a9a20173e7b3c2bcf"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": false
+    },
+    {
+      "id": "reverse-engineer-anything",
+      "kind": "skill",
+      "status": "vendored",
+      "installable": true,
+      "category": "engineering",
+      "collection": "engineering",
+      "path": "skills/engineering/reverse-engineer-anything",
+      "description": "Reverse engineer native, managed, Electron, packaged, firmware, and browser targets with REA evidence tools.",
+      "useCases": "Binary and package analysis with REA",
+      "source": {
+        "repo": "https://github.com/morluto/rea",
+        "commit": "3b79af28",
+        "commitDate": "2026-10-20",
+        "upstreamPath": "skills/reverse-engineer-anything"
+      },
+      "license": "MIT",
+      "installMethods": [
+        "copy"
+      ],
+      "dependencies": [],
+      "securityReview": {
+        "status": "static-reviewed",
+        "date": "2026-10-20",
+        "notes": "Markdown only. Instructs the agent to run npx rea-agents@6.5.0 for diagnostics and, after approval, to write MCP client configuration. Byte-identical to the rea-agents 6.5.0 bundled skill. Upstream: morluto/rea."
+      },
+      "skillMd": {
+        "sha256": "3456aab99d48c3294726065c9d5bd586bc165f2849fd5a3d5080381630564715"
+      },
+      "supportedAgents": [
+        "claude-code",
+        "gemini-cli",
+        "codex",
+        "cursor",
+        "windsurf",
+        "copilot"
+      ],
+      "safeForDefault": false
     }
   ]
 }

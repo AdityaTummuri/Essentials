@@ -1,49 +1,80 @@
-# Agent Compatibility Matrix
+# Agent Compatibility Guide
 
-Essentials aims for pragmatic, honest compatibility across AI coding agents. We distinguish between **Native Verified** (the agent discovers and parses the directory structure out of the box) and **Adapter-Mediated** (Essentials adapts the canonical skill into the format or location expected by the agent).
+Essentials skills are built on the open **Agent Skills specification** (`SKILL.md` with standard YAML frontmatter `name` and `description`).
 
-## Supported Agents Matrix
-
-| Agent / Tool | Support Level | Discovery Path | Format | Verification Status |
-|---|---|---|---|---|
-| **Claude Code** | Native | `<project>/.claude/skills/<id>/` | Canonical `SKILL.md` (YAML frontmatter) | **Verified**. End-to-end unit and integration tests passing. |
-| **Gemini CLI / Antigravity** | Native | `<project>/.agents/skills/<id>/` | Canonical `SKILL.md` | **Verified**. Scanned and active in live Antigravity workspaces. |
-| **OpenAI Codex** | Native | `<project>/.agents/skills/<id>/` or `.codex/skills/` | Canonical `SKILL.md` | **Verified** with the open Agent Skills specification. |
-| **Cursor** | Adapter | `<project>/.cursor/rules/<id>.mdc` | Markdown with Cursor MDC frontmatter (`globs`, `description`) | **Verified via Adapter**. Transforms canonical skills to `.mdc` rules. |
-| **Windsurf** | Adapter | `<project>/.windsurf/rules/<id>.md` | Markdown rules file | **Verified via Adapter**. Converted to Cascade project rules. |
-| **GitHub Copilot** | Adapter | `<project>/.github/prompts/<id>.prompt.md` | Copilot custom instructions / prompts | **Compatible via Adapter**. |
+Because skills in Essentials are self-contained folders with zero proprietary installer dependencies, they are natively compatible with virtually every modern AI coding agent.
 
 ---
 
-## Agent-Specific Implementation Details
+## 1. Compatibility Matrix
 
-### 1. Claude Code
-- **Mechanism**: Claude Code natively inspects `<project>/.claude/skills/` and `~/.claude/skills/`.
-- **Precedence**: Project-local skills override user-global skills with the same name.
-- **Activation**: Type `/<skill-id>` in Claude Code chat or let the model auto-load relevant skills based on user prompt semantics.
+| AI Coding Agent | Compatibility | Global Skill Path | Project Skill Path | Setup Method |
+|---|---|---|---|---|
+| **OpenCode** | Native | `~/.agents/skills/` | `<project>/.agents/skills/` | Direct folder copy |
+| **VS Code Copilot** | Native | `~/.agents/skills/` | `<project>/.agents/skills/` | Direct folder copy |
+| **Gemini CLI / Antigravity** | Native | `~/.agents/skills/` | `<project>/.agents/skills/` | Direct folder copy |
+| **OpenAI Codex** | Native | `~/.agents/skills/` | `<project>/.agents/skills/` | Direct folder copy |
+| **Claude Code** | Native | `~/.claude/skills/` | `<project>/.claude/skills/` | Direct folder copy or symlink |
+| **Cursor** | Native | `~/.agents/skills/` | `<project>/.agents/skills/` or `.cursor/rules/` | Direct folder copy |
+| **Windsurf** | Native | `~/.agents/skills/` | `<project>/.agents/skills/` or `.windsurf/rules/` | Direct folder copy |
 
-### 2. Gemini CLI & Antigravity
-- **Mechanism**: Looks in the active project workspace under `.agents/skills/<skill-id>/SKILL.md`.
-- **Precedence**: Active project workspace skills take priority.
-- **Activation**: Automatically indexed into the agent context if the skill metadata matches the user's intent.
+---
 
-### 3. Cursor
-- **Mechanism**: Cursor IDE uses modern Cursor Rules (`.cursor/rules/*.mdc`) or legacy `.cursorrules`.
-- **Adapter**: Essentials automatically generates `.cursor/rules/<skill-id>.mdc` with the required YAML frontmatter:
-  ```yaml
-  ---
-  description: <Skill purpose and triggers>
-  globs: *
-  alwaysApply: false
-  ---
-  ```
-- **Activation**: Triggered automatically when relevant files match, or referenced in Chat with `@rule-name`.
+## 2. Agent-Specific Copy Instructions
 
-### 4. Windsurf
-- **Mechanism**: Windsurf reads `.windsurf/rules/` or project-level `.windsurfrules`.
-- **Adapter**: Essentials deploys skills as individual rules in `.windsurf/rules/<skill-id>.md` or appends managed blocks to `.windsurfrules`.
+### 1. OpenCode, VS Code with Copilot, Gemini CLI, & OpenAI Codex
+All of these agents automatically discover skills placed in the standard `~/.agents/skills/` directory (or a local `.agents/skills/` inside a repository).
 
-### 5. GitHub Copilot
-- **Mechanism**: Copilot reads instructions from `.github/copilot-instructions.md` and repository prompt files in `.github/prompts/`.
-- **Adapter**: Generates prompt instruction blocks in `.github/prompts/<skill-id>.prompt.md`.
+**Copy one skill:**
+```bash
+mkdir -p ~/.agents/skills
+cp -r skills/engineering/code-review ~/.agents/skills/
+```
 
+**Copy an entire category (e.g. all 24 Three.js skills):**
+```bash
+cp -r skills/threejs/* ~/.agents/skills/
+```
+
+**Copy into the current workspace/repository only:**
+```bash
+mkdir -p .agents/skills
+cp -r /path/to/Essentials/skills/python/pytest-workflow .agents/skills/
+```
+
+---
+
+### 2. Claude Code
+Claude Code looks for skills in `~/.claude/skills/<skill-id>/SKILL.md` or in the project's `.claude/skills/<skill-id>/SKILL.md`.
+
+**Copy directly:**
+```bash
+mkdir -p ~/.claude/skills
+cp -r skills/design/frontend-design ~/.claude/skills/
+```
+
+**Or share with `~/.agents/skills/` (Recommended):**
+If you use multiple agents on the same machine, create a symlink once so skills copied to `~/.agents/skills/` are instantly recognized by Claude Code:
+```bash
+mkdir -p ~/.agents/skills
+ln -s ~/.agents/skills ~/.claude/skills
+```
+
+---
+
+### 3. Cursor & Windsurf
+Modern versions of Cursor and Windsurf recognize the universal Agent Skills directory (`~/.agents/skills/` and `.agents/skills/`).
+
+If you prefer project-local rules:
+- **Cursor**: You can copy a skill into `.cursor/rules/<skill-id>/` or place the `SKILL.md` directly as a rule.
+- **Windsurf**: Place the skill in `.windsurf/rules/<skill-id>/` or `.agents/skills/`.
+
+---
+
+## 3. Verifying Installation in Your Agent
+
+After copying skill folders:
+
+1. **Claude Code**: Type `/<skill-id>` (e.g. `/frontend-design`) or prompt Claude on the skill's subject. Claude will load the skill context automatically.
+2. **VS Code Copilot / OpenCode**: The skills appear in the agent skill registry and are dynamically loaded when the user's prompt matches the skill description.
+3. **Gemini CLI / Antigravity**: Scans active workspace and user directories automatically at startup.
